@@ -32,7 +32,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li  class="active"><a href="/admin/panel"> پنل اصلی<span class="sr-only">(current)</span></a></li>
-                <li><a href="/admin/article">مقاله ها</a></li>
+                <li><a href="/admin/articles">مقاله ها</a></li>
                 <li><a href="/admin/courses">دوره ها</a></li>
             </ul>
             <ul class="nav nav-sidebar">
@@ -40,11 +40,11 @@
                 <li><a href="">پرداختی های موفق<span class="badge">0</span></a></li>
                 <li><a href="">پرداختی های ناموفق<span class="badge">0</span></a></li>
                 <li><a href="">گزارشات</a></li>
-                <li><a href="">More navigation</a></li>
+                {{--<li><a href="">More navigation</a></li>--}}
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="">همه نظرات<span class="badge">0</span></a></li>
                 <li><a href="">نظرات تایید نشده <span class="badge">0</span></a></li>
-                <li><a href="">Another nav item</a></li>
+                {{--<li><a href="">Another nav item</a></li>--}}
             </ul>
         </div>

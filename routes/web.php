@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Admin')->prefix('admin')->group(function (){
+
+    $this->get('/panel','PanelController@index')->name('PanelAdmin');
+    $this->resource('articles','ArticleController');
+
 });
-
-
-Route::get('/admin/panel','Admin\PanelController@index');
