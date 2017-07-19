@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Article;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class ArticleController extends Controller
+use App\Http\Requests\ArticleRequest;
+class ArticleController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -32,12 +33,20 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param ArticleRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        return $request->all();
+
+      auth()->loginUsingId(1);
+        $imagesUrl=$this->uploadImages($request->file('images'));
+
+
+
+        auth()->user()->article()->create(array_merge(['images'=>$imagesUrl],$request->all()));
+
+        return redirect(route('articles.index'));
     }
 
     /**
@@ -82,6 +91,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+        return redirect(route('articles.index'));
     }
 }

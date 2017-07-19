@@ -7,24 +7,24 @@
            <a href="{{route('articles.create')}}" class="btn btn-sm btn-primary">درج مقاله</a>
        </div>
         <form class="form-horizontal" action="{{route('articles.store')}}" method="post" enctype="multipart/form-data">
-
             {{csrf_field()}}
+            @include('Admin.section.errors')
             <div class="form-group">
                 <label for="title" class="control-label">عنوان مقاله</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="عنوان مقاله" value="{{old('title')}}">
             </div>
             <div class="form-group">
                 <label for="description" class="control-label">توضیحات</label>
-                <input type="text" class="form-control" name="description" id="description" placeholder="توضیحات را وارد کنید" value="{{old('description')}}">
+                <textarea class="form-control" rows="5" name="description" id="description" placeholder="توضیحات را وارد کنید" >{{old('description')}}</textarea>
             </div>
             <div class="form-group">
                 <label for="body" class="control-label">متن مقاله</label>
-                <textarea rows="6"  class="form-control" name="body" id="body" placeholder="متن مقاله را وارد کنید" value="{{old('body')}}"></textarea>
+                <textarea rows="6"  class="form-control" name="body" id="body" placeholder="متن مقاله را وارد کنید" >{{old('body')}}</textarea>
             </div>
             <div class="form-group">
                 <div class="col-sm-6">
-                    <label for="imageUrl" class="control-label">تصویر مقاله</label>
-                    <input type="file" class="form-control" name="imageUrl" id="imageUrl" placeholder="تصویر مقاله را وارد کنید" value="{{old('imageUrl')}}">
+                    <label for="images" class="control-label">تصویر مقاله</label>
+                    <input type="file" class="form-control" name="images" id="images" placeholder="تصویر مقاله را وارد کنید" value="{{old('images')}}">
                 </div>
                 <div class="col-sm-6">
                     <label for="tags" class="control-label">تگ ها</label>
@@ -34,7 +34,6 @@
             <div class="form-group">
                 <div class="col-sm-12">
                     <button type="submit" class="btn btn-danger">ارسال</button>
-
                 </div>
             </div>
         </form>

@@ -27,4 +27,8 @@ class Article extends Model
     {
         return "/article/$this->slug";
     }
+
+    protected $fillable=[
+        'title','description','body','images','tags',
+    ];
 }
