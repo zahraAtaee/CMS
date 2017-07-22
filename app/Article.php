@@ -23,12 +23,16 @@ class Article extends Model
         ];
     }
 
+    protected $casts=[
+        'images'=>'array'
+    ];
+
     public function path()
     {
         return "/article/$this->slug";
     }
 
     protected $fillable=[
-        'title','description','body','images','tags',
+        'title','description','body','images','tags'
     ];
 }

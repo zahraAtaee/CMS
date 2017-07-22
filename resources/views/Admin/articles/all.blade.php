@@ -24,18 +24,23 @@
                     <td>{{$article->viewCount}}</td>
                     <td>
                         <form action="{{route('articles.destroy',['id'=>$article->id])}}" method="post">
-                            {{csrf_field('delete')}}
-                        </form>
+                            {{csrf_field()}}
+                            {{method_field('delete')}}
+
                         <div class="btn-group btn-group-xs" >
                             <a href="{{route('articles.edit',['id'=>$article->id])}}" class="btn btn-success">ویرایش</a>
-                            <button class="btn btn-danger">حذف</button>
+                            <button type="submit" class="btn btn-danger">حذف</button>
                         </div>
+                        </form>
                     </td>
 
                 </tr>
                 @endforeach
                 </tbody>
             </table>
+        </div>
+        <div style="text-align: center">
+            {!! $articles->render() !!}
         </div>
     </div>
 @endsection

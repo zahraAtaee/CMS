@@ -23,12 +23,27 @@ class ArticleRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title'=>'required|max:250',
-            'description'=>'required',
-            'body'=>'required',
-            'images'=>'required|mimes:jpeg,png,bmp,jpg',
-            'tags'=>'required',
-        ];
+        if ($this->method()=='POST')
+        {
+            return [
+                'title'=>'required|max:250',
+                'description'=>'required',
+                'body'=>'required',
+                'images'=>'required|mimes:jpeg,png,bmp,jpg',
+                'tags'=>'required',
+            ];
+        }
+        else{
+
+            return [
+                'title'=>'required|max:250',
+                'description'=>'required',
+                'body'=>'required',
+//                'images'=>'required|mimes:jpeg,png,bmp,jpg',
+                'tags'=>'required',
+            ];
+
+        }
+
     }
 }

@@ -5,3 +5,5 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/js/admin.js"></script>
+
+    @yield('script')

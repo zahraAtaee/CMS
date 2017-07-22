@@ -105,7 +105,7 @@ module.exports = __webpack_require__(43);
 /***/ 43:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(44);
+window.$ = window.jQuery = __webpack_require__(44);
 __webpack_require__(46);
 
 /***/ }),

@@ -39,12 +39,9 @@ class ArticleController extends AdminController
     public function store(ArticleRequest $request)
     {
 
-      auth()->loginUsingId(1);
+        auth()->loginUsingId(1);
         $imagesUrl=$this->uploadImages($request->file('images'));
-
-
-
-        auth()->user()->article()->create(array_merge(['images'=>$imagesUrl],$request->all()));
+        auth()->user()->article()->create(array_merge($request->all(),['images'=>$imagesUrl]));
 
         return redirect(route('articles.index'));
     }
@@ -68,7 +65,7 @@ class ArticleController extends AdminController
      */
     public function edit(Article $article)
     {
-        //
+        return view('Admin.articles.edit',compact('article'));
     }
 
     /**
@@ -78,9 +75,22 @@ class ArticleController extends AdminController
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(ArticleRequest $request, Article $article)
     {
-        //
+
+        $file=$request->file('images');
+        $input=$request->all();
+
+        if ($file){
+            $input['images']=$this->uploadImages($request->file('images'));
+        }else{
+            $input['images']=$article->images;
+            $input['images']['thumb']=$input['imagesThumb'];
+        }
+
+        $article->update($input);
+
+        return redirect(route('articles.index'));
     }
 
     /**
