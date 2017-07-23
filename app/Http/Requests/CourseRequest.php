@@ -27,8 +27,8 @@ class CourseRequest extends FormRequest
             return [
                 'title'=>'required|max:250',
                 'type'=>'required',
-                'description'=>'required',
                 'body'=>'required',
+//                'description'=>'required',
                 'images'=>'required|mimes:jpeg,png,bmp,jpg',
                 'tags'=>'required',
                 'price'=>'required',
@@ -37,9 +37,9 @@ class CourseRequest extends FormRequest
         return [
                 'title'=>'required|max:250',
                 'type'=>'required',
-                'description'=>'required',
+//                'description'=>'required',
                 'body'=>'required',
-                'images'=>'required|mimes:jpeg,png,bmp,jpg',
+//                'images'=>'required|mimes:jpeg,png,bmp,jpg',
                 'tags'=>'required',
                 'price'=>'required',
         ];

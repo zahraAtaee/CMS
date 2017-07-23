@@ -38,8 +38,10 @@ class CoursesController extends AdminController
      */
     public function store(CourseRequest $request)
     {
+        auth()->loginUsingId(1);
         $imageUrl=$this->uploadImages($request->file('images'));
-        auth()->user()->course()->create($request->all(),['images'=>$imageUrl]);
+
+        auth()->user()->course()->create(array_merge($request->all(),['images'=>$imageUrl]));
 
         return redirect(route('courses.index'));
     }
@@ -63,7 +65,7 @@ class CoursesController extends AdminController
      */
     public function edit(Course $course)
     {
-        //
+        return view('Admin.courses.edit',compact('course'));
     }
 
     /**
@@ -73,9 +75,22 @@ class CoursesController extends AdminController
      * @param  \App\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(CourseRequest $request, Course $course)
     {
-        //
+
+
+        $file=$request->file('images');
+        $input=$request->all();
+
+        if ($file){
+            $input['images']=$this->uploadImages($request->file('images'));
+        }else{
+            $input['images']=$course->images;
+            $input['images']['thumb']=$input['imagesThumb'];
+        }
+
+        $course->update($input);
+        return redirect(route('courses.index'));
     }
 
     /**
@@ -86,6 +101,7 @@ class CoursesController extends AdminController
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return redirect(route('courses.index'));
     }
 }

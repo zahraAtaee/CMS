@@ -5,6 +5,10 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Course
+ * @package App
+ */
 class Course extends Model
 {
     use Sluggable;
@@ -22,6 +26,35 @@ class Course extends Model
             ]
         ];
     }
-    protected $fillable=['type','title','slug','description','body','price',
-        'images','tags','viewCount','commentCount'];
+
+
+//    protected $guarded=[];
+
+    /**
+     * @var array
+     */
+    protected $casts=[
+        'images'=>'array'
+    ];
+
+    public function path()
+    {
+        return "/course/$this->slug";
+    }
+
+
+    /**
+     * @var array
+     */
+
+
+    protected $fillable=['title','type','description','body','price',
+       'tags','images'];
+
+
+    public function setBodyAttribute($value)
+    {
+        $this->attributes['description']=str_limit(preg_replace('/<[^>]*>/','',$value),200);
+        $this->attributes['body']=$value;
+    }
 }
