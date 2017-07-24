@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CourseRequest extends FormRequest
+class EpisodeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,25 +23,29 @@ class CourseRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->method()=='POST'){
+        return [];
+       /* if ($this->method()=='POST'){
             return [
-                'title'=>'required|max:250',
+                'title'=>'required',
+                'course_id='required',
                 'type'=>'required',
-                'body'=>'required',
                 'description'=>'required',
-                'images'=>'required|mimes:jpeg,png,bmp,jpg',
-                'tags'=>'required',
-                'price'=>'required',
+                'videoUrl'=>'required',
+                'number'=>'required',
+                'tags'=>'required'
+                'time'=>'required'
+
             ];
         }
-        return [
-                'title'=>'required|max:250',
+            return [
+                'title'=>'required',
+                'course_id='required',
                 'type'=>'required',
                 'description'=>'required',
-                'body'=>'required',
-//                'images'=>'required|mimes:jpeg,png,bmp,jpg',
-                'tags'=>'required',
-                'price'=>'required',
-        ];
+                'videoUrl'=>'required',
+                'number'=>'required',
+                'tags'=>'required'
+                'time'=>'required'
+            ];*/
     }
 }

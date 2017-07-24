@@ -7,6 +7,10 @@ use App\Http\Requests\CourseRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+/**
+ * Class CoursesController
+ * @package App\Http\Controllers\Admin
+ */
 class CoursesController extends AdminController
 {
     /**
@@ -54,7 +58,7 @@ class CoursesController extends AdminController
      */
     public function show(Course $course)
     {
-        //
+        return $course;
     }
 
     /**
@@ -71,8 +75,8 @@ class CoursesController extends AdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Course  $course
+     * @param CourseRequest|Request $request
+     * @param  \App\Course $course
      * @return \Illuminate\Http\Response
      */
     public function update(CourseRequest $request, Course $course)

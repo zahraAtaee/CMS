@@ -19,7 +19,7 @@
                 <tbody>
                 @foreach($articles as $article)
                 <tr>
-                    <td><a href="{{$article->path()}}"></a> {{$article->title}}</td>
+                    <td><a href="{{$article->path()}}">{{$article->title}}</a></td>
                     <td>{{$article->commentCount}}</td>
                     <td>{{$article->viewCount}}</td>
                     <td>

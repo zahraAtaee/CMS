@@ -52,9 +52,16 @@ class Course extends Model
        'tags','images'];
 
 
-    public function setBodyAttribute($value)
+    /*public function setBodyAttribute($value)
     {
+
         $this->attributes['description']=str_limit(preg_replace('/<[^>]*>/','',$value),200);
         $this->attributes['body']=$value;
+    }*/
+
+
+    public function episodes()
+    {
+        return $this->hasMany(Episode::class);
     }
 }

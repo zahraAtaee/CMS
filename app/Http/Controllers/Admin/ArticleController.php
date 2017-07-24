@@ -17,6 +17,7 @@ class ArticleController extends AdminController
     public function index()
     {
         $articles=Article::latest()->paginate(20);
+
         return view('Admin.articles.all',compact('articles'));
     }
 
@@ -54,7 +55,7 @@ class ArticleController extends AdminController
      */
     public function show(Article $article)
     {
-        //
+        return  $article;
     }
 
     /**
