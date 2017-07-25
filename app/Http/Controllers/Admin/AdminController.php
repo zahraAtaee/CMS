@@ -45,6 +45,7 @@ class AdminController extends Controller
     protected function setCourseTime($episode){
 
         $course=$episode->course;
+
         $course->time=$this->getCourseTime($course->episodes->pluck('time'));
         $course->save();
     }

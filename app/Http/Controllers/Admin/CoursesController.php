@@ -21,6 +21,8 @@ class CoursesController extends AdminController
     public function index()
     {
         $courses=Course::latest()->paginate(20);
+//      $courses=Course::find(1)->episodes; relation one to many
+
         return view('Admin.courses.all',compact('courses'));
     }
 
@@ -37,7 +39,7 @@ class CoursesController extends AdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CourseRequest|Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(CourseRequest $request)

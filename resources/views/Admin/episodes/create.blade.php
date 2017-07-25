@@ -25,23 +25,22 @@
                 <input type="text" class="form-control" name="title" id="title" placeholder="عنوان قسمت" value="{{old('title')}}">
             </div>
             <div class="form-group">
-                <div class="col-sm-12">
-                    <label for="courseId" class="control-label">دوره مرتبط</label>
-                    <select type="text" class="form-control" name="courseId" id="courseId" >
-
-                       {{-- @foreach($course as $value)
-
-                        @endforeach--}}
+                <div class="col-sm-6">
+                    <label for="course_id" class="control-label">دوره مرتبط</label>
+                    <select type="text" class="form-control" name="course_id" id="course_id" >
+                            @foreach($courses as $course)
+                                <option value="{{$course->id}}">{{$course->title}}</option>
+                            @endforeach
                     </select>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="title" class="control-label">نوع ویدئو</label>
-                <select name="type" id="type" class="form-control">
-                    <option value="VIP">اعضای ویژه</option>
-                    <option value="cash">نقدی</option>
-                    <option value="free">رایگان</option>
-                </select>
+                <div class="col-sm-6">
+                    <label for="title" class="control-label">نوع ویدئو</label>
+                    <select name="type" id="type" class="form-control">
+                        <option value="VIP">اعضای ویژه</option>
+                        <option value="cash">نقدی</option>
+                        <option value="free">رایگان</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label for="description" class="control-label">متن ویدئو</label>
@@ -49,8 +48,8 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-6">
-                    <label for="videotime" class="control-label">زمان ویدئو</label>
-                    <input type="text" class="form-control" name="videotime" id="videotime" placeholder=" زمان ویدئو را وارد کنید" value="{{old('videoTime')}}">
+                    <label for="time" class="control-label">زمان ویدئو</label>
+                    <input type="text" class="form-control" name="time" id="time" placeholder=" زمان ویدئو را وارد کنید" value="{{old('time')}}">
                 </div>
                 <div class="col-sm-6">
                     <label for="number" class="control-label">شماره قسمت</label>

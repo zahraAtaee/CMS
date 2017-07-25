@@ -13,6 +13,7 @@
                     <th>تعداد نظرات</th>
                     <th>مقدار بازدید</th>
                     <th>تعداد دانلود</th>
+                    <th>شماره</th>
                     <th>وضعیت ویدئو</th>
                     <th>تنظیمات</th>
                 </tr>
@@ -24,7 +25,7 @@
                         <td>{{$episode->commentCount}}</td>
                         <td>{{$episode->viewCount}}</td>
                         <td>{{$episode->downloadCount}}</td>
-                        <td>{{$episode->price}}</td>
+                        <td>{{$episode->number}}</td>
                         <td>
                             @if($episode->type=='free')
                                 {{'رایگان'}}

@@ -10,23 +10,23 @@
 @endsection
 @section('content')
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-       <div class="page-header head-section">
-           <h2> ویرایش قسمت</h2>
-       </div>
-        <form class="form-horizontal" action="{{route('episodes.update',['id'=>$episode->id])}}" method="post" enctype="multipart/form-data">
+        <div class="page-header head-section">
+            <h2> ویرایش دوره</h2>
+        </div>
+        <form class="form-horizontal" action="{{routدورهe('courses.update',['id'=>$course->id])}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             {{method_field('PATCH')}}
             @include('Admin.section.errors')
             <div class="form-group">
-                <label for="title" class="control-label">عنوان قسمت</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="عنوان قسمت" value="{{$episode->title}}">
+                <label for="title" class="control-label">عنوان دوره</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="عنوان دوره" value="{{$course->title}}">
             </div>
             <div class="form-group">
-                <label for="title" class="control-label">نوع قسمت</label>
+                <label for="title" class="control-label">نوع دوره</label>
                 <select name="type" id="type" class="form-control">
-                    <option value="VIP"  {{$episode->type=='VIP' ? 'selected' : ''}} >اعضای ویژه</option>
-                    <option value="cash" {{$episode->type=='cash' ? 'selected' : ''}} >نقدی</option>
-                    <option value="free" {{$episode->type=='free' ? 'selected' : ''}} >رایگان</option>
+                    <option value="VIP"  {{$course->type=='VIP' ? 'selected' : ''}} >اعضای ویژه</option>
+                    <option value="cash" {{$course->type=='cash' ? 'selected' : ''}} >نقدی</option>
+                    <option value="free" {{$course->type=='free' ? 'selected' : ''}} >رایگان</option>
                 </select>
             </div>
             <div class="form-group">
@@ -34,24 +34,24 @@
                 <textarea class="form-control" rows="5" name="description" id="description" placeholder="توضیحات را وارد کنید" >{{$course->description}}</textarea>
             </div>
             <div class="form-group">
-                <label for="body" class="control-label">متن قسمت</label>
-                <textarea rows="6"  class="form-control" name="body" id="body" placeholder="متن قسمت را وارد کنید" >{{$episode->body}}</textarea>
+                <label for="body" class="control-label">متن دوره</label>
+                <textarea rows="6"  class="form-control" name="body" id="body" placeholder="متن دوره را وارد کنید" >{{$course->body}}</textarea>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">
-                        <label for="images" class="control-label">ویدئو دوره</label>
-                        <input type="file" class="form-control" name="images" id="images" placeholder="تصویر قسمت را وارد کنید" >
+                    <label for="images" class="control-label">تصویر دوره</label>
+                    <input type="file" class="form-control" name="images" id="images" placeholder="تصویر دوره را وارد کنید" >
                 </div>
                 <div class="col-sm-12">
                     <div class="row">
-                        @foreach($episode->images['images'] as $key=>$image)
-                         <div class="col-sm-2">
-                             <div class="control-label">
-                                 {{$key}}
-                                 <input type="radio" name="imagesThumb" value="{{$image}}" {{$episode->images['thumb']==$image ?'checked' : ''}} />
-                                 <a href="{{$image}}"><img src="{{$image}}" alt="{{$key}}" width="70%"></a>
-                             </div>
-                         </div>
+                        @foreach($course->images['images'] as $key=>$image)
+                            <div class="col-sm-2">
+                                <div class="control-label">
+                                    {{$key}}
+                                    <input type="radio" name="imagesThumb" value="{{$image}}" {{$course->images['thumb']==$image ?'checked' : ''}} />
+                                    <a href="{{$image}}"><img src="{{$image}}" alt="{{$key}}" width="70%"></a>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -59,11 +59,11 @@
             <div class="form-group">
                 <div class="col-sm-6">
                     <label for="price" class="control-label">قیمت</label>
-                    <input type="text" class="form-control" name="price" id="price" placeholder="قیمت را وارد کنید" value="{{$episode->price}}">
+                    <input type="text" class="form-control" name="price" id="price" placeholder="قیمت را وارد کنید" value="{{$course->price}}">
                 </div>
                 <div class="col-sm-6">
                     <label for="tags" class="control-label">تگ ها</label>
-                    <input type="text" class="form-control" name="tags" id="tags" placeholder="تگ ها را وارد کنید" value="{{$episode->tags}}">
+                    <input type="text" class="form-control" name="tags" id="tags" placeholder="تگ ها را وارد کنید" value="{{$course->tags}}">
                 </div>
             </div>
             <div class="form-group">

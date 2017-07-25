@@ -23,29 +23,31 @@ class EpisodeRequest extends FormRequest
      */
     public function rules()
     {
-        return [];
-       /* if ($this->method()=='POST'){
+        if ($this->method()=='POST')
+        {
             return [
                 'title'=>'required',
-                'course_id='required',
+                'course_id'=>'required',
                 'type'=>'required',
                 'description'=>'required',
                 'videoUrl'=>'required',
                 'number'=>'required',
                 'tags'=>'required'
-                'time'=>'required'
-
             ];
         }
+        else{
+
             return [
                 'title'=>'required',
-                'course_id='required',
+                'course_id'=>'required',
                 'type'=>'required',
                 'description'=>'required',
                 'videoUrl'=>'required',
                 'number'=>'required',
                 'tags'=>'required'
-                'time'=>'required'
-            ];*/
+            ];
+
+        }
+
     }
 }

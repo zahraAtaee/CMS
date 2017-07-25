@@ -23,7 +23,7 @@ class CreateCoursesTable extends Migration
             $table->text('description');
             $table->text('body');
             $table->string('price',50);
-            $table->timestamp('time');
+            $table->string('time',15)->default('00:00:00');
             $table->text('images');
             $table->string('tags');
             $table->integer('viewCount')->default(0);

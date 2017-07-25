@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Course;
 use App\Episode;
 use App\Http\Requests\EpisodeRequest;
 use Illuminate\Http\Request;
@@ -17,11 +18,11 @@ class EpisodeController extends AdminController
     public function index()
     {
         $episodes=Episode::latest()->paginate(20);
-        $course=Episode::latest()->with('course');
+        $courses=Course::latest()->paginate(20);/*
+        return view('Admin.episodes.all')->with('episodes', 'courses');
+        return view('Admin.episodes.all',['episodes'=>$episodes,'courses'=>$courses]);*/
 
-//        return view('Admin.episodes.all',['episodes'=>$episodes,'course'=>$course]);
-//dd($course);
-        return view('Admin.episodes.all',compact('episodes','course'));
+        return view('Admin.episodes.all',compact('episodes'));
     }
 
     /**
@@ -31,7 +32,8 @@ class EpisodeController extends AdminController
      */
     public function create()
     {
-        return view('Admin.episodes.create');
+        $courses=Course::all();
+        return view('Admin.episodes.create',compact('courses'));
     }
 
     /**
@@ -42,8 +44,7 @@ class EpisodeController extends AdminController
      */
     public function store(EpisodeRequest $request)
     {
-
-       $episode=Episode::created($request->all());
+       $episode=Episode::create($request->all());
 
        $this->setCourseTime($episode);
        return redirect(route('episodes.index'));
@@ -68,7 +69,8 @@ class EpisodeController extends AdminController
      */
     public function edit(Episode $episode)
     {
-        return view('Admin.episodes.edit',compact('episode'));
+        $courses=Course::all();
+        return view('Admin.episodes.edit',compact('episode','courses'));
     }
 
     /**
@@ -82,6 +84,8 @@ class EpisodeController extends AdminController
     {
         $episode->update($request->all());
         $this->setCourseTime($episode);
+        return redirect(route('episodes.index'));
+
     }
 
     /**

@@ -2,14 +2,14 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Episode extends Model
 {
-    protected $fillable=['title','type','description','body','videoUrl','number','tags'];
+    use Sluggable;
 
-    protected $casts=['images'=>'array'];
-
+    protected $fillable=['title','type','description','time','videoUrl','number','tags','course_id'];
 
     public function course()
     {
@@ -27,7 +27,7 @@ class Episode extends Model
 
     public function path()
     {
-        return "/episode/$this->slug";
+        return "/courses/{$this->course->slug}/episode/{$this->number}";
     }
 
 }

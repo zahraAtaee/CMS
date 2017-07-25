@@ -21,7 +21,7 @@ class CreateEpisodesTable extends Migration
             $table->string('type',10);
             $table->string('slug');
             $table->text('description');
-            $table->string('time',15)->defualt('00:00:00');
+            $table->string('time',15)->default('00:00:00');
             $table->string('videoUrl');
             $table->string('number');
             $table->string('tags');
