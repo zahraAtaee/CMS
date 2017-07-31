@@ -18,10 +18,7 @@ class EpisodeController extends AdminController
     public function index()
     {
         $episodes=Episode::latest()->paginate(20);
-        $courses=Course::latest()->paginate(20);/*
-        return view('Admin.episodes.all')->with('episodes', 'courses');
-        return view('Admin.episodes.all',['episodes'=>$episodes,'courses'=>$courses]);*/
-
+        $courses=Course::latest()->paginate(20);
         return view('Admin.episodes.all',compact('episodes'));
     }
 
