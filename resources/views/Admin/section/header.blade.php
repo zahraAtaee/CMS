@@ -31,12 +31,12 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li  class="active"><a href="/admin/panel"> پنل اصلی<span class="sr-only">(current)</span></a></li>
-                <li><a href="/admin/articles">مقاله ها</a></li>
-                <li><a href="/admin/courses">دوره ها</a></li>
+                <li  class="active"><a href="{{route('PanelAdmin')}}"> پنل اصلی<span class="sr-only">(current)</span></a></li>
+                <li><a href="{{route('articles.index')}}">مقاله ها</a></li>
+                <li><a href="{{route('courses.index')}}">دوره ها</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="">کاربران<span class="badge">0</span></a></li>
+                <li><a href="{{route('users')}}">کاربران<span class="badge">0</span></a></li>
                 <li><a href="">پرداختی های موفق<span class="badge">0</span></a></li>
                 <li><a href="">پرداختی های ناموفق<span class="badge">0</span></a></li>
                 <li><a href="">گزارشات</a></li>
