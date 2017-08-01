@@ -5,7 +5,7 @@
             <h2>کاربران</h2>
             <div class="btn-group">
                 <a href="{{route('roles.index')}}" class="btn btn-sm btn-info">سطوح دسترسی</a>
-                <a href="{{route('permissions.index')}}" class="btn btn-sm btn-primary">کاربران مدیریت  </a>
+                <a href="{{route('level.index')}}" class="btn btn-sm btn-primary">کاربران مدیریت  </a>
             </div>
         </div>
         <div class="table-responsive">
