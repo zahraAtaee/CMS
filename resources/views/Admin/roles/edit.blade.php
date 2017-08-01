@@ -1,67 +1,37 @@
 @extends('Admin.master')
 @section('script')
-    <script src="/ckeditor/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('description',{
-            filebrowserUpload:'/admin/panel/upload-image',
-            filebrowserImageUploadUrl:'/admin/panel/upload-image'
-        });
+        $(document).ready(function () {
+            $('#permission_id').selectpicker();
+        })
     </script>
 @endsection
 @section('content')
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div class="page-header head-section">
-            <h2> ویرایش ویدئو</h2>
+            <h2> ویرایش مقام</h2>
         </div>
-        <form class="form-horizontal" action="{{route('episodes.update',['id'=>$episode->id])}}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{route('roles.update',['id'=>$role->id])}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             {{method_field('PATCH')}}
             @include('Admin.section.errors')
             <div class="form-group">
-                <label for="title" class="control-label">عنوان ویدئو</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="عنوان ویدئو" value="{{$episode->title}}">
-            </div>
-            <div class="form-group">
                 <div class="col-sm-6">
-                    <label for="title" class="control-label">دوره مرتبط</label>
-                    <select name="course_id" id="course_id" class="form-control">
-                        @foreach($courses as $course)
-                            <option value="{{$course->id}}" {{$course->id==$episode->course_id ? 'selected' : ''}}>{{$course->title}}</option>
+                    <label for="name" class="control-label">عنوان مقام</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="عنوان مقام" value="{{$role->name}}">
+                </div>
+                <div class="col-sm-6">
+                    <label for="permission_id" class="control-label">دسترسی ها</label>
+                    <select name="permission_id[]" id="permission_id" class="form-control" multiple>
+                        @foreach($permissions as $permission)
+                            <option value="{{$permission->id}}" {{in_array(trim($permission->id),$role->permissions()->pluck('id')->toArray()) ? 'selected' : ''}}>{{$permission->name}}</option>
                         @endforeach
                     </select>
                 </div>
-                <div class="col-sm-6">
-                    <label for="title" class="control-label">نوع ویدئو</label>
-                    <select name="type" id="type" class="form-control">
-                        <option value="VIP"  {{$episode->type=='VIP' ? 'selected' : ''}} >اعضای ویژه</option>
-                        <option value="cash" {{$episode->type=='cash' ? 'selected' : ''}} >نقدی</option>
-                        <option value="free" {{$episode->type=='free' ? 'selected' : ''}} >رایگان</option>
-                    </select>
-                </div>
             </div>
             <div class="form-group">
-                <label for="description" class="control-label">متن ویدئو</label>
-                <textarea class="form-control" rows="5" name="description" id="description" placeholder="توضیحات را وارد کنید" >{{$episode->description}}</textarea>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-6">
-                    <label for="time" class="control-label">زمان ویدئو </label>
-                    <input type="text" class="form-control" name="time" id="time" placeholder="لینک ویدئو را وارد کنید" value="{{$episode->time}}">
-                </div>
-                <div class="col-sm-6">
-                    <label for="number" class="control-label">شماره قسمت</label>
-                    <input type="text" class="form-control" name="number" id="number" placeholder="لینک ویدئو را وارد کنید" value="{{$episode->number}}">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-6">
-                    <label for="videoUrl" class="control-label">لینک ویدئو </label>
-                    <input type="text" class="form-control" name="videoUrl" id="videoUrl" placeholder="لینک ویدئو را وارد کنید" value="{{$episode->videoUrl}}">
-                </div>
-                <div class="col-sm-6">
-                    <label for="tags" class="control-label">تگ ها</label>
-                    <input type="text" class="form-control" name="tags" id="tags" placeholder="تگ ها را وارد کنید" value="{{$episode->tags}}" value="{{$episode->tags}}">
-                </div>
+                <label for="label" class="control-label">توضیحات کوتاه</label>
+                <textarea class="form-control" rows="5" name="label" id="label" placeholder="توضیحات را وارد کنید" >{{$role->label}}</textarea>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\RoleRequest;
 use App\Role;
 use App\Permission;
 use Illuminate\Http\Request;
@@ -38,9 +39,12 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
-        //
+        $role=Role::create($request->all());
+        $role->permissions()->sync($request->input('permission_id'));
+
+        return redirect(route('roles.index'));
     }
 
     /**
@@ -62,7 +66,8 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        $permissions=Permission::all();
+        return view('Admin.roles.edit',compact('role','permissions'));
     }
 
     /**
@@ -72,9 +77,12 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Role $role)
+    public function update(RoleRequest $request, Role $role)
     {
-        //
+        $role->update($request->all());
+        $role->permissions()->sync($request->input('permission_id'));
+
+        return redirect(route('roles.index'));
     }
 
     /**
