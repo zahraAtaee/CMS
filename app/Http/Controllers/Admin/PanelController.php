@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Permission;
+use App\Role;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,6 +14,13 @@ class PanelController extends Controller
 
     public function index()
     {
+//        auth()->loginUsingId(1);
+   /*     return User::whereEmail('1')->first()->roles()->get();
+       return auth()->user()->roles()->get();*/
+        Permission::create([
+            'name'=>'show-comment',
+            'label'=>'بخش نظرات'
+            ]);
         return view('Admin.panel');
     }
 

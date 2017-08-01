@@ -4,8 +4,7 @@
         <div class="page-header head-section">
             <h2>سطوح دسترسی</h2>
             <div class="btn-group">
-                <a href="{{route('roles.create')}}" class="btn btn-sm btn-info">ایجاد سطح دسترسی </a>
-                <a href="{{route('permissions.create')}}" class="btn btn-sm btn-primary">کاربران مدیریت</a>
+                <a href="{{route('permissions.create')}}" class="btn btn-sm btn-info">ایجاد سطح دسترسی </a>
             </div>
         </div>
         <div class="table-responsive">
