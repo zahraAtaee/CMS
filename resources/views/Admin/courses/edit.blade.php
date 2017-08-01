@@ -13,7 +13,7 @@
         <div class="page-header head-section">
             <h2> ویرایش دوره</h2>
         </div>
-        <form class="form-horizontal" action="{{routدورهe('courses.update',['id'=>$course->id])}}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{route('courses.update',['id'=>$course->id])}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             {{method_field('PATCH')}}
             @include('Admin.section.errors')
