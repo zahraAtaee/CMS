@@ -21,6 +21,20 @@ Route::namespace('Admin')->prefix('admin')->group(function (){
     $this->resource('articles','ArticleController');
     $this->resource('courses','CoursesController');
     $this->resource('episodes','EpisodeController');
+    $this->resource('roles','RoleController');
+    $this->resource('permissions','PermissionController');
+
+
+
+    $this->group(['prefix'=>'users'],function (){
+
+        $this->get('/','UserController@index')->name('users');
+        $this->post('/','UserController@create')->name('users.create');
+        $this->put('/','UserController@edit')->name('users.edit');
+        $this->delete('/{user}/destroy','UserController@destroy')->name('users.destroy');
+
+        $this->resource('level','LevelManageController',['parameters'=>['level'=>'user']]);
+    });
 
 });
 
