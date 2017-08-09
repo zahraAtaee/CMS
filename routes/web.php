@@ -13,8 +13,11 @@
 Route::get('/',function (){
     return view('welcome');
 });
+/*
 Route::namespace('Admin')->prefix('admin')->group(function (){
-
+*/
+Route::group(['namespace' => 'Admin','middleware'=>['auth:web','checkAdmin'], 'prefix' => 'admin'], function()
+    {
 
     $this->get('/panel','PanelController@index')->name('PanelAdmin');
     $this->post('/panel/upload-image','PanelController@uploadImageSubject')->name('uploadImage');
@@ -38,3 +41,25 @@ Route::namespace('Admin')->prefix('admin')->group(function (){
 
 });
 
+Route::group(['prefix'=>'auth'],function (){
+
+    // Authentication Routes...
+    $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    $this->post('login', 'Auth\LoginController@login');
+    $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+    // Registration Routes...
+    $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    $this->post('register', 'Auth\RegisterController@register');
+
+    // Password Reset Routes...
+    $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    $this->post('password/reset', 'Auth\ResetPasswordController@reset');
+
+});
+
+/*Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');*/
