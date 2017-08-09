@@ -8,9 +8,11 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>وب سایت فروشگاهی لاراول</title>
+    <title>راهنمای نرم افزار ها</title>
+
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 
