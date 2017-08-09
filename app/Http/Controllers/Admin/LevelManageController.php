@@ -17,7 +17,6 @@ class LevelManageController extends Controller
      */
     public function index()
     {
-
         $roles=Role::latest()->with('users')->paginate('25');
 
         return view('Admin.levelAdmins.all',compact('roles'));
@@ -32,13 +31,15 @@ class LevelManageController extends Controller
     {
         $users=User::whereLevel('admin')->get();
 
+        $roles=Role::all();
+
         return view('Admin.levelAdmins.create',compact('users','roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param LevelManageRequest|Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(LevelManageRequest $request)
@@ -63,46 +64,37 @@ class LevelManageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param User $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
-     * @internal param int $id
      */
     public function edit(User $user)
     {
         $roles=Role::all();
-        $selectRole=User::find($user->id)->roles()->first();
+        $seletcetRole=User::find($user->id)->roles()->first();
 
-
-        return view('Admin.LevelAdmins.edit',compact('user','roles','selectRole'));
+        return view('Admin.LevelAdmins.edit',compact('user','roles','seletcetRole'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param LevelManageRequest|Request $request
-     * @param User $user
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
-     * @internal param int $id
      */
-    public function update(LevelManageRequest $request, User $user)
+    public function update(LevelManageRequest $request, $id)
     {
-
-        $user->roles()->sync($request->input('role_id'));
-
-        return redirect(route('level.index'));
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param User $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
-     * @internal param int $id
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->roles()->detach();
-        return redirect(route('level.index'));
+        //
     }
 }
