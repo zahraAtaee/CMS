@@ -14,9 +14,10 @@
         {{--Todo {{in_array($role->id,$seletcetRole->id) ?'selected' :''}}--}}
         <form class="form-horizontal" action="{{route('level.update',['id'=>$user->id])}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
+            {{method_field('PATCH')}}
             @include('Admin.section.errors')
             <div class="form-group">
-               {{-- <div class="col-md-6">
+           {{--     <div class="col-md-6">
                     <label for="user" class="control-label">کاربر</label>
                     <select type="text" class="form-control" name="user_id" id="user_id"  data-live-search="true">
                         @foreach($user as $value)
@@ -24,17 +25,16 @@
                         @endforeach
                     </select>
                 </div>--}}
-                <div class="col-sm-12">
-                    <label for="role_id" class="control-label">{{$user->email}}مقام ها--</label>
+                <div class="col-sm-6">
+
                     <select type="text" class="form-control" name="role_id" id="role_id"   data-live-search="true">
                         @foreach($roles as $role)
-                            <option value="{{$role->id}}" >{{$role->name}}-{{$role->label}}</option>
+                            <option value="{{$role->id}}" {{$user->hasRole($role->name)?'selected':''}} >{{$role->name}}-{{$role->label}}</option>
                         @endforeach
                     </select>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
+                <div class="col-md-6">
+                    <label  class="control-label"></label>
                     <button type="submit" class="btn btn-danger">ارسال</button>
                 </div>
             </div>
