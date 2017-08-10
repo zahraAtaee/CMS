@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable,HasRole;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -44,4 +44,8 @@ class User extends Authenticatable
         return $this->hasMany(Course::class);
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }
