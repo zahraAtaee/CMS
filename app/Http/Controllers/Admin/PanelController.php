@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Payment;
 use App\Permission;
 use App\Role;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Morilog\Jalali\Facades\jDate;
 
 class PanelController extends Controller
 {
@@ -15,13 +17,16 @@ class PanelController extends Controller
     public function index()
     {
 //        auth()->loginUsingId(1);
-   /*     return User::whereEmail('1')->first()->roles()->get();
-       return auth()->user()->roles()->get();*/
-        Permission::create([
-            'name'=>'show-comment',
-            'label'=>'بخش نظرات'
-            ]);
-        return view('Admin.panel');
+
+        $month=12;
+        $paymentSuccess=Payment::spaningPayment($month,true);
+        $paymentUnSuccess=Payment::spaningPayment($month,false);
+        $lables=$this->getLastMonths($month);
+
+        $values['success']=$this->checkCount($paymentSuccess->pluck('published'),$month);
+        $values['unsuccess']=$this->checkCount($paymentUnSuccess->pluck('published'),$month);
+
+        return view('Admin.panel',compact('lables','values'));
     }
 
     public function uploadImageSubject()
@@ -46,6 +51,24 @@ class PanelController extends Controller
 
     }
 
+    private function getLastMonths($month)
+    {
+        for ($i=0;$i<$month;$i++){
+
+            $lables[]=jdate(Carbon::now()->subMonth($i))->format('%B');
+        }
+
+        return array_reverse($lables);
+    }
+
+    private function checkCount($count, $month)
+    {
+        for ($i=0;$i<$month;$i++)
+        {
+            $new[$i]=empty($count[$i])? 0:$count[$i];
+        }
+        return array_reverse($new);
+    }
 
 
 }

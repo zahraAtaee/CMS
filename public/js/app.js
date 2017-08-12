@@ -57957,17 +57957,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+    props: ['labels', 'values'],
     mounted: function mounted() {
 
-        var ctx = document.getElementById("payment").getContext("2d");
+        var ctx = this.$refs.payment.getContext("2d");
 
         var myChart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: this.labels,
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'پرداختهای موفق',
+                    data: this.values.success,
+                    backgroundColor: 'rgba(0, 188, 212,0.5)',
+                    borderColor: 'rgba(255, 152, 0,1.0)',
+                    borderWidth: 1
+                }, {
+                    label: 'پرداختهای نا موفق',
+                    data: this.values.unsuccess,
                     backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
                     borderColor: ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
                     borderWidth: 1
@@ -70731,12 +70739,12 @@ module.exports = function(Chart) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('canvas', {
+    ref: "payment",
     staticStyle: {
       "width": "100%"
     },
     attrs: {
-      "height": "400",
-      "id": "payment"
+      "height": "400"
     }
   })
 },staticRenderFns: []}

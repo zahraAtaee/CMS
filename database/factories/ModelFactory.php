@@ -22,3 +22,14 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Payment::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => rand(1,2),
+        'resnumber' => rand(100000,500000),
+        'course_id' => rand(1,2),
+        'price' => rand(1000,50000),
+        'payment' => rand(0,1),
+        'created_at' => $faker->dateTimeBetween('-5 months','now')
+    ];
+});
