@@ -28,7 +28,7 @@
     </div>
 
     {{--Chart_JS--}}
-    <payment></payment>
+    <payment :values="{{json_encode($values)}}"  :labels="{{json_encode($lables)}}" ></payment>
     {{--End Chart_Js--}}
     <h2 class="sub-header">Section title</h2>
     <div class="table-responsive">
