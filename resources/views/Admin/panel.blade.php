@@ -27,6 +27,9 @@
         </div>
     </div>
 
+    {{--Chart_JS--}}
+    <payment></payment>
+    {{--End Chart_Js--}}
     <h2 class="sub-header">Section title</h2>
     <div class="table-responsive">
         <table class="table table-striped">

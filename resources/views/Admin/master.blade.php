@@ -15,9 +15,10 @@
 </head>
 
 <body>
-
-@include('Admin.section.header');
-       @yield('content')
+<div id="app">
+    @include('Admin.section.header');
+    @yield('content')
+</div>
 @include('Admin.section.footer');
 </body>
 </html>
