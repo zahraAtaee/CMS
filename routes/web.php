@@ -11,7 +11,11 @@
 |
 */
 Route::get('/',function (){
-    return view('welcome');
+   $user=\App\User::find(1);
+
+   event(new \App\Events\UserRegistered($user));
+
+   dd('eeeeeeee');
 });
 Route::namespace('Admin')->prefix('admin')->group(function (){
 
