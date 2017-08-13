@@ -24,7 +24,7 @@ class UserActivation
      * @param User $user
      */
     public function __construct(User $user)
-    {dd(ActivationCode::createCode($user)->code);
+    {
         $this->user=$user;
         $this->activationCode=ActivationCode::createCode($user)->code;
     }

@@ -47,7 +47,10 @@ class UserController extends Controller
 
         $activationCode->user()->update(['active'=>1]);
 
-        auth()->loginUsingId($activationCode->user->id);
+        auth()->loginUsingId($activationCode->user
+
+
+            ->id);
 
         return redirect('/');
     }
