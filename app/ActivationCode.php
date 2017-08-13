@@ -31,4 +31,9 @@ class ActivationCode extends Model
 
         return $code;
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

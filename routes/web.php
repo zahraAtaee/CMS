@@ -15,6 +15,8 @@ Route::get('/',function (){
     event(new \App\Events\UserActivation(\App\User::find(2)));
 
 });
+
+Route::get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
 Route::namespace('Admin')->prefix('admin')->group(function (){
 
 
