@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class ActivationCode extends Model
 {
-    protected $fillable=['user_id','code','used','expire'];
+    protected $fillable=['user_id','code','expire'];
 
 
     public function scopeCreateCode($query,$user)

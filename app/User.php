@@ -9,13 +9,15 @@ class User extends Authenticatable
 {
     use Notifiable,HasRole;
 
+    protected $table = 'users';
+    protected $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','active'
     ];
 
     /**
@@ -27,6 +29,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function activationCode()
+    {
+        return $this->hasMany(ActivationCode::class);
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -44,9 +50,6 @@ class User extends Authenticatable
         return $this->hasMany(Course::class);
     }
 
-    public function activation()
-    {
-        return $this->hasMany(ActivationCode::class);
-    }
+
 
 }

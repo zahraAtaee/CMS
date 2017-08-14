@@ -12,7 +12,7 @@
 */
 Route::get('/',function (){
 
-    event(new \App\Events\UserActivation(\App\User::find(2)));
+//    event(new \App\Events\UserActivation(\App\User::find(2)));
 
 });
 

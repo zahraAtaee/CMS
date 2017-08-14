@@ -68,15 +68,8 @@
 /***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(208);
+(function webpackMissingModule() { throw new Error("Cannot find module \"G:\\CMS\\resources\\assets\\js\\admin.js\""); }());
 
-
-/***/ }),
-
-/***/ 208:
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'G:\\CMS\\resources\\assets\\js\\admin.js'");
 
 /***/ })
 
