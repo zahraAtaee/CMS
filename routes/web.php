@@ -12,8 +12,8 @@
 */
 Route::get('/',function (){
 
+    return view('home');
 //    event(new \App\Events\UserActivation(\App\User::find(2)));
-
 });
 
 Route::get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
@@ -46,7 +46,7 @@ Route::group(['namespace'=>'Auth'],function (){
     // Authentication Routes...
     $this->get('login', 'LoginController@showLoginForm')->name('login');
     $this->post('login', 'LoginController@login');
-    $this->post('logout', 'LoginController@logout')->name('logout');
+    $this->get('logout', 'LoginController@logout')->name('logout');
 
     // Registration Routes...
     $this->get('register', 'RegisterController@showRegistrationForm')->name('register');

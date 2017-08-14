@@ -172,6 +172,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Morilog\Jalali\JalaliServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -234,6 +235,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'jDate' => Morilog\Jalali\Facades\jDate::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

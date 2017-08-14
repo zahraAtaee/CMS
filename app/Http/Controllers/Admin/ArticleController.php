@@ -44,6 +44,7 @@ class ArticleController extends AdminController
         $imagesUrl=$this->uploadImages($request->file('images'));
         auth()->user()->article()->create(array_merge($request->all(),['images'=>$imagesUrl]));
 
+        alert()->success('مقاله مورد نظر شما با موفقیت ذخیره شد.', 'مقالات')->persistent('بسیار خب');
         return redirect(route('articles.index'));
     }
 
@@ -72,8 +73,8 @@ class ArticleController extends AdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Article  $article
+     * @param ArticleRequest|Request $request
+     * @param  \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function update(ArticleRequest $request, Article $article)

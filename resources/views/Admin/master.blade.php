@@ -10,6 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
 
     <title>وب سایت فروشگاهی لاراول</title>
     <link rel="stylesheet" href="/css/admin.css">
@@ -21,5 +22,6 @@
     @yield('content')
 </div>
 @include('Admin.section.footer');
+@include('sweet::alert');
 </body>
 </html>
