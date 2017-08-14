@@ -171,6 +171,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Morilog\Jalali\JalaliServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,7 +232,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'jDate' => Morilog\Jalali\Facades\jDate::class
+        'jDate' => Morilog\Jalali\Facades\jDate::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

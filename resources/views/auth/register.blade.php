@@ -62,6 +62,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
+                                <a href="{{url('login/google')}}" class="btn btn-danger">ثبت نام با google</a>
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>

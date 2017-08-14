@@ -57,6 +57,11 @@ Route::group(['namespace'=>'Auth'],function (){
     $this->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     $this->get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
     $this->post('password/reset', 'ResetPasswordController@reset');
+
+    //Auth Google
+    Route::get('login/google', 'LoginController@redirectToProvider');
+    Route::get('login/google/callback', 'LoginController@handleProviderCallback');
+
 });
 
 

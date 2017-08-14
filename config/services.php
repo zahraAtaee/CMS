@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+        'client_id' => '1057147133494-7d6ahj7sdn5hrfne2h9mj11kmm19a26b.apps.googleusercontent.com',
+        'client_secret' => 'fcdQ5BUiH4bzVdYWanzv648_',
+        'redirect' => 'http://localhost:8000/login/google/callback',
+    ],
+
 ];
