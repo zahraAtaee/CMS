@@ -17,8 +17,7 @@ Route::get('/',function (){
 });
 
 Route::get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
-Route::namespace('Admin')->prefix('admin')->group(function (){
-
+Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
 
     $this->get('/panel','PanelController@index')->name('PanelAdmin');
     $this->post('/panel/upload-image','PanelController@uploadImageSubject')->name('uploadImage');
@@ -42,20 +41,23 @@ Route::namespace('Admin')->prefix('admin')->group(function (){
 
 });
 
-// Authentication Routes...
-$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-$this->post('login', 'Auth\LoginController@login');
-$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::group(['namespace'=>'Auth'],function (){
 
-// Registration Routes...
-$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-$this->post('register', 'Auth\RegisterController@register');
+    // Authentication Routes...
+    $this->get('login', 'LoginController@showLoginForm')->name('login');
+    $this->post('login', 'LoginController@login');
+    $this->post('logout', 'LoginController@logout')->name('logout');
 
-// Password Reset Routes...
-$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-$this->post('password/reset', 'Auth\ResetPasswordController@reset');
+    // Registration Routes...
+    $this->get('register', 'RegisterController@showRegistrationForm')->name('register');
+    $this->post('register', 'RegisterController@register');
+
+    // Password Reset Routes...
+    $this->get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    $this->post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    $this->get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+    $this->post('password/reset', 'ResetPasswordController@reset');
+});
 
 
 Auth::routes();
