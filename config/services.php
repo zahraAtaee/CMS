@@ -41,4 +41,9 @@ return [
         'redirect' => 'http://localhost:8000/login/google/callback',
     ],
 
+    'recaptcha'=>[
+
+        'secret'=>env('RECAPTCHA_SECRET')
+    ],
+
 ];

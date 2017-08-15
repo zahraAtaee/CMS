@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\UserRegistered;
+use App\Events\UserActivation;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     /*
@@ -68,6 +69,32 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|string
+     */
+    public function register(Request $request)
+    {
+
+        $validator= Validator::make($request->all(),[
+            'g-recaptcha-response'=>'recaptcha'
+        ]);
+
+        if ($validator->fails()){
+
+            return 'fali';
+
+        }else{
+
+            event(new Registered($user = $this->create($request->all())));
+            event(new UserActivation($user));
+            return $this->registered($request, $user)
+                ?: redirect($this->redirectPath());
+        }
 
     }
 }

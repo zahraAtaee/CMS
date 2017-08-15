@@ -12,7 +12,7 @@
 */
 Route::get('/',function (){
 
-    return view('home');
+    return view('welcome');
 //    event(new \App\Events\UserActivation(\App\User::find(2)));
 });
 
@@ -59,8 +59,8 @@ Route::group(['namespace'=>'Auth'],function (){
     $this->post('password/reset', 'ResetPasswordController@reset');
 
     //Auth Google
-    Route::get('login/google', 'LoginController@redirectToProvider');
-    Route::get('login/google/callback', 'LoginController@handleProviderCallback');
+    $this->get('login/google', 'LoginController@redirectToProvider');
+    $this->get('login/google/callback', 'LoginController@handleProviderCallback');
 
 });
 
