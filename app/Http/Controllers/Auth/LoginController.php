@@ -8,6 +8,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Socialite;
 
 class LoginController extends Controller
@@ -69,7 +70,6 @@ class LoginController extends Controller
             {
                 $checkActiveCode=$user->activationCode()->where('expire','>=',Carbon::now())->latest()->first();
                 if (count($checkActiveCode)==1){
-
                     if ($checkActiveCode->expire>=Carbon::now())
                     {
                         $this->incrementLoginAttempts($request);
@@ -122,4 +122,6 @@ class LoginController extends Controller
         auth()->loginUsingId($user->id);
         return redirect('/');
     }
+
+
 }
