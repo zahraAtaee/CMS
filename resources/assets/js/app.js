@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('payment', require('./components/Payment.vue'));
+// Vue.component('form-ajax',require('./components/FormAjax.vue'));
 
 const app = new Vue({
     el: '#app'

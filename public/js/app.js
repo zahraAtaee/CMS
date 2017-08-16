@@ -16868,6 +16868,7 @@ window.Vue = __webpack_require__(152);
  */
 
 Vue.component('payment', __webpack_require__(153));
+// Vue.component('form-ajax',require('./components/FormAjax.vue'));
 
 var app = new Vue({
   el: '#app'

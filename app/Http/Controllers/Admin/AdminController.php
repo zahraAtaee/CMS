@@ -11,6 +11,7 @@ class AdminController extends Controller
 {
     /**
      * @param $file
+     * @return mixed
      */
 
     protected function uploadImages($file)
