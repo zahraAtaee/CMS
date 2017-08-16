@@ -12,9 +12,11 @@
 */
 Route::get('/',function (){
 
+
 //  return view('home');
     return view('welcome');
 //  event(new \App\Events\UserActivation(\App\User::find(2)));
+
 
 });
 
