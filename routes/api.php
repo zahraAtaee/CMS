@@ -17,11 +17,12 @@ use Illuminate\Http\Request;
     return $request->user();
 });*/
 
-Route::group(['prifix'=>'v1'],function (){
+Route::group(['prefix'=>'v1','namespace'=>'Api\v1'],function (){
 
 
-    $this->get('articles','articleController@articles');
+    $this->get('articles','ArticleController@articles');
 
+    
 
 });
 
