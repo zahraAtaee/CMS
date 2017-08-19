@@ -21,8 +21,18 @@ Route::group(['prefix'=>'v1','namespace'=>'Api\v1'],function (){
 
 
     $this->get('articles','ArticleController@articles');
+    $this->post('login','UserController@login');
 
-    
+
+
+     $this->get('/user',function (Request $request){
+
+//         return auth()->user();
+         return $request->user();
+
+
+    })->middleware('auth:api');
+
+
 
 });
-
