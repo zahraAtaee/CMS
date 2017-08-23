@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 207);
+/******/ 	return __webpack_require__(__webpack_require__.s = 227);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 207:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackMissingModule() { throw new Error("Cannot find module \"G:\\CMS\\resources\\assets\\js\\admin.js\""); }());

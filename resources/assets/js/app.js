@@ -18,6 +18,29 @@ window.Vue = require('vue');
 Vue.component('payment', require('./components/Payment.vue'));
 // Vue.component('form-ajax',require('./components/FormAjax.vue'));
 
+Vue.component(
+    'passport-clients',
+    require('./components/passport/Clients.vue')
+);
+
+Vue.component(
+    'passport-authorized-clients',
+    require('./components/passport/AuthorizedClients.vue')
+);
+
+Vue.component(
+    'passport-personal-access-tokens',
+    require('./components/passport/PersonalAccessTokens.vue')
+);
+
+
+
 const app = new Vue({
     el: '#app'
 });
+
+Echo.private('articles.admin')
+    .listen('ArticleEvent',function (e) {
+       console.log(e);
+    });
+

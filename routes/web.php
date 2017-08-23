@@ -10,15 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function (){
-
-
-//  return view('home');
-    return view('welcome');
-//  event(new \App\Events\UserActivation(\App\User::find(2)));
-
-
-});
 
 Route::get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
 Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
@@ -68,6 +59,12 @@ Route::group(['namespace'=>'Auth'],function (){
 
 });
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/',function (){
+    $user=\App\User::find(1);
+    event(new \App\Events\ArticleEvent($user));
+
+    return 'down';
+//    return view('welcome');
+});

@@ -1,5 +1,7 @@
 <?php
 
+use GuzzleHttp\Client;
+
 use Illuminate\Http\Request;
 
 /*
@@ -25,13 +27,7 @@ Route::group(['prefix'=>'v1','namespace'=>'Api\v1'],function (){
 
 
 
-     $this->get('/user',function (Request $request){
-
-//         return auth()->user();
-         return $request->user();
-
-
-    })->middleware('auth:api');
+    $this->get('/user','UserController@AuthSubSystem')->middleware('auth:api');
 
 
 

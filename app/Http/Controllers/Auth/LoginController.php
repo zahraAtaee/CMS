@@ -77,7 +77,8 @@ class LoginController extends Controller
                     }
                 }
             }else{
-                event(new  UserActivation($user));
+
+//                event(new  UserActivation($user));
             }
         }
 

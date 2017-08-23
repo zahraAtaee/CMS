@@ -11,6 +11,15 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
+/*Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
+});*/
+
+
+Broadcast::channel('articles.{type}', function ($user, $type) {
+//    return (int) $user->id === (int) $id;
+
+    dd($user,$type);
+    return false;
 });
+
