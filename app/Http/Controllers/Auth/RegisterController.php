@@ -89,7 +89,7 @@ class RegisterController extends Controller
 
         if ($validator->fails()){
 
-            return 'fali';
+            return 'fali recaptcha...';
 
         }else{
 
