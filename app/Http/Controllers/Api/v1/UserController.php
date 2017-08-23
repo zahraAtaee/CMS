@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\v1;
 
 use App\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
@@ -31,13 +32,25 @@ class UserController extends Controller
 
             $user=User::whereEmail($request->input('email'))->first();
 
-            $user->update([
-                'api_token'=>Str::random(60)
-            ]);
+            $token=$user->createToken('zataee Api Token Android')->accessToken;
 
-            return response(['data'=>$user->api_token,'status'=>200],200);
+            return response(['data'=>$token,'status'=>200],200);
 
         }
 
+    }
+
+
+    public function AuthSubSystem(Request $request)
+    {
+
+       $user=$request->user();
+
+
+//        dd($user);
+
+
+
+        return $user;
     }
 }
