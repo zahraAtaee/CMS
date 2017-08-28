@@ -39,8 +39,12 @@ const app = new Vue({
     el: '#app'
 });
 
-Echo.private('articles.admin')
-    .listen('ArticleEvent',function (e) {
-       console.log(e);
-    });
+/*Echo.private('articles.admin')
+ .listen('ArticleEvent',function (e) {
+ console.log(e);
+ });*/
 
+Echo.private('articles.admin')
+    .listen('ArticleEvent',function (e)  {
+        console.log(e);
+    });

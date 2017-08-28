@@ -17243,7 +17243,8 @@ return zhTw;
 
 __webpack_require__(130);
 __webpack_require__(225);
-module.exports = __webpack_require__(226);
+__webpack_require__(226);
+module.exports = __webpack_require__(227);
 
 
 /***/ }),
@@ -17279,6 +17280,11 @@ Vue.component('passport-personal-access-tokens', __webpack_require__(220));
 var app = new Vue({
     el: '#app'
 });
+
+/*Echo.private('articles.admin')
+ .listen('ArticleEvent',function (e) {
+ console.log(e);
+ });*/
 
 Echo.private('articles.admin').listen('ArticleEvent', function (e) {
     console.log(e);
@@ -17345,9 +17351,9 @@ Pusher.logToConsole = true;
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
   broadcaster: 'pusher',
-  key: 'dabf928a9855be9dac28',
-  app_id: '387297',
-  secret: '28dea90c84c8eba862ec',
+  key: 'bc136cc573491da246a9',
+  app_id: '390060',
+  secret: '8a283e3e81b770b49278',
   cluster: 'us2',
   encrypted: true
 });
@@ -77673,6 +77679,12 @@ if (false) {
 
 /***/ }),
 /* 226 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 227 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

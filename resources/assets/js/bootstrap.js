@@ -51,9 +51,9 @@ Pusher.logToConsole=true;
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: 'dabf928a9855be9dac28',
-    app_id : '387297',
-    secret : '28dea90c84c8eba862ec',
+    key: 'bc136cc573491da246a9',
+    app_id : '390060',
+    secret : '8a283e3e81b770b49278',
     cluster : 'us2',
     encrypted: true,
 });
