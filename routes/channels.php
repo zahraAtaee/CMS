@@ -19,7 +19,10 @@
 Broadcast::channel('articles.{type}', function ($user, $type) {
 //    return (int) $user->id === (int) $id;
 
-    dd($user,$type);
+    if ($user->level=='admin'){
+        return true;
+    }
+
     return false;
 });
 

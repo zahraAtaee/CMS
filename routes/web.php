@@ -9,8 +9,18 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+HomeController@index
+$user=\App\User::find(4);
+event(new \App\Events\ArticleEvent($user));*/
+Route::get('/','HomeController@index'/*function (){
 
+
+   /* Redis::incr('visit');
+    return Redis::get('visit');
+}*/);
+Route::get('/articles/{articlesSlug}','ArticleController@single');
+Route::get('/courses/{courseSlug}','CourseController@single');
+Route::get('/comment','HomeController@comment');
 Route::get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
 Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
 
@@ -61,10 +71,4 @@ Route::group(['namespace'=>'Auth'],function (){
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/',function (){
-    $user=\App\User::find(1);
-    event(new \App\Events\ArticleEvent($user));
 
-    return 'down';
-//    return view('welcome');
-});
