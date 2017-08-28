@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd93677560da012d6f984ed6020fdd7e",
+    "content-hash": "226a0046395bc9595815e1b52adb6e45",
     "packages": [
+        {
+            "name": "artesaos/seotools",
+            "version": "0.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/artesaos/seotools.git",
+                "reference": "6cdd1787aa36ac0c1a63155fb84a27934f426c93"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/artesaos/seotools/zipball/6cdd1787aa36ac0c1a63155fb84a27934f426c93",
+                "reference": "6cdd1787aa36ac0c1a63155fb84a27934f426c93",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5",
+                "illuminate/support": "~5",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "orchestra/testbench": "~3.0",
+                "phpspec/phpspec": "2.1.x",
+                "phpunit/phpunit": "^4.0|^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Artesaos\\SEOTools\\": "src/SEOTools/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vinicius",
+                    "email": "luiz.vinicius73@gmail.com"
+                }
+            ],
+            "description": "SEO Tools for Laravel and Lumen",
+            "keywords": [
+                "laravel5",
+                "lumen",
+                "metatags",
+                "opengraph",
+                "seo",
+                "seotools",
+                "webmaster"
+            ],
+            "time": "2016-10-27T03:03:45+00:00"
+        },
         {
             "name": "barryvdh/laravel-debugbar",
             "version": "v2.4.3",
@@ -1169,16 +1222,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.33",
+            "version": "v5.4.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e53a81a2bf406f501cdf818ad949f8d6c8dabfc0"
+                "reference": "54aa18a4e8495c4b6902d9665ec9fa4d3a1f3d2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e53a81a2bf406f501cdf818ad949f8d6c8dabfc0",
-                "reference": "e53a81a2bf406f501cdf818ad949f8d6c8dabfc0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/54aa18a4e8495c4b6902d9665ec9fa4d3a1f3d2e",
+                "reference": "54aa18a4e8495c4b6902d9665ec9fa4d3a1f3d2e",
                 "shasum": ""
             },
             "require": {
@@ -1294,7 +1347,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-08-14T20:17:41+00:00"
+            "time": "2017-08-24T12:30:18+00:00"
         },
         {
             "name": "laravel/passport",
@@ -2293,6 +2346,56 @@
                 "x509"
             ],
             "time": "2017-06-05T06:31:10+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16T16:22:20+00:00"
         },
         {
             "name": "psr/http-message",

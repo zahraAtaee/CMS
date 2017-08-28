@@ -39,7 +39,7 @@ class Course extends Model
 
     public function path()
     {
-        return "/course/$this->slug";
+        return "/courses/$this->slug";
     }
 
 

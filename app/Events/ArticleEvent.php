@@ -4,6 +4,7 @@ namespace App\Events;
 
 use App\User;
 use Illuminate\Broadcasting\Channel;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class ArticleEvent implements ShouldBroadcast
+class ArticleEvent implements ShouldBroadcast,ShouldQueue
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -34,14 +35,9 @@ class ArticleEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-//        return new channel('articles');
         return new PrivateChannel('articles.admin');
     }
 
-    /*public function broadcastwith()
-    {
-        return [
-          'message'=>'brodcast with salammmm....'
-        ];
-    }*/
+
+
 }

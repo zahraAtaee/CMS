@@ -29,10 +29,15 @@ class Article extends Model
 
     public function path()
     {
-        return "/article/$this->slug";
+        return "/articles/$this->slug";
     }
 
     protected $fillable=[
         'title','description','body','images','tags'
+    ];
+
+
+    protected $hidden=[
+        'slug'
     ];
 }

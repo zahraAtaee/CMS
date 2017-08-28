@@ -175,6 +175,8 @@ return [
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -184,6 +186,7 @@ return [
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -238,6 +241,11 @@ return [
         'jDate' => Morilog\Jalali\Facades\jDate::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'SEOMeta'   => Artesaos\SEOTools\Facades\SEOMeta::class,
+        'OpenGraph' => Artesaos\SEOTools\Facades\OpenGraph::class,
+        'Twitter'   => Artesaos\SEOTools\Facades\TwitterCard::class,
+        // or
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
 
     ],
 
