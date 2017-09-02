@@ -48,3 +48,12 @@ Echo.private('articles.admin')
     .listen('ArticleEvent',function (e)  {
         console.log(e);
     });
+
+
+
+$('#sendCommentModal').on('show.bs.modal' , function (event) {
+    let button = $(event.relatedTarget);
+    let parentId = button.data('parent');
+    let modal = $(this);
+    modal.find("[name='parent_id']").val(parentId);
+});

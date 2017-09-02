@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Comment;
 use App\Course;
+use App\Http\Requests\CommentRequest;
 use SEO;//or use SEOMETA
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -55,10 +57,17 @@ class HomeController extends Controller
             $courses=Course::latest()->take(4)->get();
             cache::put('courses',$courses,Carbon::now()->addMinute(1));
         }
-//        return ($articles);
+//        return ($articles);CommentRequest $request
         return view('Home.index', compact('articles','courses'));
     }
 
+    public function comment(CommentRequest $request)
+    {
+//      Comment::create(array_merge([auth()->user->id],$request->all())); --- sampel insert to DB.
+        auth()->user()->comments()->create($request->all());
+        return back();
+
+    }
 
 
     /*

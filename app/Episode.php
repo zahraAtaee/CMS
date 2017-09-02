@@ -30,4 +30,9 @@ class Episode extends Model
         return "/courses/{$this->course->slug}/episode/{$this->number}";
     }
 
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
 }

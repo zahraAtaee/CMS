@@ -11,6 +11,12 @@ class CourseController extends Controller
     public function single(Course $course)
     {
         Redis::incr("views.{$course->id}.courses");
-        return $course;
+        $comments=$course->comments()->where('approved',1)->where('parent_id',0)->latest()
+            ->with(['comments'=>function($query){
+                $query->approved=1;
+            }])->get();
+        return view('Home.courses',compact('course','comments'));
     }
+
+
 }

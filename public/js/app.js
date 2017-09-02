@@ -17290,6 +17290,13 @@ Echo.private('articles.admin').listen('ArticleEvent', function (e) {
     console.log(e);
 });
 
+$('#sendCommentModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var parentId = button.data('parent');
+    var modal = $(this);
+    modal.find("[name='parent_id']").val(parentId);
+});
+
 /***/ }),
 /* 131 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {

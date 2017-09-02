@@ -40,4 +40,9 @@ class Article extends Model
     protected $hidden=[
         'slug'
     ];
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }

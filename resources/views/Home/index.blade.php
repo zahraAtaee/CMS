@@ -55,8 +55,7 @@
                     <div class="caption">
                         <h4><a href="{{$article->path()}}">‌{{$article->title}}</a>
                         </h4>
-                        <p>{{$article->description}}
-                            <a target="_blank" href="{{$article->path()}}">Bootsnipp - http://bootsnipp.com</a>.</p>
+                        <p>{{str_limit($article->description,120)}}
                     </div>
                     <div class="ratings">
                         <p class="pull-right">

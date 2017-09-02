@@ -10,18 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 HomeController@index
-$user=\App\User::find(4);
-event(new \App\Events\ArticleEvent($user));*/
-Route::get('/','HomeController@index'/*function (){
+/*function (){
+     $user=\App\User::find(4);
+ event(new \App\Events\ArticleEvent($user));
+   Redis::incr('visit');
+     return Redis::get('visit');
+}*/
+Route::group(['middelware'=>'web'],function (){
 
+    $this->get('/','HomeController@index');
+    $this->get('/articles/{articleSlug}','ArticleController@single');
+    $this->get('/courses/{courseSlug}','CourseController@single');
+    $this->post('/comment','HomeController@comment');
+    $this->get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
+});
 
-   /* Redis::incr('visit');
-    return Redis::get('visit');
-}*/);
-Route::get('/articles/{articlesSlug}','ArticleController@single');
-Route::get('/courses/{courseSlug}','CourseController@single');
-Route::get('/comment','HomeController@comment');
-Route::get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
 Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
 
     $this->get('/panel','PanelController@index')->name('PanelAdmin');
