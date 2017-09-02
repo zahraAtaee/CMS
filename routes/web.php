@@ -34,6 +34,8 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
     $this->resource('episodes','EpisodeController');
     $this->resource('roles','RoleController');
     $this->resource('permissions','PermissionController');
+    $this->get('comments/unsuccessful','CommentController@unsuccessful')->name('comments.unsuccessfull');
+    $this->resource('comments','CommentController');
 
 
 

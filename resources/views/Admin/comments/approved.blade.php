@@ -20,16 +20,22 @@
                 <tr>
                     <td>{{$comment->user->name}}</td>
                     <td>{{$comment->comment}}</td>
-                    <td><a href="{{$comment->commentable->path()}}"></a></td>
+                    <td><a href="{{$comment->commentable->path()}}">{{$comment->commentable->title}}</a></td>
                     <td>
-                        <form action="{{route('comments.destroy',['id'=>$comment->id])}}" method="post">
-                            {{csrf_field()}}
-                            {{method_field('delete')}}
+                        <div style="display: flex">
+                            <form action="{{route('comments.destroy',['id'=>$comment->id])}}" method="post">
+                                {{csrf_field()}}
+                                {{method_field('delete')}}
 
-                        <div class="btn-group btn-group-xs" >
-                            <button type="submit" class="btn btn-danger">حذف</button>
+                                <button type="submit" class="btn  btn-xs btn-danger">حذف</button>
+                            </form>
+                            <form style="margin-right: 5px" action="{{route('comments.update',['id'=>$comment->id])}}" method="post">
+                                {{csrf_field()}}
+                                {{method_field('patch')}}
+                                <button type="submit" class="btn btn-xs btn-success">تایید</button>
+                            </form>
                         </div>
-                        </form>
+
                     </td>
 
                 </tr>

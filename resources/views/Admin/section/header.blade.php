@@ -43,8 +43,8 @@
                 {{--<li><a href="">More navigation</a></li>--}}
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="">همه نظرات<span class="badge">0</span></a></li>
-                <li><a href="">نظرات تایید نشده <span class="badge">0</span></a></li>
+                <li><a href="/admin/comments">همه نظرات<span class="badge">{{$successful}}</span></a></li>
+                <li><a href="{{route('comments.unsuccessfull')}}">نظرات تایید نشده <span class="badge">{{$unsuccessful}}</span></a></li>
                 {{--<li><a href="">Another nav item</a></li>--}}
             </ul>
         </div>
