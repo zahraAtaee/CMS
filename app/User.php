@@ -56,5 +56,20 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function payments()
+    {
 
+      return $this->hasMany(Payment::class);
+
+    }
+
+    public function checkLearning($course)
+    {
+        return Learning::where('user_id',$this->id)->where('course_id',$course->id)->count();
+    }
+
+    public function learnings()
+    {
+        return $this->hasMany(Learning::class);
+    }
 }

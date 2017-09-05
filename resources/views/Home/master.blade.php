@@ -12,7 +12,7 @@
     {!! SEO::generate(true) !!}
 
     <title>وبسایت فروشگاه</title>
-
+    <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
     <!-- Bootstrap Core CSS -->
     <link href="/css/home.css" rel="stylesheet">
 </head>
@@ -79,7 +79,8 @@
 
 
 <script src="/js/app.js"></script>
-
+<script src="/js/sweetalert.min.js"></script>
+@include('sweet::alert')
 </body>
 
 </html>

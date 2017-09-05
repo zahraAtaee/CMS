@@ -99,12 +99,16 @@
 
     <!-- Blog Sidebar Widgets Column -->
     <div class="col-md-4">
+        @if(auth()->user()->checkLearning($course)==0)
         <div class="well">
             برای استفاده از این دوره نیاز است این دوره را با مبلغ ۱۰۰۰۰ تومان خریداری کنید
-            <a href="#">
-                <button class="btn btn-success">خرید دوره</button>
-            </a>
+            <form action="/course/payment" method="post">
+                {{csrf_field()}}
+                <input type="hidden" name="course_id" value="{{$course->id}}" />
+                <input type="submit" class="btn btn-success" value="خرید دوره" />
+            </form>
         </div>
+        @endif
         <!-- Blog Search Well -->
         <div class="well">
             <h4>جستجو در سایت</h4>

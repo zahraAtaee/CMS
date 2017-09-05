@@ -16,13 +16,18 @@ HomeController@index
    Redis::incr('visit');
      return Redis::get('visit');
 }*/
-Route::group(['middelware'=>'web'],function (){
 
-    $this->get('/','HomeController@index');
-    $this->get('/articles/{articleSlug}','ArticleController@single');
-    $this->get('/courses/{courseSlug}','CourseController@single');
-    $this->post('/comment','HomeController@comment');
-    $this->get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
+$this->get('/','HomeController@index');
+$this->get('/articles/{articleSlug}','ArticleController@single');
+$this->get('/courses/{courseSlug}','CourseController@single');
+$this->post('/comment','HomeController@comment');
+$this->get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
+
+Route::group(['middelware'=>'auth:web'],function (){
+
+    $this->post('/course/payment','PaymentController@payment');
+    $this->get('/course/payment/checker','PaymentController@checker');
+
 });
 
 Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
@@ -34,9 +39,14 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
     $this->resource('episodes','EpisodeController');
     $this->resource('roles','RoleController');
     $this->resource('permissions','PermissionController');
+
+    //Comment Section
     $this->get('comments/unsuccessful','CommentController@unsuccessful')->name('comments.unsuccessfull');
     $this->resource('comments','CommentController');
 
+    //Payment Section
+    $this->get('payments/unsuccessful','PaymentsController@unsuccessful')->name('payments.unsuccessfull');
+    $this->resource('payments','PaymentsController');
 
 
     $this->group(['prefix'=>'users'],function (){
