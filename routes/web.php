@@ -17,11 +17,15 @@ HomeController@index
      return Redis::get('visit');
 }*/
 
-$this->get('/','HomeController@index');
-$this->get('/articles/{articleSlug}','ArticleController@single');
-$this->get('/courses/{courseSlug}','CourseController@single');
-$this->post('/comment','HomeController@comment');
-$this->get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
+Route::get('/','HomeController@index');
+Route::get('/articles/{articleSlug}','ArticleController@single');
+Route::get('/courses/{courseSlug}','CourseController@single');
+Route::post('/comment','HomeController@comment');
+Route::get('/user/active/email/{token}','Admin\UserController@activation')->name('activation.account');
+Route::get('/sitemap','SitemapController@index')->name('sitemap');
+Route::get('/sitemap-articles','SitemapController@articles')->name('sitemap-articles');
+Route::get('/feed/articles','FeedController@article')->name('sitemap-articles');
+
 
 Route::group(['middelware'=>'auth:web'],function (){
 

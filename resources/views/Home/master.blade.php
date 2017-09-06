@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
     <!-- Bootstrap Core CSS -->
     <link href="/css/home.css" rel="stylesheet">
+    <link rel="alternate"  type="application/rss+xml" href="/feed/articles" title="فیلد مقالات فروشگاه ">
 </head>
 
 <body>
