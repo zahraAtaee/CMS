@@ -37,14 +37,14 @@
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="{{route('users')}}">کاربران<span class="badge">0</span></a></li>
-                <li><a href="">پرداختی های موفق<span class="badge">0</span></a></li>
-                <li><a href="">پرداختی های ناموفق<span class="badge">0</span></a></li>
+                <li><a href="{{route('payments.index')}}">پرداختی های موفق<span class="badge">{{$paymentSuccess}}</span></a></li>
+                <li><a href="{{route('payment.unsuccessfull')}}">پرداختی های ناموفق<span class="badge">{{$paymentUnsuccess}}</span></a></li>
                 <li><a href="">گزارشات</a></li>
                 {{--<li><a href="">More navigation</a></li>--}}
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="/admin/comments">همه نظرات<span class="badge">{{$successful}}</span></a></li>
-                <li><a href="{{route('comments.unsuccessfull')}}">نظرات تایید نشده <span class="badge">{{$unsuccessful}}</span></a></li>
+                <li><a href="{{route('comments.index')}}">همه نظرات<span class="badge">{{$commentSuccess}}</span></a></li>
+                <li><a href="{{route('comments.unsuccessfull')}}">نظرات تایید نشده <span class="badge">{{$commentUnsuccess}}</span></a></li>
                 {{--<li><a href="">Another nav item</a></li>--}}
             </ul>
         </div>

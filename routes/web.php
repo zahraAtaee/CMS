@@ -45,8 +45,8 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
     $this->resource('comments','CommentController');
 
     //Payment Section
-    $this->get('payments/unsuccessful','PaymentsController@unsuccessful')->name('payments.unsuccessfull');
-    $this->resource('payments','PaymentsController');
+    $this->get('payments/unsuccessful','PaymentController@unsuccessful')->name('payment.unsuccessfull');
+    $this->resource('payments','PaymentController');
 
 
     $this->group(['prefix'=>'users'],function (){

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Comment;
+use App\Payment;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
@@ -23,9 +24,18 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('Admin.section.header',function($view){
 
-            $successful=Comment::where('approved',1)->count();
-            $unsuccessful=Comment::where('approved',0)->count();
-            $view->with(['successful'=>$successful,'unsuccessful'=>$unsuccessful]);
+            $commentSuccess  =Comment::where('approved',1)->count();
+            $commentUnsuccess=Comment::where('approved',0)->count();
+
+            $paymentSuccess  =Payment::wherePayment(1)->count();
+            $paymentUnsuccess=Payment::wherePayment(0)->count();
+            $view->with
+            ([
+                    'commentSuccess'     =>$commentSuccess,
+                    'commentUnsuccess'   =>$commentUnsuccess,
+                    'paymentSuccess'     =>$paymentSuccess,
+                    'paymentUnsuccess'   =>$paymentUnsuccess,
+            ]);
         });
 
 
