@@ -64,7 +64,8 @@ class PaymentController extends Controller
         $payment=Payment::whereResnumber($Authority)->firstOrFail();
         $course=Course::findOrfail($payment->course_id);
 
-        if (request('Status')=='ok'){
+        if (request('Status')=='OK')
+        {
             $client = new SoapClient('https://www.zarinpal.com/pg/services/WebGate/wsdl', ['encoding' => 'UTF-8']);
 
             $result = $client->PaymentVerification(
@@ -90,7 +91,8 @@ class PaymentController extends Controller
                 echo 'Transaction failed. Status:'.$result->Status;
             }
         }
-        else {
+        else
+        {
             echo 'Transaction canceled by user';
         }
 
@@ -102,7 +104,7 @@ class PaymentController extends Controller
         $payment->update([
             'payment'=>1
         ]);
-       auth()->user()->learnings->create(['course_id'=>$course->id]);
+       auth()->user()->learnings()->create(['course_id'=>$course->id]);
 
        return true;
     }
