@@ -25,6 +25,8 @@ Route::get('/user/active/email/{token}','Admin\UserController@activation')->name
 Route::get('/sitemap','SitemapController@index')->name('sitemap');
 Route::get('/sitemap-articles','SitemapController@articles')->name('sitemap-articles');
 Route::get('/feed/articles','FeedController@article')->name('sitemap-articles');
+Route::get('telegram','TelegramController@telegram')->name('telegram');
+Route::post('/400053881:AAE8A8Z0amhX4qt2os7w4WFye1DfV1tnTxg/webhook','TelegramController@webhook');
 
 
 Route::group(['middelware'=>'auth:web'],function (){
@@ -59,7 +61,6 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
         $this->post('/','UserController@create')->name('users.create');
         $this->put('/','UserController@edit')->name('users.edit');
         $this->delete('/{user}/destroy','UserController@destroy')->name('users.destroy');
-
         $this->resource('level','LevelManageController',['parameters'=>['level'=>'user']]);
     });
 

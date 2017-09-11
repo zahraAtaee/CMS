@@ -12,6 +12,7 @@
         "doctrine/dbal": "^2.5",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.4",
+        "irazasyed/telegram-bot-sdk": "^2.2",
         "laravel/framework": "5.4.*",
         "laravel/passport": "^3.0",
         "laravel/socialite": "^3.0",
@@ -21,7 +22,8 @@
         "pusher/pusher-php-server": "^2.6",
         "roumen/feed": "^2.10",
         "roumen/sitemap": "^2.6",
-        "uxweb/sweet-alert": "^1.4"
+        "uxweb/sweet-alert": "^1.4",
+        "zarincheg/telegram-bot-dialogs": "^0.2.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
