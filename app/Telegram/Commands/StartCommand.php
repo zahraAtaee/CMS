@@ -17,7 +17,7 @@ class StartCommand extends Command
             [
                 ['آخرین مقالات سایت'],
                 ['آخرین ویدئو های سایت'],
-                ['وبسایت بدی دارید'],
+                ['راهنمای استفاده از ربات من :)'],
 
             ];
 
@@ -29,7 +29,7 @@ class StartCommand extends Command
 
         Telegram::sendMessage([
             'chat_id' => request('message.chat.id'),
-            'text' => 'به نظر سنجی من خوش آمدید:)',
+            'text' => 'به ربات اطلاع رسانی سیستم مدیریت محتوای من خوش آمدید.:)',
             'reply_markup' => $reply_markup
         ]);
 

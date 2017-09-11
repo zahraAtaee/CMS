@@ -41,8 +41,9 @@ class TelegramController extends Controller
                 return $this->LastEpisodes();
                 break;
 
-            case 'راهنمایی برای استفاده از ربات زهرا...:)':
+            case 'راهنمای استفاده از ربات من :)':
 
+                return $this->guard();
                 break;
         };
 
@@ -63,7 +64,7 @@ class TelegramController extends Controller
             }
         }else
         {
-                $text="ویدئویی ای برای نمایش وجود ندارد.";
+                $text="مقاله ای برای نمایش وجود ندارد.";
         }
         Telegram::sendMessage([
             'chat_id' => request('message.chat.id'),
@@ -86,11 +87,19 @@ class TelegramController extends Controller
             }
         }else
         {
-            $text="مقاله ای برای نمایش وجود ندارد.";
+            $text="ویدئویی برای نمایش وجود ندارد.";
         }
         Telegram::sendMessage([
             'chat_id' => request('message.chat.id'),
             'text' => $text,
+        ]);
+    }
+
+    private function guard()
+    {
+        Telegram::sendMessage([
+            'chat_id' => request('message.chat.id'),
+            'text' => 'برای استفاده از ربات زهرا عطایی باید آدم خوبی باشید.:)',
         ]);
     }
 }
