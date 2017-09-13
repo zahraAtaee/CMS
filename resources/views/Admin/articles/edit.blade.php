@@ -22,6 +22,13 @@
                 <input type="text" class="form-control" name="title" id="title" placeholder="عنوان مقاله" value="{{$article->title}}">
             </div>
             <div class="form-group">
+                <label for="lang" class="control-label">زبان مقاله</label>
+                <select name="lang" id="lang" class="form-control">
+                    <option value="fa" {{$article->lang=='fa' ? 'selected' :''}} >فارسی</option>
+                    <option value="en" {{$article->lang=='en' ? 'selected' :''}}>انگلیسی</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="description" class="control-label">توضیحات</label>
                 <textarea class="form-control" rows="5" name="description" id="description" placeholder="توضیحات را وارد کنید" >{{$article->description}}</textarea>
             </div>

@@ -29,11 +29,12 @@ class Article extends Model
 
     public function path()
     {
-        return "/articles/$this->slug";
+        $local=app()->getLocale();
+        return "/$local/articles/$this->slug";
     }
 
     protected $fillable=[
-        'title','description','body','images','tags'
+        'title','description','body','images','tags','lang'
     ];
 
 

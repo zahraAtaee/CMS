@@ -19,7 +19,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -30,22 +30,22 @@ class HomeController extends Controller
     public function index()
     {
         //Seo or SEOMeta ...
+//        app()->setLocale('en');
+        $local=app()->getLocale();
 
-        SEO::setTitle('وب سایت فروشگاهی');
+        SEO::setTitle(__('messages.title'));
         SEO::setDescription('فروش-آموزش مجازی-دوره های تخصصی');
 
         cache::store('file')->put('name','zahra Ataee',Carbon::now()->addMinute(2));
 
 
-
-
-        if (cache::has('articles')){
-            $articles=cache('articles');
+        if (cache::has("articles.$local")){
+            $articles=cache("articles.$local");
         }
         else
         {
-            $articles=Article::latest()->take(8)->get();
-            cache::put('articles',$articles,Carbon::now()->addMinute(1));
+            $articles=Article::whereLang($local)->latest()->take(8)->get();
+            cache::put("articles.$local",$articles,Carbon::now()->addMinute(1));
         }
 
         if (cache::has('courses'))

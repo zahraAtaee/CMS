@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {!! SEO::generate(true) !!}
 
-    <title>وبسایت فروشگاه</title>
+    <title>@lang('messages.title')@endlang</title>
     <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
     <!-- Bootstrap Core CSS -->
     <link href="/css/home.css" rel="stylesheet">
@@ -31,11 +31,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">وبسایت فروشگاه</a>
+            <a class="navbar-brand" href="#">@lang('messages.title')@endlang</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
+
                 <li>
                     <a href="#">دوره‌ها</a>
                 </li>
@@ -44,6 +45,9 @@
                 </li>
                 <li>
                     <a href="#">درباره‌ما</a>
+                </li>
+                <li>
+                    <a href="{{route('language')}}">EN</a>
                 </li>
             </ul>
         </div>

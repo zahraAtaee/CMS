@@ -39,7 +39,8 @@ class Course extends Model
 
     public function path()
     {
-        return "/courses/$this->slug";
+        $local=app()->getLocale();
+        return "/$local/courses/$this->slug";
     }
 
 
