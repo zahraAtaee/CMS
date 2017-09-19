@@ -29,19 +29,19 @@ Route::group(['middleware' => 'auth:web'] , function () {
     $this->post('/course/payment' , 'CourseController@payment');
     $this->get('/course/payment/checker' , 'CourseController@checker');
 });
-// namespace('Admin')->prefix('admin')
-Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web' , 'checkAdmin'], 'prefix' => 'admin'],function (){
+// namespace('Admin')->prefix('admin'), 'checkAdmin'
+Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web' ], 'prefix' => 'admin'],function (){
     $this->get('/panel' , 'PanelController@index');
     $this->post('/panel/upload-image' , 'PanelController@uploadImageSubject');
     $this->resource('articles' , 'ArticleController');
     $this->resource('courses' , 'CoursesController');
 
     // Comment Section
-    $this->get('comments/unsuccessful' , 'CommentController@unsuccessful');
+    $this->get('comments/unsuccessful' , 'CommentController@unsuccessful')->name('comments.unsuccessfull');
     $this->resource('comments' , 'CommentController');
 
     // Payment Section
-    $this->get('payments/unsuccessful' , 'PaymentController@unsuccessful');
+    $this->get('payments/unsuccessful' , 'PaymentController@unsuccessful')->name('payment.unsuccessfull');
     $this->resource('payments' , 'PaymentController');
 
     $this->resource('episodes' , 'EpisodeController');

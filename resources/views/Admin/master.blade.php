@@ -40,11 +40,24 @@
     <link rel="shortcut icon" href="favicon.ico" /> </head>
 <!-- END HEAD -->
 </head>
-
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
 <div id="app" class="page-wrapper">
-    @include('Admin.section.header')
-    @yield('content')
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        @include('Admin.section.header')
+        @include('Admin.section.sidebar')
+        <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    @yield('content')
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+        <!-- END CONTENT -->
+            @include('Admin.section.quickSidebar')
+    </div>
+    <!-- END CONTAINER -->
 </div>
 @include('Admin.section.footer')
 @include('Admin.section.quickNav')
