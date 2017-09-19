@@ -1,10 +1,11 @@
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+    <div class="page-footer-inner"> 2016 &copy; قالب مترونیک ترجمه توسط
+        <a target="_blank" href="http://cactusweb.ir">کاکتوس وب</a> &nbsp;|&nbsp;
+        <a href="https://zhaket.com/product/metronic-html/" title="خرید قالب مترونیک تنها با 50 هزارتومان و آپدیت رایگان همیشگی" target="_blank">خرید قالب مترونیک</a>
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/js/app.js"></script>
-<script src="/js/sweetalert.min.js"></script>
-<script src="/js/bootstrap-select.min.js"></script>
 @yield('script')
