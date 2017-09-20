@@ -1,56 +1,78 @@
 @extends('Admin.master')
-@section('script')
-    <script src="/ckeditor/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('body',{
-            filebrowserUpload:'/admin/panel/upload-image',
-            filebrowserImageUploadUrl:'/admin/panel/upload-image'
-        });
-    </script>
-@endsection
 @section('content')
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-       <div class="page-header head-section">
-           <h2> ایجاد مقالات</h2>
-           <a href="{{route('articles.create')}}" class="btn btn-sm btn-primary">درج مقاله</a>
-       </div>
-        <form class="form-horizontal" action="{{route('articles.store')}}" method="post" enctype="multipart/form-data">
-            {{csrf_field()}}
-            @include('Admin.section.errors')
-            <div class="form-group">
-                <label for="title" class="control-label">عنوان مقاله</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="عنوان مقاله" value="{{old('title')}}">
+    <!-- BEGIN PAGE HEADER-->
+    <!-- BEGIN PAGE BAR -->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="index.html">خانه</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span>ایجاد مقالات</span>
+            </li>
+        </ul>
+        <div class="page-toolbar">
+            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
+                <i class="icon-calendar"></i>&nbsp;
+                <span class="thin uppercase hidden-xs"></span>&nbsp;
+                <i class="fa fa-angle-down"></i>
             </div>
-            <div class="form-group">
-                <label for="lang" class="control-label">زبان مقاله</label>
-                <select name="lang" id="lang" class="form-control">
-                    <option value="fa">فارسی</option>
-                    <option value="en">انگلیسی</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="description" class="control-label">توضیحات</label>
-                <textarea class="form-control" rows="5" name="description" id="description" placeholder="توضیحات را وارد کنید" >{{old('description')}}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="body" class="control-label">متن مقاله</label>
-                <textarea rows="6"  class="form-control" name="body" id="body" placeholder="متن مقاله را وارد کنید" >{{old('body')}}</textarea>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-6">
-                    <label for="images" class="control-label">تصویر مقاله</label>
-                    <input type="file" class="form-control" name="images" id="images" placeholder="تصویر مقاله را وارد کنید" value="{{old('images')}}">
+        </div>
+    </div>
+    <!-- END PAGE BAR -->
+    <p>
+        <a class="btn btn-outline mb1 blue" href="{{route('articles.create')}}" class="btn btn-sm btn-primary">درج مقاله</a>
+    </p>
+    <!-- END PAGE HEADER-->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-globe"></i>مقالات </div>
+                    <div class="tools"> </div>
                 </div>
-                <div class="col-sm-6">
-                    <label for="tags" class="control-label">تگ ها</label>
-                    <input type="text" class="form-control" name="tags" id="tags" placeholder="تگ ها را وارد کنید" value="{{old('tags')}}">
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form role="form"  action="{{route('articles.store')}}" method="post" enctype="multipart/form-data">
+                        <div class="form-body">
+                            <div class="form-group form-md-line-input">
+                                <input type="text" class="form-control" id="title" >
+                                <label for="title">عنوان مقاله</label>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <select name="lang" id="lang" class="form-control">
+                                    <option value="fa">فارسی</option>
+                                    <option value="en">انگلیسی</option>
+                                </select>
+                                <label for="lang" class="control-label">زبان مقاله</label>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <textarea class="form-control"  rows="2" name="description" id="description"></textarea>
+                                <label for="description">توضیحات</label>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <textarea class="form-control"  rows="5" name="body" id="body"></textarea>
+                                <label for="body"> مقاله</label>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                <label for="images" class="control-label">تصویر مقاله</label>
+                                <input type="file" class="form-control" name="images" id="images" placeholder="تصویر مقاله را وارد کنید" value="{{old('images')}}">
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions noborder">
+                            <button type="button" class="btn blue">ارسال</button>
+                            <button type="button" class="btn default">انصراف</button>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <button type="submit" class="btn btn-danger">ارسال</button>
-                </div>
-            </div>
-        </form>
+            <!-- END EXAMPLE TABLE PORTLET-->
+        </div>
     </div>
 @endsection

@@ -38,6 +38,12 @@
     <link href="/layouts/layout/css/custom-rtl.min.css" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
     <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" rel="stylesheet" type="text/css" />
+    <link href="/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+@yield('style')
 <!-- END HEAD -->
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
@@ -55,7 +61,7 @@
                 <!-- END CONTENT BODY -->
             </div>
         <!-- END CONTENT -->
-            @include('Admin.section.quickSidebar')
+        @include('Admin.section.quickSidebar')
     </div>
     <!-- END CONTAINER -->
 </div>
