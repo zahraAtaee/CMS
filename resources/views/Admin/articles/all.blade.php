@@ -1,88 +1,14 @@
 @extends('Admin.master')
+@section('style')
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" rel="stylesheet" type="text/css" />
+    <link href="/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+@endsection
 @section('content')
+
     <!-- BEGIN PAGE HEADER-->
-    <!-- BEGIN THEME PANEL -->
-    <div class="theme-panel hidden-xs hidden-sm">
-        <div class="toggler"> </div>
-        <div class="toggler-close"> </div>
-        <div class="theme-options">
-            <div class="theme-option theme-colors clearfix">
-                <span> رنگ تم </span>
-                <ul>
-                    <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
-                    <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="Dark Blue"> </li>
-                    <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
-                    <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
-                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
-                    <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true" data-original-title="Light 2"> </li>
-                </ul>
-            </div>
-            <div class="theme-option">
-                <span> استایل تم </span>
-                <select class="layout-style-option form-control input-sm">
-                    <option value="square" selected="selected">گوشه های مربعی</option>
-                    <option value="rounded">گوشه های انحنادار</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> طرح بندی </span>
-                <select class="layout-option form-control input-sm">
-                    <option value="fluid" selected="selected">Fluid</option>
-                    <option value="boxed">Boxed</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> هدر </span>
-                <select class="page-header-option form-control input-sm">
-                    <option value="fixed" selected="selected">ثابت</option>
-                    <option value="default">پیش فرض</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> منوی بالای کرکره ای </span>
-                <select class="page-header-top-dropdown-style-option form-control input-sm">
-                    <option value="light" selected="selected">روشن</option>
-                    <option value="dark">تیره</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> حالت سایدبار </span>
-                <select class="sidebar-option form-control input-sm">
-                    <option value="fixed">ثابت</option>
-                    <option value="default" selected="selected">پیش فرض</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> منو سایدبار </span>
-                <select class="sidebar-menu-option form-control input-sm">
-                    <option value="accordion" selected="selected">آکاردئون</option>
-                    <option value="hover">هاوور</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> استایل سایدبار </span>
-                <select class="sidebar-style-option form-control input-sm">
-                    <option value="default" selected="selected">پیش فرض</option>
-                    <option value="light">روشن</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> مکان سایدبار </span>
-                <select class="sidebar-pos-option form-control input-sm">
-                    <option value="left">چپ</option>
-                    <option value="right" selected="selected">راست</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> فوتر </span>
-                <select class="page-footer-option form-control input-sm">
-                    <option value="fixed">ثابت</option>
-                    <option value="default" selected="selected">پیش فرض</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <!-- END THEME PANEL -->
     <!-- BEGIN PAGE BAR -->
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -103,21 +29,27 @@
         </div>
     </div>
     <!-- END PAGE BAR -->
-        <p>
-            <a class="btn btn-outline mb1 blue" href="{{route('articles.create')}}" class="btn btn-sm btn-primary">درج مقاله</a>
-        </p>
-     <!-- END PAGE HEADER-->
+    <!-- BEGIN PAGE TITLE-->
+    <h1 class="page-title"> مقالات تخصصی
+        <small>لیست مطالب ارسالی ....</small>
+    </h1>
+    <!-- END PAGE TITLE-->
+    <!-- END PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN EXAMPLE TABLE PORTLET-->
-            <div class="portlet box green">
+            <div class="portlet light bordered">
                 <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-globe"></i>مقالات </div>
+                    <div class="caption font-dark">
+                        <i class="icon-settings font-dark"></i>
+                        <span class="caption-subject bold uppercase">
+                            <a class="btn btn-outline mb1 blue" href="{{route('articles.create')}}" class="btn btn-sm btn-primary">درج مقاله</a>
+                        </span>
+                    </div>
                     <div class="tools"> </div>
                 </div>
                 <div class="portlet-body">
-                    <table class="table table-striped table-bordered table-hover" id="sample_2">
+                    <table class="table table-striped table-bordered table-hover" id="sample_1">
                         <thead>
                         <tr>
                             <th>عنوان مقاله</th>
@@ -126,6 +58,14 @@
                             <th>تنظیمات</th>
                         </tr>
                         </thead>
+                        <tfoot>
+                        <tr>
+                            <th>عنوان مقاله</th>
+                            <th>تعداد نظرات</th>
+                            <th>مقدار بازدید</th>
+                            <th>تنظیمات</th>
+                        </tr>
+                        </tfoot>
                         <tbody>
                         @foreach($articles as $article)
                             <tr>
@@ -151,4 +91,15 @@
             <!-- END EXAMPLE TABLE PORTLET-->
         </div>
     </div>
+@endsection
+@section('script')
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="/global/scripts/datatable.js" type="text/javascript"></script>
+    <script src="/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+    <script src="/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+    <script src="/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="/pages/scripts/table-datatables-buttons.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
 @endsection

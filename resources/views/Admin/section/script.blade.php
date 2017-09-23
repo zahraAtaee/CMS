@@ -1,6 +1,4 @@
 <script src="/js/app.js"></script>
-<script src="/js/sweetalert.min.js"></script>
-<script src="/js/bootstrap-select.min.js"></script>
 <!-- BEGIN CORE PLUGINS -->
 <script src="/global/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -53,30 +51,7 @@
 <script src="/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="/global/scripts/datatable.js" type="text/javascript"></script>
-<script src="/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
-<script src="/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
-<script src="/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/pages/scripts/table-datatables-buttons.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-
-
-
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js" type="text/javascript"></script>
-<script src="/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
-<script src="/global/plugins/typeahead/typeahead.bundle.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-
-<!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="/pages/scripts/components-bootstrap-tagsinput.min.js" type="text/javascript"></script>
-<!-- END PAGE LEVEL SCRIPTS -->
-<script src="/ckeditor/ckeditor.js"></script>
 @yield('script')
-
 <script>
     $(document).ready(function()
     {
@@ -84,10 +59,5 @@
         {
             $('#radio1003').attr('checked', 'checked');
         });
-    }),
-        CKEDITOR.replace('body',{
-            filebrowserUpload:'/admin/panel/upload-image',
-            filebrowserImageUploadUrl:'/admin/panel/upload-image'
-        });
+    })
 </script>
-

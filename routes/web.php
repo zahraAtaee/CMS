@@ -31,7 +31,7 @@ Route::group(['middleware' => 'auth:web'] , function () {
 });
 // namespace('Admin')->prefix('admin'), 'checkAdmin'
 Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web' ], 'prefix' => 'admin'],function (){
-    $this->get('/panel' , 'PanelController@index');
+    $this->get('/panel' , 'PanelController@index')->name('admin.panel');
     $this->post('/panel/upload-image' , 'PanelController@uploadImageSubject');
     $this->resource('articles' , 'ArticleController');
     $this->resource('courses' , 'CoursesController');

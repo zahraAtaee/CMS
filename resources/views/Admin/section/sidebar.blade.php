@@ -41,7 +41,7 @@
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
             </li>
             <li class="nav-item start active open">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="{{route('admin.panel')}}" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">پیشخوان</span>
                     <span class="selected"></span>
@@ -52,18 +52,41 @@
                 <h3 class="uppercase">امکانات</h3>
             </li>
             <li class="nav-item  ">
-                <a  href="{{route('articles.index')}}" class="nav-link nav-toggle">
-                    <i class="icon-diamond"></i>
-                    <span class="title"> مقاله ها </span>
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-layers"></i>
+                    <span class="title">مقالات</span>
                     <span class="arrow"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a  href="{{route('articles.index')}}" class="nav-link ">
+                            <span class="title">مقالات تخصصی</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="layout_classic_page_head.html" class="nav-link ">
+                            <span class="title">مقالات عمومی</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item  ">
-                <a href="{{route('courses.index')}}" class="nav-link nav-toggle">
+                <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-puzzle"></i>
-                    <span class="title">دوره ها</span>
+                    <span class="title">دوره های آموزشی</span>
                     <span class="arrow"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="nav-item  ">
+                        <a href="{{route('courses.index')}}"  class="nav-link ">
+                            <span class="title">دوره های تخصصی</span>
+                        </a>
+                        <a  class="nav-link ">
+                            <span class="title">دوره های عمومی</span>
+                        </a>
+                    </li>
+
+                </ul>
             </li>
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -75,11 +98,14 @@
                     <li class="nav-item  ">
                         <a href="{{route('payments.index')}}" class="nav-link ">
                             <span class="title">پرداختی های موفق</span>
+                            <span class="badge badge-success">{{$paymentSuccess}}</span>
+
                         </a>
                     </li>
                     <li class="nav-item  ">
                         <a  href="{{route('payment.unsuccessfull')}}" class="nav-link ">
                             <span class="title">پرداختی های ناموفق</span>
+                            <span class="badge badge-danger">{{$paymentUnsuccess}}</span>
                         </a>
                     </li>
 
@@ -95,11 +121,13 @@
                     <li class="nav-item  ">
                         <a href="{{route('comments.index')}}" class="nav-link ">
                             <span class="title">همه نظرات</span>
+                            <span class="badge badge-success">{{$commentSuccess}}</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
                         <a href="{{route('comments.unsuccessfull')}}" class="nav-link ">
                             <span class="title">نظرات تایید نشده </span>
+                            <span class="badge badge-danger">{{$commentUnsuccess}}</span>
                         </a>
                     </li>
 

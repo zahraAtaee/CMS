@@ -1,10 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
+{{--    <div class="owl">
+        <div class="hand"></div>
+        <div class="hand hand-r"></div>
+        <div class="arms">
+            <div class="arm"></div>
+            <div class="arm arm-r"></div>
+        </div>
+    </div>
+    <div class="form">
+        <div class="control">
+            <label for="email" class="fa fa-envelope"></label>
+            <input id="email" placeholder="Email" type="email"></input>
+        </div>
+        <div class="control">
+            <label for="password" class="fa fa-asterisk"></label>
+            <input id="password" placeholder="Password" type="password"></input>
+        </div>
+    </div>--}}
+
 <div class="container">
     <div class="row">
+
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="owl">
+                <div class="hand"></div>
+                <div class="hand hand-r"></div>
+                <div class="arms">
+                    <div class="arm"></div>
+                    <div class="arm arm-r"></div>
+                </div>
+            </div>
+            <div class="stiker panel panel-default">
+
                 <div class="panel-heading">ورود</div>
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -14,7 +43,7 @@
                             <label for="email" class="col-md-4 control-label">آدرس ایمیل</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email"  class="form-control fa fa-envelope" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -51,11 +80,10 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <a href="{{url('login/google')}}" class="btn btn-danger">ثبت نام با گوگل</a>
                                 <button type="submit" class="btn btn-primary">
                                     ورود
                                 </button>
-
+                                <a href="{{url('login/google')}}" class="btn btn-danger">ثبت نام با گوگل</a>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     فراموشی رمز عبور؟
                                 </a>

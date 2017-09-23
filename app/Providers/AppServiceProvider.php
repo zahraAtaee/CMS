@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
 
         Validator::extend('recaptcha',Validation\Recaptcha::class);
 
-        view()->composer('Admin.section.header',function($view){
+        view()->composer('Admin.section.sidebar',function($view){
 
             $commentSuccess  =Comment::where('approved',1)->count();
             $commentUnsuccess=Comment::where('approved',0)->count();

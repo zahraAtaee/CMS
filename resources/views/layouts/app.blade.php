@@ -8,16 +8,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'ApplicationName') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-
 </head>
-<body>
+<body>{{--navbar-inverse --Default style="background-color: #2b3643"--}}
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top" >
             <div class="container">
                 <div class="navbar-header">
 
@@ -45,8 +46,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">ورود</a></li>
+                            <li><a href="{{ route('register') }}">ثبت نام</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -78,5 +79,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script  src="/js/login.js"></script>
+
 </body>
 </html>

@@ -13,13 +13,13 @@
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.4",
         "irazasyed/telegram-bot-sdk": "^2.2",
-        "laravel/framework": "5.4.*",
+        "laravel/framework": "5.5.*",
         "laravel/passport": "^3.0",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "morilog/jalali": "^2.2",
         "predis/predis": "^1.1",
-        "pusher/pusher-php-server": "^2.6",
+        "pusher/pusher-php-server": "~3.0",
         "roumen/feed": "^2.10",
         "roumen/sitemap": "^2.6",
         "uxweb/sweet-alert": "^1.4",
@@ -29,7 +29,7 @@
         "barryvdh/laravel-ide-helper": "^2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~6.0"
 
     },
     "autoload": {

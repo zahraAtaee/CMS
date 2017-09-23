@@ -186,7 +186,7 @@
                                 </div>
                             </div>
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="/layouts/layout/img/avatar3.jpg" />
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">کوروش</a>
@@ -195,7 +195,7 @@
                                 </div>
                             </div>
                             <div class="post in">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <img class="avatar" alt="" src="/layouts/layout/img/avatar2.jpg" />
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Ella Wong</a>
@@ -204,7 +204,7 @@
                                 </div>
                             </div>
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="/layouts/layout/img/avatar3.jpg" />
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">کوروش</a>
@@ -213,7 +213,7 @@
                                 </div>
                             </div>
                             <div class="post in">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar2.jpg" />
+                                <img class="avatar" alt="" src="/layouts/layout/img/avatar2.jpg" />
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">Ella Wong</a>
@@ -222,7 +222,7 @@
                                 </div>
                             </div>
                             <div class="post out">
-                                <img class="avatar" alt="" src="../assets/layouts/layout/img/avatar3.jpg" />
+                                <img class="avatar" alt="" src="/layouts/layout/img/avatar3.jpg" />
                                 <div class="message">
                                     <span class="arrow"></span>
                                     <a href="javascript:;" class="name">کوروش</a>
