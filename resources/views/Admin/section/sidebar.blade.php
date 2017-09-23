@@ -78,14 +78,16 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{route('courses.index')}}"  class="nav-link ">
+                        <a href="{{route('courses.index')}}" class="nav-link ">
                             <span class="title">دوره های تخصصی</span>
                         </a>
-                        <a  class="nav-link ">
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="components_color_pickers.html" class="nav-link ">
                             <span class="title">دوره های عمومی</span>
+                            <span class="badge badge-danger">2</span>
                         </a>
                     </li>
-
                 </ul>
             </li>
             <li class="nav-item  ">
