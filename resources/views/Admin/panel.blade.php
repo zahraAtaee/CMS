@@ -1,8 +1,7 @@
 @extends('Admin.master')
 @section('content')
-
         <!-- BEGIN PAGE HEADER-->
-       @include('Admin.section.themePanel')
+{{--       @include('Admin.section.themePanel')--}}
         <!-- BEGIN PAGE BAR -->
         <div class="page-bar">
             <ul class="page-breadcrumb">
@@ -24,67 +23,122 @@
         </div>
         <!-- END PAGE BAR -->
         <!-- BEGIN PAGE TITLE-->
-        <h1 class="page-title"> پیشخوان مدیر                            <small>آمار، نمودار ها، رویدادهای اخیر و گزارش ها</small>
+        <h1 class="page-title"> پیشخوان مدیر
+                        <small>آمار، نمودار ها، رویدادهای اخیر و گزارش ها</small>
         </h1>
         <!-- END PAGE TITLE-->
         <!-- END PAGE HEADER-->
         <!-- BEGIN DASHBOARD STATS 1-->
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <a class="dashboard-stat dashboard-stat-v2 blue" href="#">
-                    <div class="visual">
-                        <i class="fa fa-comments"></i>
-                    </div>
-                    <div class="details">
+                <div class="dashboard-stat2 ">
+                    <div class="display">
                         <div class="number">
-                            <span data-counter="counterup" data-value="1349">0</span>
+                            <h3 class="font-green-sharp">
+                                <span data-counter="counterup" data-value="{{$sumPrice}}">{{$sumPrice}}</span>
+                                <small class="font-green-sharp">تومان</small>
+                            </h3>
+                            <small>سود کل</small>
                         </div>
-                        <div class="desc"> بازخورد های جدید </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <a class="dashboard-stat dashboard-stat-v2 red" href="#">
-                    <div class="visual">
-                        <i class="fa fa-bar-chart-o"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number">
-                            <span data-counter="counterup" data-value="12,5">0</span>میلیون تومان </div>
-                        <div class="desc"> سود کل </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <a class="dashboard-stat dashboard-stat-v2 green" href="#">
-                    <div class="visual">
-                        <i class="fa fa-shopping-cart"></i>
-                    </div>
-                    <div class="details">
-                        <div class="number">
-                            <span data-counter="counterup" data-value="549">0</span>
+                        <div class="icon">
+                            <i class="icon-pie-chart"></i>
                         </div>
-                        <div class="desc"> سفارشات جدید </div>
                     </div>
-                </a>
+                    <div class="progress-info">
+                        <div class="progress">
+                            <span style="width: 76%;" class="progress-bar progress-bar-success green-sharp">
+                                <span class="sr-only">76% progress</span>
+                            </span>
+                        </div>
+                        <div class="status">
+                            <div class="status-title"> progress </div>
+                            <div class="status-number"> 76% </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <a class="dashboard-stat dashboard-stat-v2 purple" href="#">
-                    <div class="visual">
-                        <i class="fa fa-globe"></i>
+                <div class="dashboard-stat2 ">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-red-haze">
+                                <span data-counter="counterup" data-value="{{$feedback}}">{{$feedback}}</span>
+                            </h3>
+                            <small>بازخورد های جدید</small>
+                        </div>
+                        <div class="icon">
+                            <i class="icon-like"></i>
+                        </div>
                     </div>
-                    <div class="details">
-                        <div class="number"> +
-                            <span data-counter="counterup" data-value="89"></span>% </div>
-                        <div class="desc"> محبوبیت برند </div>
+                    <div class="progress-info">
+                        <div class="progress">
+                            <span style="width: 85%;" class="progress-bar progress-bar-success red-haze">
+                                <span class="sr-only">85% تغییر</span>
+                            </span>
+                        </div>
+                        <div class="status">
+                            <div class="status-title"> تغییر </div>
+                            <div class="status-number"> 85% </div>
+                        </div>
                     </div>
-                </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat2 ">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-blue-sharp">
+                                <span data-counter="counterup" data-value="{{$orders}}">{{$orders}}</span>
+                            </h3>
+                            <small>سفارشات جدید</small>
+                        </div>
+                        <div class="icon">
+                            <i class="icon-basket"></i>
+                        </div>
+                    </div>
+                    <div class="progress-info">
+                        <div class="progress">
+                            <span style="width: 45%;" class="progress-bar progress-bar-success blue-sharp">
+                                <span class="sr-only">45% grow</span>
+                            </span>
+                        </div>
+                        <div class="status">
+                            <div class="status-title"> grow </div>
+                            <div class="status-number"> 45% </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="dashboard-stat2 ">
+                    <div class="display">
+                        <div class="number">
+                            <h3 class="font-purple-soft">
+                                <span data-counter="counterup" data-value="{{$userCount}}">{{$userCount}}</span>
+                            </h3>
+                            <small>تعداد کاربران</small>
+                        </div>
+                        <div class="icon">
+                            <i class="icon-user"></i>
+                        </div>
+                    </div>
+                    <div class="progress-info">
+                        <div class="progress">
+                            <span style="width: 57%;" class="progress-bar progress-bar-success purple-soft">
+                                <span class="sr-only">56% تغییر</span>
+                            </span>
+                        </div>
+                        <div class="status">
+                            <div class="status-title"> تغییر </div>
+                            <div class="status-number"> 57% </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="clearfix"></div>
         <!-- END DASHBOARD STATS 1-->
         <div class="row">
-
             <div class="col-lg-6 col-xs-12 col-sm-12">
                 <!-- BEGIN PORTLET-->
                 <div class="portlet light bordered">
@@ -104,10 +158,27 @@
                         </div>
                     </div>
                     <div class="portlet-body">
-
                         <payment :values="{{json_encode($values)}}"  :labels="{{json_encode($lables)}}" ></payment>
-
-
+                        <div style="margin: 20px 0 10px 30px">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                                    <span class="label label-sm label-success"> درآمد: </span>
+                                    <h3>{{$sumPrice}} تومان</h3>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                                    <span class="label label-sm label-info"> مالیات: </span>
+                                    <h3>{{$tax}} تومان</h3>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                                    <span class="label label-sm label-danger"> حمل و نقل: </span>
+                                    <h3>T 1,134</h3>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-6 text-stat">
+                                    <span class="label label-sm label-warning"> سفارشات: </span>
+                                    <h3>{{$orders}} عدد</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- END PORTLET-->
@@ -212,7 +283,7 @@
                                             <div class="mt-action-row">
                                                 <div class="mt-action-info ">
                                                     <div class="mt-action-icon ">
-                                                        <i class="icon-magnet"></i>
+                                                        <i class="icon-bubbles"></i>
                                                     </div>
                                                     <div class="mt-action-details ">
                                                         <span class="mt-action-author">{{$comment->user->name}}</span>
@@ -225,22 +296,34 @@
                                                     <span class="mt=action-time">{{jdate($comment->created_at)->getDateTime()}}</span>
                                                 </div>
                                                 <div class="mt-action-buttons ">
-                                                    <div class="btn-group btn-group-circle">
-                                                        <button type="button" class="btn btn-outline green btn-sm">ویرایش</button>
-                                                        <button type="button" class="btn btn-outline red btn-sm">حذف</button>
-                                                    </div>
+                                                    <form action="{{route('comments.update',['id'=>$comment->id])}}" method="post">
+                                                        {{csrf_field()}}
+                                                        {{method_field('patch')}}
+                                                        <div class="btn-group btn-group-circle">
+                                                            <a href="{{route('comments.destroy',['id'=>$comment->id])}}" class="btn btn-outline red btn-sm">حذف</a>
+                                                            <button type="submit" class="btn btn-outline green btn-sm">تایید</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     @endforeach
+                                    <div class="btn-arrow-link pull-right">
+                                        <a type="button" href="{{route('comments.unsuccessfull')}}" class="btn btn-success btn-sm mt-ladda-btn ladda-button btn-circle" data-style="expand-left">
+                                          <span class="ladda-label">
+                                          <i class="icon-arrow-left"></i>مشاهده تمام پیام ها</span>
+                                        <span class="ladda-spinner"></span>
+                                        </a>
+                                    </div>
                                 </div>
                                 <!-- END: Actions -->
                             </div>
                             <div class="tab-pane" id="tab_actions_completed">
                                 <!-- BEGIN:Completed-->
                                 <div class="mt-actions">
-                                    @foreach($commentsDeActive as $comment)
+                                    @foreach($commentsActive as $comment)
+
                                     <div class="mt-action">
                                         <div class="mt-action-img">
                                             <img src="/pages/media/users/avatar1.jpg" /> </div>
@@ -257,260 +340,569 @@
                                                 </div>
                                                 <div class="mt-action-datetime ">
                                                     <span class="mt-action-date">3{{jdate($comment->created_at)->ago()}}</span>
-                                                    <span class="mt-action-dot bg-red"></span>
+                                                    <span class="mt-action-dot bg-green"></span>
                                                     <span class="mt=action-time">{{jdate($comment->created_at)->getDateTime()}}</span>
                                                 </div>
                                                 <div class="mt-action-buttons ">
-                                                    <div class="btn-group btn-group-circle">
-                                                        <button type="button" class="btn btn-outline green btn-sm">ویرایش</button>
-                                                        <button type="button" class="btn btn-outline red btn-sm">حذف</button>
-                                                    </div>
+                                                    <a href="{{route('comments.destroy',['id'=>$comment->id])}}" class="btn red btn-sm mt-ladda-btn ladda-button btn-outline btn-circle" data-style="slide-left" data-spinner-color="#333">
+                                                        <span class="ladda-label">حذف</span>
+                                                        <span class="ladda-spinner"></span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     @endforeach
-                                    <!-- END: Completed -->
+                                <!-- END: Completed -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-6 col-xs-12 col-sm-12">
+                <!-- BEGIN PORTLET-->
                 <div class="portlet light bordered">
                     <div class="portlet-title tabbable-line">
                         <div class="caption">
-                            <i class="icon-bubbles font-dark hide"></i>
-                            <span class="caption-subject font-dark bold uppercase">نظرات</span>
+                            <i class="icon-globe font-dark hide"></i>
+                            <span class="caption-subject font-dark bold uppercase">فید</span>
                         </div>
                         <ul class="nav nav-tabs">
                             <li class="active">
-                                <a href="#portlet_comments_1" data-toggle="tab"> درانتظار </a>
+                                <a href="#tab_1_1" class="active" data-toggle="tab"> سیستم </a>
                             </li>
                             <li>
-                                <a href="#portlet_comments_2" data-toggle="tab"> تایید شده </a>
+                                <a href="#tab_1_2" data-toggle="tab"> فعالیت ها </a>
                             </li>
                         </ul>
                     </div>
                     <div class="portlet-body">
+                        <!--BEGIN TABS-->
                         <div class="tab-content">
-                            <div class="tab-pane active" id="portlet_comments_1">
-                                <!-- BEGIN: Comments -->
-                                <div class="mt-comments">
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar1.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">مایکل</span>
-                                                <span class="mt-comment-date">26 Feb, 10:30AM</span>
+                            <div class="tab-pane active" id="tab_1_1">
+                                <div class="scroller" style="height: 339px;" data-always-visible="1" data-rail-visible="0">
+                                    <ul class="feeds">
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-success">
+                                                            <i class="fa fa-bell-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> 4 وظیفه انجام نشده دارید.
+                                                            <span class="label label-sm label-info"> اقدام به انجام
+                                                                                <i class="fa fa-share"></i>
+                                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="mt-comment-text"> لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-pending">در انتظار</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
+                                            <div class="col2">
+                                                <div class="date"> اکنون </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar6.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">لاریسا</span>
-                                                <span class="mt-comment-date">12 Feb, 08:30AM</span>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> نسخه جدید v1.4 راه اندازی شد! </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> 20 دقیقه </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-danger">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> دیتابیس سرور #12 پربار است. لطفا مشکل را رفع کنید. </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="mt-comment-text"> این یک واقعیت طولانی است که یک خواننده هیجان زده خواهد شد. </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-rejected">رد شده</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
+                                            <div class="col2">
+                                                <div class="date"> 24 دقیقه </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar8.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">ناتاشا</span>
-                                                <span class="mt-comment-date">19 Dec,09:50 AM</span>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="mt-comment-text"> از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد. </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-pending">در انتظار</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
+                                            <div class="col2">
+                                                <div class="date"> 30 دقیقه </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar4.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">سباستین دیویدسون</span>
-                                                <span class="mt-comment-date">10 Dec, 09:20 AM</span>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-success">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="mt-comment-text"> آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و صفحه‌بندی را به پایان برند. </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-rejected">رد شده</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
+                                            <div class="col2">
+                                                <div class="date"> 40 دقیقه </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-warning">
+                                                            <i class="fa fa-plus"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> کاربر جدید ثبت نام کرد. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 1.5 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-success">
+                                                            <i class="fa fa-bell-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سخت افزار وب سرور باید ارتقا یابد.
+                                                            <span class="label label-sm label-default "> از کار افتاده </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 2 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-default">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 3 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-warning">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 5 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 18 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-default">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 21 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 22 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-default">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 21 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 22 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-default">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 21 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 22 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-default">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 21 ساعت </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-info">
+                                                            <i class="fa fa-bullhorn"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش جدید دریافت شد. لطفا بررسی کنید. </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col2">
+                                                <div class="date"> 22 ساعت </div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <!-- END: Comments -->
                             </div>
-                            <div class="tab-pane" id="portlet_comments_2">
-                                <!-- BEGIN: Comments -->
-                                <div class="mt-comments">
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar4.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">مایکل</span>
-                                                <span class="mt-comment-date">26 Feb, 10:30AM</span>
+                            <div class="tab-pane" id="tab_1_2">
+                                <div class="scroller" style="height: 290px;" data-always-visible="1" data-rail-visible1="1">
+                                    <ul class="feeds">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> سفارش جدید دریافت شد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> 10 دقیقه </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-sm label-danger">
+                                                            <i class="fa fa-bolt"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc"> سفارش #24DOP4 رد شد.
+                                                            <span class="label label-sm label-danger "> اقدام به انجام
+                                                                                <i class="fa fa-share"></i>
+                                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="mt-comment-text"> لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-approved">تایید شده</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
+                                            <div class="col2">
+                                                <div class="date"> 24 دقیقه </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar8.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">لاریسا</span>
-                                                <span class="mt-comment-date">12 Feb, 08:30AM</span>
-                                            </div>
-                                            <div class="mt-comment-text">  و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-approved">تایید شده</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar6.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">ناتاشا</span>
-                                                <span class="mt-comment-date">19 Dec,09:50 AM</span>
-                                            </div>
-                                            <div class="mt-comment-text"> از آنجایی که طراحان عموما نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال کار آنها به نوعی وابسته به متن می‌باشد. </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-approved">تایید شده</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-comment">
-                                        <div class="mt-comment-img">
-                                            <img src="/pages/media/users/avatar1.jpg" /> </div>
-                                        <div class="mt-comment-body">
-                                            <div class="mt-comment-info">
-                                                <span class="mt-comment-author">سباستین دیویدسون</span>
-                                                <span class="mt-comment-date">10 Dec, 09:20 AM</span>
-                                            </div>
-                                            <div class="mt-comment-text"> بخش استاندارد Lorem Ipsum از سال 1500 استفاده می شود </div>
-                                            <div class="mt-comment-details">
-                                                <span class="mt-comment-status mt-comment-status-approved">تایید شده</span>
-                                                <ul class="mt-comment-actions">
-                                                    <li>
-                                                        <a href="#">ویرایش سریع</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">نمایش</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">حذف</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> کاربر جدید ثبت نام کرد </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> اکنون </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <!-- END: Comments -->
                             </div>
                         </div>
+                        <!--END TABS-->
                     </div>
                 </div>
+                <!-- END PORTLET-->
             </div>
         </div>
         <div class="row">
@@ -1275,704 +1667,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6 col-xs-12 col-sm-12">
-                <div class="portlet light bordered">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="icon-share font-dark hide"></i>
-                            <span class="caption-subject font-dark bold uppercase">فعالیت های اخیر</span>
-                        </div>
-                        <div class="actions">
-                            <div class="btn-group">
-                                <a class="btn btn-sm blue btn-outline btn-circle" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> فیلتر بر اساس
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
-                                <div class="dropdown-menu hold-on-click dropdown-checkboxes pull-right">
-                                    <label class="mt-checkbox mt-checkbox-outline">
-                                        <input type="checkbox" /> امورمالی
-                                        <span></span>
-                                    </label>
-                                    <label class="mt-checkbox mt-checkbox-outline">
-                                        <input type="checkbox" checked="" /> عضویت
-                                        <span></span>
-                                    </label>
-                                    <label class="mt-checkbox mt-checkbox-outline">
-                                        <input type="checkbox" /> پشتیبانی مشتریان
-                                        <span></span>
-                                    </label>
-                                    <label class="mt-checkbox mt-checkbox-outline">
-                                        <input type="checkbox" checked="" /> HR
-                                        <span></span>
-                                    </label>
-                                    <label class="mt-checkbox mt-checkbox-outline">
-                                        <input type="checkbox" /> سیستم
-                                        <span></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
-                            <ul class="feeds">
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-info">
-                                                    <i class="fa fa-check"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> 4 وظیفه انجام نشده دارید.
-                                                    <span class="label label-sm label-warning "> اقدام به انجام
-                                                                        <i class="fa fa-share"></i>
-                                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> اکنون </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-success">
-                                                        <i class="fa fa-bar-chart-o"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> گزارش مالی سال 2013 منتشر شده است. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 20 دقیقه </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-danger">
-                                                    <i class="fa fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> شما 5 عضویت در انتظار دارید که نیاز به بررسی سریع دارند. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 24 دقیقه </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-info">
-                                                    <i class="fa fa-shopping-cart"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> سفارش جدید دریافت شد با
-                                                    <span class="label label-sm label-success"> شماره مرجع: DR23923 </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 30 دقیقه </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-success">
-                                                    <i class="fa fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> شما 5 عضویت در انتظار دارید که نیاز به بررسی سریع دارند. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 24 دقیقه </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-default">
-                                                    <i class="fa fa-bell-o"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> سخت افزار وب سرور باید ارتقا یابد.
-                                                    <span class="label label-sm label-default "> از کار افتاده </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 2 ساعت </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-default">
-                                                        <i class="fa fa-briefcase"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> گزارش IPO سال 2013 منتشر شده است. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 20 دقیقه </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-info">
-                                                    <i class="fa fa-check"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> 4 وظیفه انجام نشده دارید.
-                                                    <span class="label label-sm label-warning "> اقدام به انجام
-                                                                        <i class="fa fa-share"></i>
-                                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> اکنون </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-danger">
-                                                        <i class="fa fa-bar-chart-o"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> گزارش مالی سال 2013 منتشر شده است. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 20 دقیقه </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-default">
-                                                    <i class="fa fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> شما 5 عضویت در انتظار دارید که نیاز به بررسی سریع دارند. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 24 دقیقه </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-info">
-                                                    <i class="fa fa-shopping-cart"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> سفارش جدید دریافت شد با
-                                                    <span class="label label-sm label-success"> شماره مرجع: DR23923 </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 30 دقیقه </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-success">
-                                                    <i class="fa fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> شما 5 عضویت در انتظار دارید که نیاز به بررسی سریع دارند. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 24 دقیقه </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-warning">
-                                                    <i class="fa fa-bell-o"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> سخت افزار وب سرور باید ارتقا یابد.
-                                                    <span class="label label-sm label-default "> از کار افتاده </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 2 ساعت </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-info">
-                                                        <i class="fa fa-briefcase"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> گزارش IPO سال 2013 منتشر شده است. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 20 دقیقه </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="scroller-footer">
-                            <div class="btn-arrow-link pull-right">
-                                <a href="javascript:;"> مشاهده تمام سوابق </a>
-                                <i class="icon-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xs-12 col-sm-12">
-                <div class="portlet light tasks-widget bordered">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <i class="icon-share font-dark hide"></i>
-                            <span class="caption-subject font-dark bold uppercase">وظایف</span>
-                            <span class="caption-helper">خلاصه وظایف...</span>
-                        </div>
-                        <div class="actions">
-                            <div class="btn-group">
-                                <a class="btn blue-oleo btn-circle btn-sm" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true"> بیشتر
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li>
-                                        <a href="javascript:;"> همه پروژه ها </a>
-                                    </li>
-                                    <li class="divider"> </li>
-                                    <li>
-                                        <a href="javascript:;"> AirAsia </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> Cruise </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> HSBC </a>
-                                    </li>
-                                    <li class="divider"> </li>
-                                    <li>
-                                        <a href="javascript:;"> در انتظار
-                                            <span class="badge badge-danger"> 4 </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> تکمیل شده
-                                            <span class="badge badge-success"> 12 </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"> سررسید
-                                            <span class="badge badge-warning"> 9 </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portlet-body">
-                        <div class="task-content">
-                            <div class="scroller" style="height: 312px;" data-always-visible="1" data-rail-visible1="1">
-                                <!-- START TASK LIST -->
-                                <ul class="task-list">
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> آمار سالانه IPO در سال 2013 در جلسه هیئت مدیره </span>
-                                            <span class="label label-sm label-success">شرکت</span>
-                                            <span class="task-bell">
-                                                                <i class="fa fa-bell-o"></i>
-                                                            </span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> برگزاری یک مصاحبه برای موقعیت مدیر بازاریابی </span>
-                                            <span class="label label-sm label-danger">بازاریابی</span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> جلسه داخلی پروژه سیستم اینترانت ایرآسیا </span>
-                                            <span class="label label-sm label-success">AirAsia</span>
-                                            <span class="task-bell">
-                                                                <i class="fa fa-bell-o"></i>
-                                                            </span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> جلسه مدیریت فنی </span>
-                                            <span class="label label-sm label-warning">شرکت</span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> شروع توسعه اپلیکیشن اندروید CRM شرکت </span>
-                                            <span class="label label-sm label-info">محصولات داخلی</span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> آماده سازی پیشنهاد تجاری برای وب سایت  </span>
-                                            <span class="label label-sm label-danger">چشم انداز هوشمند</span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> ثبت قرارداد تجاری با AutoSmart</span>
-                                            <span class="label label-sm label-default">AutoSmart</span>
-                                            <span class="task-bell">
-                                                                <i class="fa fa-bell-o"></i>
-                                                            </span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group dropup">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> جلسه هیئت مدیره شرکت </span>
-                                            <span class="label label-sm label-success">Cruise</span>
-                                            <span class="task-bell">
-                                                                <i class="fa fa-bell-o"></i>
-                                                            </span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group dropup">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="last-line">
-                                        <div class="task-checkbox">
-                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </div>
-                                        <div class="task-title">
-                                            <span class="task-title-sp"> بحث سرمایه گذاری KeenThemes </span>
-                                            <span class="label label-sm label-warning">KeenThemes </span>
-                                        </div>
-                                        <div class="task-config">
-                                            <div class="task-config-btn btn-group dropup">
-                                                <a class="btn btn-sm default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                    <i class="fa fa-cog"></i>
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-check"></i> تکمیل </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-pencil"></i> ویرایش </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="fa fa-trash-o"></i> لغو </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <!-- END START TASK LIST -->
-                            </div>
-                        </div>
-                        <div class="task-footer">
-                            <div class="btn-arrow-link pull-right">
-                                <a href="javascript:;"> مشاهده تمام سوابق </a>
-                                <i class="icon-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="row">
             <div class="col-lg-6 col-xs-12 col-sm-12">
                 <div class="portlet light bordered">

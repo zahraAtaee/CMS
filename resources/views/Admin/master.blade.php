@@ -27,7 +27,7 @@
                     <div class="page-content-wrapper">
                         <!-- BEGIN CONTENT BODY -->
                         <div class="page-content">
-                            @include('Admin.section.themePanel')
+                            {{--@include('Admin.section.themePanel')--}}
                             @yield('content')
                         </div>
                         <!-- END CONTENT BODY -->

@@ -27,10 +27,18 @@ class PanelController extends Controller
         $values['success']=$this->checkCount($paymentSuccess->pluck('published'),$month);
         $values['unsuccess']=$this->checkCount($paymentUnSuccess->pluck('published'),$month);
 
+        $sumPrice=Payment::sum('price');
+        $tax=Payment::sum('price')-10*100;
+        $orders=Payment::count();
+
         $commentsActive=Comment::Approved(true);
         $commentsDeActive=Comment::Approved(false);
+        $feedback=Comment::Approved(false)->count();
 
-        return view('Admin.panel',compact('lables','values','commentsActive','commentsDeActive'));
+
+        $userCount=User::count();
+
+        return view('Admin.panel',compact('lables','values','commentsActive','commentsDeActive','orders','sumPrice','tax','feedback','userCount'));
     }
 
     public function uploadImageSubject()
