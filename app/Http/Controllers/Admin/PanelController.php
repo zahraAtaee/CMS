@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Comment;
 use App\Payment;
 use App\Permission;
 use App\Role;
@@ -26,7 +27,10 @@ class PanelController extends Controller
         $values['success']=$this->checkCount($paymentSuccess->pluck('published'),$month);
         $values['unsuccess']=$this->checkCount($paymentUnSuccess->pluck('published'),$month);
 
-        return view('Admin.panel',compact('lables','values'));
+        $commentsActive=Comment::Approved(true);
+        $commentsDeActive=Comment::Approved(false);
+
+        return view('Admin.panel',compact('lables','values','commentsActive','commentsDeActive'));
     }
 
     public function uploadImageSubject()
