@@ -79,10 +79,7 @@
                                             <button type="submit" class="btn btn-outline green btn-sm">تایید</button>
                                         </div>
                                     </form>
-
-
                                 </td>
-
                             </tr>
                         @endforeach
                         </tbody>
