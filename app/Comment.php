@@ -34,4 +34,12 @@ class Comment extends Model
     {
         return $this->attributes['comment']=str_replace(PHP_EOL,"</br>",$value);
     }
+
+    public function ScopeApproved($query,$approved)
+    {
+        return $query->selectRaw('*')
+            ->whereApproved($approved)
+            ->latest();
+    }
+
 }
