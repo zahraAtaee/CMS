@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title">
-                    <h2>Blog</h2>
+                    <h2>وبلاگ</h2>
                     <p>Dantes remained confused and silent by this explanation of the <br> thoughts which had unconsciously</p>
                 </div>
                 <div id="blog-post" class="owl-carousel">

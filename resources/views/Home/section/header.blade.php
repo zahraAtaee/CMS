@@ -21,14 +21,14 @@
         <!-- main nav -->
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
             <ul id="nav" class="nav navbar-nav menu">
-                <li><a href="#top">Home</a></li>
-                <li><a href="#features">Service</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#pricing-table">Price</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#testimonial">Testimonial</a></li>
-                <li><a href="#contact-form">Contact</a></li>
+                <li><a href="#top">خانه</a></li>
+                <li><a href="#features">خدمات</a></li>
+                <li><a href="#portfolio">نمونه کارها</a></li>
+                <li><a href="#team">تیم</a></li>
+                <li><a href="#pricing-table">قیمت</a></li>
+                <li><a href="#blog">مقالات</a></li>
+                <li><a href="#testimonial">گواهی نامه</a></li>
+                <li><a href="#contact-form">تماس با ما</a></li>
             </ul>
         </nav>
         <!-- /main nav -->

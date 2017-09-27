@@ -3,17 +3,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title">
-                    <h2>LATEST WORKS</h2>
-                    <p>Dantes remained confused and silent by this explanation of the <br> thoughts which had unconsciously</p>
+                    <h2>آخرین کارها</h2>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ<br> و با استفاده از طراحان گرافیک است.</p>
                 </div>
                 <div class="block">
                     <div class="recent-work-mixMenu">
                         <ul>
-                            <li><button class="filter" data-filter="all">All</button></li>
-                            <li><button class="filter" data-filter=".category-2">Printing</button></li>
-                            <li><button class="filter" data-filter=".category-1">Web</button></li>
-                            <li><button class="filter" data-filter=".category-2">Illustration</button></li>
-                            <li><button class="filter" data-filter=".category-1">Media</button></li>
+                            <li><button class="filter" data-filter="all">همه</button></li>
+                            <li><button class="filter" data-filter=".category-2">چاپ</button></li>
+                            <li><button class="filter" data-filter=".category-1">وب</button></li>
+                            <li><button class="filter" data-filter=".category-2">تصویر</button></li>
+                            <li><button class="filter" data-filter=".category-1">مدیا</button></li>
                         </ul>
                     </div>
                     <div class="recent-work-pic">
@@ -22,7 +22,7 @@
                                 <a class="example-image-link" href="/viewSite/img/work1.jpg" data-lightbox="example-set">
                                     <img class="img-responsive" src="/viewSite/img/work1.jpg" alt="">
                                     <div class="overlay">
-                                        <h3>Web design</h3>
+                                        <h3>طراحی وب</h3>
                                         <i class="ion-ios-plus-empty"></i>
                                     </div>
                                 </a>
@@ -31,7 +31,7 @@
                                 <a class="example-image-link" href="/viewSite/img/work2.jpg" data-lightbox="example-set">
                                     <img class="img-responsive" src="/viewSite/img/work2.jpg" alt="">
                                     <div class="overlay">
-                                        <h3>Web design</h3>
+                                        <h3>طراحی وب</h3>
                                         <i class="ion-ios-plus-empty"></i>
                                     </div>
                                 </a>
@@ -40,7 +40,7 @@
                                 <a class="example-image-link" href="/viewSite/img/work3.jpg" data-lightbox="example-set">
                                     <img class="img-responsive" src="/viewSite/img/work3.jpg" alt="">
                                     <div class="overlay">
-                                        <h3>Web design</h3>
+                                        <h3>طراحی وب</h3>
                                         <i class="ion-ios-plus-empty"></i>
                                     </div>
                                 </a>
@@ -49,7 +49,7 @@
                                 <a class="example-image-link" href="/viewSite/img/work4.jpg" data-lightbox="example-set">
                                     <img class="img-responsive" src="/viewSite/img/work4.jpg" alt="">
                                     <div class="overlay">
-                                        <h3>Web design</h3>
+                                        <h3>طراحی وب</h3>
                                         <i class="ion-ios-plus-empty"></i>
                                     </div>
                                 </a>
@@ -58,7 +58,7 @@
                                 <a class="example-image-link" href="/viewSite/img/work5.jpg" data-lightbox="example-set">
                                     <img class="img-responsive" src="/viewSite/img/work5.jpg" alt="">
                                     <div class="overlay">
-                                        <h3>Web design</h3>
+                                        <h3>طراحی وب</h3>
                                         <i class="ion-ios-plus-empty"></i>
                                     </div>
                                 </a>
@@ -67,7 +67,7 @@
                                 <a class="example-image-link" href="/viewSite/img/work6.jpg" data-lightbox="example-set">
                                     <img class="img-responsive" src="/viewSite/img/work6.jpg" alt="">
                                     <div class="overlay">
-                                        <h3>Web design</h3>
+                                        <h3>طراحی وب</h3>
                                         <i class="ion-ios-plus-empty"></i>
                                     </div>
                                 </a>

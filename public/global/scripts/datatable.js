@@ -39,7 +39,7 @@ var Datatable = function() {
                 filterApplyAction: "filter",
                 filterCancelAction: "filter_cancel",
                 resetGroupActionInputOnSuccess: true,
-                loadingMessage: 'Loading...',
+                loadingMessage: 'در حال بارگذاری...',
                 dataTable: {
                     "dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r><'table-responsive't><'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>", // datatable layout
                     "pageLength": 10, // default records per page
@@ -49,18 +49,18 @@ var Datatable = function() {
                         "metronicAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
 
                         // data tables spesific
-                        "lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
-                        "info": "<span class='seperator'>|</span>Found total _TOTAL_ records",
-                        "infoEmpty": "No records found to show",
-                        "emptyTable": "No data available in table",
-                        "zeroRecords": "No matching records found",
+                        "lengthMenu": "<span class='seperator'>|</span>نمایش _MENU_ مورد",
+                        "info": "<span class='seperator'>|</span>مجموع یافته ها _TOTAL_ مورد",
+                        "infoEmpty": "داده ای برای نمایش یافت نشد",
+                        "emptyTable": "داده ای در جدول موجود نیست",
+                        "zeroRecords": "داده ای مطابق درخواست شما یافت نشد",
                         "paginate": {
                             "previous": "Prev",
                             "next": "Next",
                             "last": "Last",
                             "first": "First",
-                            "page": "Page",
-                            "pageOf": "of"
+                            "page": "صفحه",
+                            "pageOf": "از"
                         }
                     },
 

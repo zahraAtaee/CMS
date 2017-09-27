@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/' , 'HomeController@index');
+Route::get('/' , 'HomeController@index')->name('index');
 Route::get('/articles' , 'ArticleController@index');
 Route::get('/courses' , 'CourseController@index');
 Route::get('/articles/{articleSlug}' , 'ArticleController@single');

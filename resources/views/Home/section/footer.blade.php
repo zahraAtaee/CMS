@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="block">
                     <a href="#"><img src="img/logo.png" alt=""></a>
-                    <p>All rights reserved © 2015</p>
+                    <p>تمامی حقوق این سیستم متعلق به آبفای استان تهران  می باشد. © 2017</p>
                 </div>
             </div>
         </div>
