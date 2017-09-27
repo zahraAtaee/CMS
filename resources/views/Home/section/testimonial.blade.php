@@ -18,12 +18,12 @@
                     <div class="media-body">
                         <a href="{{$course->path()}}"><h4 class="media-heading">{{$course->title}}</h4></a>
                         <p> {{str_limit($course->description,219)}}</p>
-                        <p><i class="fa fa-eye" aria-hidden="true"></i> {{Redis::get("views.{$course->id}.courses")}}/ {{$course->viewCount}}</p>
+                        {{--<p><i class="fa fa-eye" aria-hidden="true"></i> {{Redis::get("views.{$course->id}.courses")}}/ {{$course->viewCount}}</p>--}}
                     </div>
                 </div>
             </div>
             @endforeach
-            <div class="col col-md-6">
+            {{--<div class="col col-md-6">
                 <div class="media wow fadeInLeft" data-wow-delay=".3s">
                     <div class="media-left">
                         <a href="#">
@@ -48,7 +48,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo</p>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
     </div>
 </section>

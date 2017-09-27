@@ -32,7 +32,7 @@ class HomeController extends Controller
         //Seo or SEOMeta ...
 //        app()->setLocale('en');
         $local=app()->getLocale();
-        $orintation=['fadeInLeft','fadeInRight'];
+        $orintation=['fadeInLeft','fadeInRight','fadeInLeft','fadeInRight'];
 
         SEO::setTitle(__('messages.title'));
         SEO::setDescription('فروش-آموزش مجازی-دوره های تخصصی');
@@ -54,7 +54,7 @@ class HomeController extends Controller
         }
          else
         {
-            $courses=Course::latest()->take(2)->get();
+            $courses=Course::latest()->take(4)->get();
             cache::put('courses',$courses,Carbon::now()->addMinute(1));
         }
 //        return ($articles);CommentRequest $request

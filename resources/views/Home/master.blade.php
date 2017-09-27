@@ -45,7 +45,16 @@
 
 <script src="/viewSite/js/jquery-1.11.3.min.js"></script>
 <script src="/viewSite/js/bootstrap.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false"></script>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('googleMap'), {
+            center: {lat: 35.714088, lng: 51.397441},
+            zoom: 8
+        });
+    }
+</script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB5bKr7r4KJkvlApP-suXOTT-4J3Tp-Vek&amp;sensor=true"></script>
 <script src="/viewSite/js/waypoints.min.js"></script>
 <script src="/viewSite/js/lightbox.js"></script>
 <script src="/viewSite/js/jquery.counterup.min.js"></script>
