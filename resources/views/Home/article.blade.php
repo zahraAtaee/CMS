@@ -1,98 +1,199 @@
 @extends('Home.master')
-
-
 @section('content')
-        <!-- Blog Post Content Column -->
-        <div class="col-lg-8">
-
-            <!-- Blog Post -->
-
-            <!-- Title -->
-            <h1>عنوان مقاله</h1>
-
-            <!-- Author -->
-            <p class="lead">
-                توسط <a href="#">زهرا عطایی رحمتی</a>
-            </p>
-
-            <hr>
-
-            <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> ارسال شده در ۱۲ خرداد ۹۶</p>
-
-            <hr>
-
-            <!-- Preview Image -->
-            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-
-            <hr>
-
-            <!-- Post Content -->
-            <p dir="rtl">بعد از آنکه تیم مدیریت راکت وب تصمیم گرفتند که بخشی از مقاله ها را به موضوع لینوکس اختصاص دهیم، تصمیم گرفتم که از مفاهیم و مقدمات اولیه شروع کنم تا اگر در آینده سراغ مباحث کمی پیشرفته تر رفتیم، منبعی برای خواندن مفاهیم اولیه داشته باشید.</p>
-
-            <p dir="rtl" style="text-align:center"><img alt="" src="/public/images/2017/6/26/linux.jpg"></p>
-
-            <p dir="rtl">لینوکس توی دهه ۹۰ متولد شد و از اون وقت همواره در حال رشد و ترقی بوده، تا جایی که الان به عنوان یک سیستم عامل خانگی ازش استفاده می کنن. برای اون دسته از افرادی که نمی دونن باید بگم که لینوکس تقریبا همه جا هست. تلفن همراه تان را نگاهی بیاندازید، سیستم هوشمند ماشین ها از لینوکس ساخته شدند. وسائل هوشمند آشپزخانه تان هم دقیقا به همین شکل. پس واقعا لینوکس در همه جا حضور داره. البته باید گفت که بیشترین نقش لینوکس در سوپر کامپیوترها، دسکتاپ، سرور و سیستم های تعبیه شده است. اما قبل از آنکه درباره سطح اجرایی لینوکس صحبت بشه باید گفت که لینوکس یک سیستم عامل پایدار، امن و رایگان است.</p>
-
-            <p dir="rtl">خب در این مقاله می خوام که بدون هیچ حاشیه ای، خیلی سریع شما رو با مفهوم لینوکس آشنا کنم.</p>
-
-            <p dir="rtl"><span style="font-size:16px"><strong>لینوکس</strong><strong> </strong><strong>چیست؟</strong></span></p>
-
-            <p dir="rtl">درست مانند سیستم عامل های ویندوز اکس پی و مکینتاش، لینوکس هم یک سیستم عامل محسوب میشه. سیستم عامل از دسته نرم افزار ها محسوب میشه و ارتباط مستقیمی با سخت افزار داره. یعنی یه سیستم عامل می تونه سخت افزار رو کنترل کنه. در لایه بالایی سیستم عامل، کاربر و نرم افزارهای کاربردی قرار داره. پس میشه گفت رابط بین کاربر و سخت افزار هم محسوب می شه. سیستم عامل جزو برنامه های سیستمی به حساب می آد و در نهایت برنامه های کاربردی و … روی سیستم عامل اجرا می شن. بدون داشتن یک سیستم عامل توانایی اجرای برنامه ها رو ندارید.</p>
-
-            <p dir="rtl">سیستم عامل معمولا شامل این مورد ها هستش:</p>
-
-            <p dir="rtl"><strong>Bootloader</strong></p>
-
-            <p dir="rtl"><strong>&nbsp;</strong>برنامه ای هستش که فرایند بوت شدن «بالا آمدن» سیستم رو برای شما انجام میده. بعضی از بوت لودر ها خیلی ساده اند و بعضی ها هم پیچیده. ولی خب در نهایت کار آن ها در لایه منطقی یکی هستش.</p>
-
-            <p dir="rtl"><strong>Kernel</strong></p>
-
-            <p dir="rtl"><strong>&nbsp;</strong>مهمترین قسمت یک سیستم عامل محسوب می شه، در حقیقت ما بهش می گیم، لینوکس. چون خود لینوکس یک کرنل کلی محسوب میشه. کرنل سی پی یو شما رو کنترل میکنه، حافظه اصلی شما رو در اختیار داره و همچنین اجزای دیگه سخت افزار رو می تونه کنترل کنه. کرنل پایین ترین سطح سیستم عامل محسوب میشه.</p>
-
-            <p dir="rtl"><strong>Daemons</strong></p>
-
-            <p dir="rtl">دیمونس در واقع فرایند های پشت زمینه سیستم شما رو در بر می گیره. که معمولا یا در هنگام بوت شدن سیستم شروع به کار میکنه و یا بعد از اینکه به دسکتاپ وارد شدید.</p>
-
-            <p dir="rtl"><strong>Shell</strong></p>
-
-            <p dir="rtl">&nbsp;به احتمال زیاد چیزی به اسم خط فرمان لینوکس رو شنیده باشید. این قسمت رو شل یا پوسته میگن. در واقع جایی هستش که شما می تونید از طریق متن در یک محیط متنی با کامپیوتر ارتباط برقرار کنید. اینجا جاییه که باعث میشه مردم بیشترین ترس رو نسبت به لینوکس پیدا کنند. البته با حضور دسکتاپ های گرافیکی مدرن کمتر برای انجام کارهای روزمره به محیط کامند لاین احتیاج پیدا می کنیم.&nbsp;</p>
-
-            <p dir="rtl"><strong>Graphical Server</strong></p>
-
-            <p dir="rtl">&nbsp;در واقع این قسمت رو میشه یک زیر سیستم به حساب آورد که می تونه گرافیک رو روی صفحه نمایش، نشون بده. اغلب اوقات ما اون رو با اسم X-Server هم می بینیم.</p>
-            <hr>
-
-            <!-- Blog Comments -->
-
-            @include('Home.layout.comment',['comments'=>$comments,'subject'=>$article])
-
-
-        </div>
-
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-            <!-- Blog Search Well -->
-            <div class="well">
-                <h4>جستجو در سایت</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                           <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
+    <section id="global-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block text-center">
+                        <h1>BIG HEADLINE FOR BLOG</h1>
+                        <p>13 MARCH 2015 / BY SARA SMITH</p>
+                    </div>
                 </div>
-                <!-- /.input-group -->
             </div>
-
-            <!-- Side Widget Well -->
-            <div class="well">
-                <h4>دیوار</h4>
-                <p>طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.</p>
-            </div>
-
         </div>
+    </section>
+
+    <section id="blog-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1">
+                    <div class="blog-img row">
+                        <div class="col-md-12">
+                            <img class="img-responsive" src="img/blog-details-img2.jpg" alt="">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <img class="img-responsive" src="img/blog-details-img3.jpg" alt="">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <img class="img-responsive" src="img/blog-details-img4.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <span class="first-child-span">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                        <p class="first-child">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text.</p>
+                        <blockquote>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text.</p>
+                            <div class="footer">
+                                Jason Santa Maria
+                            </div>
+                        </blockquote>
+                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p><br>
+                        <div class="tags">
+                            <h5>Tags</h5>
+                            <a href="#">Advertisement</a>,
+                            <a href="#">Smart Quotes</a>,
+                            <a href="#">Unique</a>,
+                            <a href="#">Design</a>
+                        </div>
+                        <div class="blog-comment">
+                            <a class="comment-img" href="#"><img class="img-responsive" src="img/avtar6.jpg" alt=""></a>
+                            <div class="comment-text">
+                                <h5><a href="#">About The Author</a></h5>
+                                <span>Paul Scrivens - Creative Head</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            </div>
+                        </div>
+                        <!-- social media icon -->
+                        <div class="media-link">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-comment-main">
+                        <div class="blog-comment">
+                            <a class="comment-img" href="#">
+                                <img class="img-responsive" src="img/blog-details-img5.jpg" alt="">
+                            </a>
+                            <div class="comment-text">
+                                <a class="title" href="#">Kristi Hines</a>
+                                <span>September 05th, 2015</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a class="btn" href="#">Post Reply</a>
+                            </div>
+                        </div>
+                        <div class="sub-blog-comment">
+                            <a class="comment-img" href="#">
+                                <img class="img-responsive" src="img/blog-details-img6.jpg" alt="">
+                            </a>
+                            <div class="comment-text">
+                                <a class="title" href="#">Ray Michael</a>
+                                <span>September 05th, 2015</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a class="btn" href="#">Post Reply</a>
+                            </div>
+                        </div>
+                        <div class="blog-comment">
+                            <a class="comment-img" href="#">
+                                <img class="img-responsive" src="img/avtar6.jpg" alt="">
+                            </a>
+                            <div class="comment-text">
+                                <a class="title" href="#">Kristi Hines</a>
+                                <span>September 05th, 2015</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a class="btn" href="#">Post Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="addcomment">
+                        <span>Leave a Comment</span>
+                        <div class="blog-comment-form">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" class="form-control" placeholder="Email">
+                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                <button class="btn btn-default" type="submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-offset-1 col-sm-4">
+                    <div class="widget">
+                        <form>
+                            <i class="fa fa-search"></i>
+                            <input type="text" name="search" class="" placeholder="TYPE KEYWORD HERE...">
+                        </form>
+                    </div>
+                    <div class="widget">
+                        <span>Categories</span>
+                        <div class="widget-body">
+                            <ul class="category-list">
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">Featured Blog</a></li>
+                                <li><a href="#">Photography Idea</a></li>
+                                <li><a href="#">Design Tutorials</a></li>
+                                <li><a href="#">News and Events</a></li>
+                                <li><a href="#">Arts and Entertainment</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <span>ABOUT ME</span>
+                        <div class="widget-body">
+                            <img class="img-responsive" src="img/blog-img8.jpg" alt="">
+                            <span class="title">JOHN DEO</span>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been industry's standard.</p>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <span>TEXT WIDGET</span>
+                        <div class="widget-body">
+                            <p>Lorem Ipsum is simply dummy text of printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the of type and scrambled it to make a type specimen.</p>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <span>POPULAR POSTS</span>
+                        <div class="widget-body">
+                            <ul class="category-list">
+                                <li><a class="items" href="#">Standard Post with Gallery</a>Saturday - June 15, 2013</li>
+                                <li><a class="items" href="#">Standard post with preview Video</a>Saturday - June 20, 2013</li>
+                                <li><a class="items" href="#">Standard post with preview Picture</a>Saturday - June 25, 2013</li>
+                                <li><a class="items" href="#">Standard Post with Gallery</a>Saturday - June 15, 2013</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget sidebar-tags">
+                        <span>Tags</span>
+                        <div class="widget-body">
+                            <a href="#">Advertisement</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Sea</a>
+                            <a href="#">Forest</a>
+                            <a href="#">Nature</a>
+                            <a href="#">Portrait</a>
+                            <a href="#">Wordpress</a>
+                            <a href="#">Photo</a>
+                            <a href="#">Sky</a>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <span>RECENT COMMENTS</span>
+                        <div class="widget-body">
+                            <ul class="category-list">
+                                <li><a href="#">Standard Post with Gallery</a>Saturday - June 15, 2013</li>
+                                <li><a href="#">Standard post with preview Video</a>Saturday - June 20, 2013</li>
+                                <li><a href="#">Standard post with preview Picture</a>Saturday - June 25, 2013</li>
+                                <li><a href="#">Standard Post with Gallery</a>Saturday - June 15, 2013</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <a href="#">
+                            <img class="img-responsive" src="img/blog-img7.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{{--            @include('Home.layout.comment',['comments'=>$comments,'subject'=>$article])--}}
+
+
+
+
 
 @endsection

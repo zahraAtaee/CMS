@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/viewSite/css/rtlTheme.css">
 <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
-<link href="../global/plugins/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/global/plugins/bootstrap/css/bootstrap-rtl.min.css" type="text/css" />
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet" href="/viewSite/css/font-awesome.min.css">
 <link rel="stylesheet" href="/viewSite/css/owl.carousel.css">
@@ -15,12 +15,6 @@
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link href="/pages/css/profile-rtl.min.css" rel="stylesheet" type="text/css" />
 <!-- END PAGE LEVEL STYLES -->
-<style>
-    .videoPic{
-        width: 78px;
-        height: 78px;
-    }
-</style>
-@yield('style')
+
 {{--<link rel="stylesheet" href="/viewSite/css/bootstrap.min.css">--}}
 {{--<link href="/css/home.css" rel="stylesheet">--}}
