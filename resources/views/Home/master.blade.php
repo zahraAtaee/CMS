@@ -17,26 +17,9 @@
 @include("Home.section.header")
 
 <div class="wrapper">
-    @include("Home.section.baner")
-    @include("Home.section.features")
-    @include("Home.section.counter")
-    @include("Home.section.portfolio")
-    @include("Home.section.playVideo")
-    @include("Home.section.team")
-    @include("Home.section.pricing-table")
-    <section id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    @yield('content')
-                </div>
-            </div>
-        </div>
-    </section>
-    @include("Home.section.testimonial")
-    @include("Home.section.clientLogo")
-    @include("Home.section.contactForm")
-    @include("Home.section.footer")
+
+    @yield('content')
+
 </div>
 
 <!-- load Js -->
@@ -45,15 +28,6 @@
 
 <script src="/viewSite/js/jquery-1.11.3.min.js"></script>
 <script src="/viewSite/js/bootstrap.min.js"></script>
-<script>
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('googleMap'), {
-            center: {lat: 35.714088, lng: 51.397441},
-            zoom: 8
-        });
-    }
-</script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB5bKr7r4KJkvlApP-suXOTT-4J3Tp-Vek&amp;sensor=true"></script>
 <script src="/viewSite/js/waypoints.min.js"></script>
 <script src="/viewSite/js/lightbox.js"></script>
