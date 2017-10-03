@@ -15,101 +15,7 @@
 
     <section id="blog-left">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1">
-                    <div class="blog-img row">
-                        <div class="col-md-12">
-                            <img class="img-responsive" src="img/blog-details-img2.jpg" alt="">
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <img class="img-responsive" src="img/blog-details-img3.jpg" alt="">
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <img class="img-responsive" src="img/blog-details-img4.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="block">
-                        <span class="first-child-span">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
-                        <p class="first-child">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text.</p>
-                        <blockquote>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text.</p>
-                            <div class="footer">
-                                Jason Santa Maria
-                            </div>
-                        </blockquote>
-                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text.</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p><br>
-                        <div class="tags">
-                            <h5>Tags</h5>
-                            <a href="#">Advertisement</a>,
-                            <a href="#">Smart Quotes</a>,
-                            <a href="#">Unique</a>,
-                            <a href="#">Design</a>
-                        </div>
-                        <div class="blog-comment">
-                            <a class="comment-img" href="#"><img class="img-responsive" src="img/avtar6.jpg" alt=""></a>
-                            <div class="comment-text">
-                                <h5><a href="#">About The Author</a></h5>
-                                <span>Paul Scrivens - Creative Head</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                            </div>
-                        </div>
-                        <!-- social media icon -->
-                        <div class="media-link">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-comment-main">
-                        <div class="blog-comment">
-                            <a class="comment-img" href="#">
-                                <img class="img-responsive" src="img/blog-details-img5.jpg" alt="">
-                            </a>
-                            <div class="comment-text">
-                                <a class="title" href="#">Kristi Hines</a>
-                                <span>September 05th, 2015</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <a class="btn" href="#">Post Reply</a>
-                            </div>
-                        </div>
-                        <div class="sub-blog-comment">
-                            <a class="comment-img" href="#">
-                                <img class="img-responsive" src="img/blog-details-img6.jpg" alt="">
-                            </a>
-                            <div class="comment-text">
-                                <a class="title" href="#">Ray Michael</a>
-                                <span>September 05th, 2015</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <a class="btn" href="#">Post Reply</a>
-                            </div>
-                        </div>
-                        <div class="blog-comment">
-                            <a class="comment-img" href="#">
-                                <img class="img-responsive" src="img/avtar6.jpg" alt="">
-                            </a>
-                            <div class="comment-text">
-                                <a class="title" href="#">Kristi Hines</a>
-                                <span>September 05th, 2015</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <a class="btn" href="#">Post Reply</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="addcomment">
-                        <span>Leave a Comment</span>
-                        <div class="blog-comment-form">
-                            <form>
-                                <input type="text" class="form-control" placeholder="Name">
-                                <input type="text" class="form-control" placeholder="Email">
-                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                                <button class="btn btn-default" type="submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <div class="row pageRtl" >
                 <div class="col-md-3 col-md-offset-1 col-sm-4">
                     <div class="widget">
                         <form>
@@ -133,7 +39,7 @@
                     <div class="widget">
                         <span>ABOUT ME</span>
                         <div class="widget-body">
-                            <img class="img-responsive" src="img/blog-img8.jpg" alt="">
+                            <img class="img-responsive" src="/viewSite/img/blog-img8.jpg" alt="">
                             <span class="title">JOHN DEO</span>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been industry's standard.</p>
                         </div>
@@ -182,8 +88,104 @@
                     </div>
                     <div class="widget">
                         <a href="#">
-                            <img class="img-responsive" src="img/blog-img7.jpg" alt="">
+                            <img class="img-responsive" src="/viewSite/img/blog-img7.jpg" alt="">
                         </a>
+                    </div>
+                </div>
+                <div class="col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1">
+                    <div class="blog-img row">
+                        <div class="col-md-12">
+                            <img class="img-responsive" src="/viewSite/img/blog-details-img2.jpg" alt="">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <img class="img-responsive" src="/viewSite/img/blog-details-img3.jpg" alt="">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <img class="img-responsive" src="/viewSite/img/blog-details-img4.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <span class="first-child-span">{{$article->title}}</span>
+                        <p class="first-child">
+                            {{$article->description}}
+                        </p>
+
+                        <blockquote>
+                            <p>
+                                {!! $article->body !!}
+                            </p>
+                            <div class="footer">
+                                {{$article->user->name}}
+                            </div>
+                        </blockquote>
+                        <div class="tags">
+                            <h5>تگ ها</h5>
+
+                           {{-- @foreach($article->tags as $value)
+                            <a href="#">{{$value}}</a>,
+                            @endforeach--}}
+                        </div>
+                        <div class="blog-comment">
+                            <a class="comment-img" href="#"><img class="img-responsive" src="/viewSite/img/avtar6.jpg" alt=""></a>
+                            <div class="comment-text">
+                                <h5><a href="#">درباره نویسنده</a></h5>
+                                <span>Paul Scrivens - Creative Head</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            </div>
+                        </div>
+                        <!-- social media icon -->
+                        <div class="media-link">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-comment-main">
+                        <div class="blog-comment">
+                            <a class="comment-img" href="#">
+                                <img class="img-responsive" src="/viewSite/img/blog-details-img5.jpg" alt="">
+                            </a>
+                            <div class="comment-text">
+                                <a class="title" href="#">Kristi Hines</a>
+                                <span>September 05th, 2015</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a class="btn" href="#">Post Reply</a>
+                            </div>
+                        </div>
+                        <div class="sub-blog-comment">
+                            <a class="comment-img" href="#">
+                                <img class="img-responsive" src="/viewSite/img/blog-details-img6.jpg" alt="">
+                            </a>
+                            <div class="comment-text">
+                                <a class="title" href="#">Ray Michael</a>
+                                <span>September 05th, 2015</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a class="btn" href="#">Post Reply</a>
+                            </div>
+                        </div>
+                        <div class="blog-comment">
+                            <a class="comment-img" href="#">
+                                <img class="img-responsive" src="/viewSite/img/avtar6.jpg" alt="">
+                            </a>
+                            <div class="comment-text">
+                                <a class="title" href="#">Kristi Hines</a>
+                                <span>September 05th, 2015</span>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a class="btn" href="#">Post Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="addcomment">
+                        <span>Leave a Comment</span>
+                        <div class="blog-comment-form">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" class="form-control" placeholder="Email">
+                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                <button class="btn btn-default" type="submit">Send Message</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

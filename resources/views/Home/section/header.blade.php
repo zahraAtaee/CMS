@@ -11,21 +11,21 @@
             <!-- /responsive nav button -->
             <!-- logo -->
             <h1 class="navbar-brand">
-                <a href="#body"><img src="/viewSite/img/logo.png" height="40" width="164" alt=""></a>
+                <a href="{{ URL::route('index') }}#body"><img src="/viewSite/img/logo.png" height="40" width="164" alt=""></a>
             </h1>
             <!-- /logo -->
         </div>
         <!-- main nav -->
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
             <ul id="nav" class="nav navbar-nav menu">
-                <li><a href="{{route('index').'#top'}}" >خانه</a></li>
-                <li><a href="#features">خدمات</a></li>
-                <li><a href="#portfolio">نمونه کارها</a></li>
-                <li><a href="#team">تیم</a></li>
-                <li><a href="#pricing-table">قیمت</a></li>
-                <li><a href="#blog">مقالات</a></li>
-                <li><a href="#testimonial">ویدئوها</a></li>
-                <li><a href="#contact-form">تماس با ما</a></li>
+                <li><a href="{{ URL::route('index') }}#top" >خانه</a></li>
+                <li><a href="{{ URL::route('index') }}#features">خدمات</a></li>
+                <li><a href="{{ URL::route('index') }}#portfolio">نمونه کارها</a></li>
+                <li><a href="{{ URL::route('index') }}#team">تیم</a></li>
+                <li><a href="{{ URL::route('index') }}#pricing-table">قیمت</a></li>
+                <li><a href="{{ URL::route('index') }}#blog">مقالات</a></li>
+                <li><a href="{{ URL::route('index') }}#testimonial">ویدئوها</a></li>
+                <li><a href="{{ URL::route('index') }}#contact-form">تماس با ما</a></li>
             </ul>
         </nav>
         <!-- /main nav -->

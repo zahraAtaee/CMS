@@ -12,9 +12,5 @@
 <link rel="stylesheet" href="/viewSite/css/icon.css">
 <link rel="stylesheet" href="/viewSite/css/style.css">
 <link rel="stylesheet" href="/viewSite/css/responsive.css">
-<!-- BEGIN PAGE LEVEL STYLES -->
-<link href="/pages/css/profile-rtl.min.css" rel="stylesheet" type="text/css" />
-<!-- END PAGE LEVEL STYLES -->
-
 {{--<link rel="stylesheet" href="/viewSite/css/bootstrap.min.css">--}}
 {{--<link href="/css/home.css" rel="stylesheet">--}}
