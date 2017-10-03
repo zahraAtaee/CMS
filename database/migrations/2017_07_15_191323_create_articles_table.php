@@ -23,6 +23,7 @@ class CreateArticlesTable extends Migration
             $table->text('body');
             $table->text('images');
             $table->string('tags');
+            $table->string('lang')->default('fa');
             $table->integer('viewCount')->default(0);
             $table->integer('commentCount')->default(0);
             $table->timestamps();

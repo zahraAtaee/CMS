@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block text-center">
-                        <h1>BIG HEADLINE FOR BLOG</h1>
-                        <p>13 MARCH 2015 / BY SARA SMITH</p>
+                        <h1>{{$article->title}}</h1>
+                        <p>{{$article->description}}</p>
                     </div>
                 </div>
             </div>
@@ -111,26 +111,30 @@
                         </p>
 
                         <blockquote>
-                            <p>
-                                {!! $article->body !!}
-                            </p>
+                            {!! $article->body !!}
                             <div class="footer">
                                 {{$article->user->name}}
                             </div>
                         </blockquote>
                         <div class="tags">
                             <h5>تگ ها</h5>
-
-                           {{-- @foreach($article->tags as $value)
-                            <a href="#">{{$value}}</a>,
-                            @endforeach--}}
+                            <?php  $tags=explode(",",$article->tags); ?>
+                            @foreach($tags as $value)
+                                <a href="#">{{$value}}</a>,
+                            @endforeach
                         </div>
                         <div class="blog-comment">
                             <a class="comment-img" href="#"><img class="img-responsive" src="/viewSite/img/avtar6.jpg" alt=""></a>
                             <div class="comment-text">
                                 <h5><a href="#">درباره نویسنده</a></h5>
-                                <span>Paul Scrivens - Creative Head</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                <span>{{$article->user->description}}</span>
+                                <p>
+                                    @if(strlen($article->user->description)<=0)
+                                    {{'هیچ اطلاعاتی برای نمایش وجود ندارد'}}
+                                    @else
+                                    {{$article->user->description}}
+                                    @endif
+                                </p>
                             </div>
                         </div>
                         <!-- social media icon -->
@@ -141,61 +145,9 @@
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <div class="blog-comment-main">
-                        <div class="blog-comment">
-                            <a class="comment-img" href="#">
-                                <img class="img-responsive" src="/viewSite/img/blog-details-img5.jpg" alt="">
-                            </a>
-                            <div class="comment-text">
-                                <a class="title" href="#">Kristi Hines</a>
-                                <span>September 05th, 2015</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <a class="btn" href="#">Post Reply</a>
-                            </div>
-                        </div>
-                        <div class="sub-blog-comment">
-                            <a class="comment-img" href="#">
-                                <img class="img-responsive" src="/viewSite/img/blog-details-img6.jpg" alt="">
-                            </a>
-                            <div class="comment-text">
-                                <a class="title" href="#">Ray Michael</a>
-                                <span>September 05th, 2015</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <a class="btn" href="#">Post Reply</a>
-                            </div>
-                        </div>
-                        <div class="blog-comment">
-                            <a class="comment-img" href="#">
-                                <img class="img-responsive" src="/viewSite/img/avtar6.jpg" alt="">
-                            </a>
-                            <div class="comment-text">
-                                <a class="title" href="#">Kristi Hines</a>
-                                <span>September 05th, 2015</span>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <a class="btn" href="#">Post Reply</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="addcomment">
-                        <span>Leave a Comment</span>
-                        <div class="blog-comment-form">
-                            <form>
-                                <input type="text" class="form-control" placeholder="Name">
-                                <input type="text" class="form-control" placeholder="Email">
-                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                                <button class="btn btn-default" type="submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
+                    @include('Home.layout.comment',['comments'=>$comments,'subject'=>$article])
                 </div>
             </div>
         </div>
     </section>
-
-{{--            @include('Home.layout.comment',['comments'=>$comments,'subject'=>$article])--}}
-
-
-
-
-
 @endsection
