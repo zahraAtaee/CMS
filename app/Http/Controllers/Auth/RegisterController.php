@@ -65,6 +65,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        dd($data);
+
+        /*$imagesUrl=$this->uploadImages($request->file('images'));
+        auth()->user()->article()->create(array_merge($request->all(),['images'=>$imagesUrl]));*/
 
         return User::create([
             'name' => $data['name'],
