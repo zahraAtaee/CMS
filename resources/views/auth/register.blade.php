@@ -13,9 +13,9 @@
                 </div>
             </div>
             <div class="stiker panel panel-default">
-                <div class="panel-heading">ثبت نام</div>
+                {{--<div class="panel-heading">ثبت نام</div>--}}
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
@@ -57,21 +57,58 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">آدرس ایمیل</label>
+                        <div class="form-group{{ $errors->has('position') ? ' has-error' : '' }}">
+                            <label for="position" class="col-md-4 control-label">موقعیت</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="position" type="text" class="form-control" name="position" value="{{ old('position') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('position'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('position') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('birthday') ? ' has-error' : '' }}">
+                            <label for="birthday" class="col-md-4 control-label">تاریخ تولد</label>
 
+                            <div class="col-md-6">
+                                <input id="birthday" type="text" class="form-control" name="birthday" value="{{ old('birthday') }}" required autofocus>
+
+                                @if ($errors->has('birthday'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('birthday') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                            <label for="description" class="col-md-4 control-label">توضیحات</label>
+
+                            <div class="col-md-6">
+                                <input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>
+
+                                @if ($errors->has('description'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('images') ? ' has-error' : '' }}">
+                            <label for="images" class="col-md-4 control-label">تصویر</label>
+
+                            <div class="col-md-6">
+                                <input id="images" type="file" class="form-control" name="images" value="{{ old('images') }}" required autofocus>
+
+                                @if ($errors->has('images'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('images') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">آدرس ایمیل</label>
 
@@ -112,10 +149,10 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <a href="{{url('login/google')}}" class="btn btn-danger">ثبت نام با گوگل</a>
                                 <button type="submit" class="btn btn-primary">
                                     ثبت نام
                                 </button>
+                                <a href="{{url('login/google')}}" class="btn btn-danger">ثبت نام با گوگل</a>
                             </div>
                         </div>
                     </form>

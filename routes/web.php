@@ -48,11 +48,14 @@ Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web' ], 'prefix' =
     $this->resource('roles' , 'RoleController');
     $this->resource('permissions' , 'PermissionController');
 
-    $this->group(['prefix' => 'users'],function (){
-        $this->get('/' , 'UserController@index');
-        $this->resource('level' , 'LevelManageController' , ['parameters' => ['level' => 'user']]);
-        $this->delete('/{user}/destroy' , 'UserController@destroy')->name('users.destroy');
-    });
+
+        $this->resource('users','UserController');
+/*        $this->get('/' , 'UserController@index')->name('user.all');*/
+        $this->resource('users/level' , 'LevelManageController' , ['parameters' => ['level' => 'user']]);
+        /*$this->put('/{user}/edit' , 'UserController@edit')->name('users.edit');
+        $this->post('/create' , 'UserController@create')->name('users.create');
+        $this->delete('/{user}/destroy' , 'UserController@destroy')->name('users.destroy');*/
+
 });
 
 Route::group(['namespace' => 'Auth'] , function (){

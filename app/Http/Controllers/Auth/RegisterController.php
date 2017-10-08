@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Events\UserActivation;
+use App\Http\Controllers\Admin\AdminController;
 use App\User;
-use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class RegisterController extends Controller
+class RegisterController extends AdminController
 {
     /*
     |--------------------------------------------------------------------------
@@ -65,16 +65,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        dd($data);
+        $imagesUrl=$this->uploadImages($data['images']);
 
-        /*$imagesUrl=$this->uploadImages($request->file('images'));
-        auth()->user()->article()->create(array_merge($request->all(),['images'=>$imagesUrl]));*/
+
+       /* auth()->user()->article()->create(array_merge($request->all(),['images'=>$imagesUrl]));*/
 
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'api_token' => Str::random(60),
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'images'=>$imagesUrl,
+                'username'=> $data['username'],
+                'family'=> $data['family'],
+                'birthday'=> $data['birthday'],
+                'description'=> $data['description'],
+                'position'=> $data['position'],
+                'password' => bcrypt($data['password']),
+                'api_token' => Str::random(60)
         ]);
 
     }

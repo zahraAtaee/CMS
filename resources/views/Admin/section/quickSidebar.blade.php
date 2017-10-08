@@ -7,7 +7,7 @@
         <ul class="nav nav-tabs">
             <li class="active">
                 <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> کاربران
-                    <span class="badge badge-danger">2</span>
+                    <span class="badge badge-danger">{{count($user)}}</span>
                 </a>
             </li>
             <li>
@@ -45,16 +45,18 @@
                 <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
                     <h3 class="list-heading">کارکنان</h3>
                     <ul class="media-list list-items">
+                        @foreach($user as $value)
                         <li class="media">
                             <div class="media-status">
-                                <span class="badge badge-success">8</span>
+                                <span class="badge badge-success">{{count($value->comments)}}</span>
                             </div>
-                            <img class="media-object" src="/layouts/layout/img/avatar3.jpg" alt="...">
+                            <img class="media-object" src="{{$value->images['thumb']}}" alt="...">
                             <div class="media-body">
-                                <h4 class="media-heading">کوروش</h4>
-                                <div class="media-heading-sub"> مدیر پروژه </div>
+                                <h4 class="media-heading">{{$value->name}}</h4>
+                                <div class="media-heading-sub">{{$value->description}} </div>
                             </div>
                         </li>
+                        @endforeach
                         <li class="media">
                             <img class="media-object" src="/layouts/layout/img/avatar1.jpg" alt="...">
                             <div class="media-body">

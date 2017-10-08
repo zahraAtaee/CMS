@@ -15,7 +15,7 @@
                 <i class="fa fa-circle"></i>
             </li>
             <li>
-                <span> ایجاد دوره</span>
+                <span>ویرایش کاربران</span>
             </li>
         </ul>
         <div class="page-toolbar">
@@ -24,8 +24,7 @@
     </div>
     <!-- END PAGE BAR -->
     <!-- BEGIN PAGE TITLE-->
-    <h1 class="page-title"> درج دوره
-        <small>اطلاعات مورد نظر جهت درج این مطلب...</small>
+    <h1 class="page-title"> درج کاربران
     </h1>
     <!-- END PAGE TITLE-->
     <!-- END PAGE HEADER-->
@@ -50,82 +49,101 @@
                     </div>
                 </div>
                 <div class="portlet-body form">
-                    <form role="form"  action="{{route('courses.store')}}" method="post" enctype="multipart/form-data">
+                    <form role="form"  action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         @include('Admin.section.errors')
                         <div class="form-body">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group form-md-line-input has-success">
                                         <div class="input-icon">
-                                            <input type="text" class="form-control"  name="title"   >
-                                            <label for="form_control_1">عنوان دوره </label>
-                                            <span class="help-block">عنوان دوره را وارد کنید...</span>
-
+                                            <input type="text" class="form-control"  name="username"   >
+                                            <label for="username">نام کاربری </label>
+                                            <span class="help-block">نام کاربری را وارد کنید...</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group form-md-line-input has-success">
-                                        <select name="type" id="type" class="form-control">
-                                            <option value="VIP">اعضای ویژه</option>
-                                            <option value="cash">نقدی</option>
-                                            <option value="free">رایگان</option>
-                                        </select>
-                                        <label for="lang" class="control-label">نوع دوره</label>
-
+                                        <input type="text" class="form-control"  name="name"   >
+                                        <label for="name">نام</label>
+                                        <span class="help-block">نام را وارد کنید...</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <input type="text" class="form-control"  name="family"   >
+                                        <label for="family">خانوادگی </label>
+                                        <span class="help-block">خانوادگی را وارد کنید...</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control"  name="birthday"   >
+                                            <label for="birthday">تاریخ تولد</label>
+                                            <span class="help-block">تاریخ تولد را وارد کنید...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control"  name="position"   >
+                                            <label for="position">موقعیت </label>
+                                            <span class="help-block">موقعیت را وارد کنید...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control"  name="email"   >
+                                            <label for="email">ایمیل </label>
+                                            <span class="help-block">ایمیل را وارد کنید...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <input type="password" class="form-control"  name="password" >
+                                            <label for="password"> رمز عبور</label>
+                                            <span class="help-block">رمز عبور را وارد کنید...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <input type="password" class="form-control"  name="repassword" >
+                                            <label for="password"> تکرار رمز عبور</label>
+                                            <span class="help-block">تکرار رمز عبور را وارد کنید...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control"  name="description"   >
+                                            <label for="description">توضیحات </label>
+                                            <span class="help-block">توضیحات را وارد کنید...</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group form-md-line-input has-success">
                                         <div class="input-icon">
-                                            <textarea class="form-control"  rows="2" name="description" id="description"-></textarea>
-                                            <label for="description">توضیحات</label>
-                                            <span class="help-block">توضیحات دوره را وارد کنید...</span>
+                                            <label for="images" class="control-label">تصویر کاربر </label>
+                                            <input type="file" class="form-control" name="images" id="images" placeholder="تصویر کاربر  را وارد کنید" value="{{old('images')}}" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group form-md-line-input has-success">
-                                        <div class="input-icon">
-                                            <textarea class="form-control"  rows="5" name="body" id="body"></textarea>
-                                            <label for="body"> متن</label>
-                                            <span class="help-block">متن دوره را وارد کنید...</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group form-md-line-input has-success">
-                                        <div class="input-icon">
-                                            <label for="images" class="control-label">تصویر دوره</label>
-                                            <input type="file" class="form-control" name="images" id="images" placeholder="تصویر دوره را وارد کنید"  />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group form-md-line-input has-success">
-                                        <div class="input-icon">
-                                            <label for="tags" class="control-label ">تگ ها</label>
-                                            <input type="text" name="tags" id="tags" class="form-control input-large" data-role="tagsinput" style="display: none;" >
-                                            <span class="help-block">تگ های دوره را وارد کنید...</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group form-md-line-input has-success">
-                                        <div class="input-icon">
-                                            <label for="price" class="control-label">قیمت</label>
-                                            <input type="text" class="form-control" name="price" id="price" >
-                                            <span class="help-block">قیمت (تومان) دوره را وارد کنید...</span>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                         <div class="form-actions noborder">
                             <button type="submit" class="btn blue">ارسال</button>
-                            <button type="button" class="btn default">انصراف</button>
+                            <a href="{{route('users.index')}}" class="btn default">انصراف</a>
                         </div>
                     </form>
                 </div>

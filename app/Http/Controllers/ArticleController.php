@@ -19,8 +19,12 @@ class ArticleController extends Controller
             ->with(['comments'=>function($query){
                 $query->approved=1;
             }])->get();
+//        if (\Gate::allows('show-aricle',$article)){
+            return view('Home.article',compact('article','comments'));
 
-        return view('Home.article',compact('article','comments'));
+        /*}
+        abort(403,'not access');*/
+
     }
 
 
@@ -28,3 +32,5 @@ class ArticleController extends Controller
 /* $CommentsChild = $article->comments()->withCount(['comments','comments AS pending_comments'=>function($query){
             $query->where('approved', false);
         }])->latest()->get();*/
+
+

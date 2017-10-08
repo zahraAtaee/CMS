@@ -14,11 +14,7 @@
                 </li>
             </ul>
             <div class="page-toolbar">
-                <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
-                    <i class="icon-calendar"></i>&nbsp;
-                    <span class="thin uppercase hidden-xs"></span>&nbsp;
-                    <i class="fa fa-angle-down"></i>
-                </div>
+               @include('Admin.section.pageTools')
             </div>
         </div>
         <!-- END PAGE BAR -->
@@ -323,7 +319,6 @@
                                 <!-- BEGIN:Completed-->
                                 <div class="mt-actions">
                                     @foreach($commentsActive as $comment)
-
                                     <div class="mt-action">
                                         <div class="mt-action-img">
                                             <img src="/pages/media/users/avatar1.jpg" /> </div>

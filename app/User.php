@@ -2,13 +2,14 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable,HasRole,HasApiTokens ;
+    use Notifiable,HasRole,HasApiTokens,Sluggable ;
 
     protected $table = 'users';
     protected $primaryKey = 'id';
@@ -18,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','active','g-recaptcha-response','api_token'
+        'name', 'email', 'password','active','g-recaptcha-response','api_token','username','family','birthday','description','images','position'
     ];
 
     /**
@@ -28,6 +29,25 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token','api_token'
+    ];
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'username'
+            ]
+        ];
+    }
+
+    public function path()
+    {
+        $local=app()->getLocale();
+        return "/$local/register/$this->slug";
+    }
+
+    protected $casts=[
+        'images'=>'array'
     ];
 
     public function activationCode()

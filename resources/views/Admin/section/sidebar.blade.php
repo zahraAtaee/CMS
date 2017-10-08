@@ -182,9 +182,9 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="page_user_profile_1.html" class="nav-link ">
+                        <a href="{{route('users.index')}}" class="nav-link ">
                             <i class="icon-user"></i>
-                            <span class="title">پروفایل 1</span>
+                            <span class="title">لیست کاربران</span>
                         </a>
                     </li>
                     <li class="nav-item  ">

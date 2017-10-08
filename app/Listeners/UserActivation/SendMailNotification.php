@@ -27,6 +27,6 @@ class SendMailNotification
      */
     public function handle(UserActivation $event)
     {
-//        Mail::to($event->user)->send(new ActivationUserAccount($event->user,$event->activationCode));
+        Mail::to($event->user)->send(new ActivationUserAccount($event->user,$event->activationCode));
     }
 }

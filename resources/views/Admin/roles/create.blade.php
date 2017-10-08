@@ -1,44 +1,136 @@
 @extends('Admin.master')
+@section('style')
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+    <link href="/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+@endsection
+@section('content')
+    <!-- BEGIN PAGE HEADER-->
+    <!-- BEGIN PAGE BAR -->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="index.html">خانه</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <span> ایجاد نقش</span>
+            </li>
+        </ul>
+        <div class="page-toolbar">
+           @include('Admin.section.pageTools')
+        </div>
+    </div>
+    <!-- END PAGE BAR -->
+    <!-- BEGIN PAGE TITLE-->
+    <h1 class="page-title"> درج نقش
+    </h1>
+    <!-- END PAGE TITLE-->
+    <!-- END PAGE HEADER-->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE FORM PORTLET-->
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-red-sunglo">
+                        <span class="caption-subject bold uppercase"> </span>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-circle btn-icon-only blue" href="javascript:;">
+                            <i class="icon-cloud-upload"></i>
+                        </a>
+                        <a class="btn btn-circle btn-icon-only green" href="javascript:;">
+                            <i class="icon-wrench"></i>
+                        </a>
+                        <a class="btn btn-circle btn-icon-only red" href="javascript:;">
+                            <i class="icon-trash"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <form class="form-horizontal" action="{{route('roles.store')}}" method="post" enctype="multipart/form-data">
+                        {{csrf_field()}}
+                        @include('Admin.section.errors')
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control"  name="title"   >
+                                            <label for="form_control_1">عنوان نقش </label>
+                                            <span class="help-block">عنوان نقش را وارد کنید...</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1"></div>
+
+                                <div class="col-md-5">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <label for="permission_id" class="control-label">سطوح دسترسی</label>
+                                        <select  name="permission_id[]" id="permission_id" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                            @foreach($permissions as $permission)
+                                                <option value="{{$permission->id}}">{{$permission->name}}-{{$permission->label}}</option>
+                                            @endforeach
+                                        </select>
+                                       {{-- <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button" data-select2-open="multi-append">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>--}}
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-md-line-input has-success">
+                                        <div class="input-icon">
+                                            <textarea class="form-control"  rows="2" name="label" id="label"-></textarea>
+                                            <label for="label">توضیحات</label>
+                                            <span class="help-block">توضیحات  را وارد کنید...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions noborder">
+                            <button type="submit" class="btn blue">ارسال</button>
+                            <button type="button" class="btn default">انصراف</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END SAMPLE FORM PORTLET-->
+        </div>
+    </div>
+@endsection
 @section('script')
+    <script src="/ckeditor/ckeditor.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js" type="text/javascript"></script>
+    <script src="/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+    <script src="/global/plugins/typeahead/typeahead.bundle.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="/pages/scripts/components-bootstrap-tagsinput.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="/pages/scripts/components-select2.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
     <script>
+        CKEDITOR.replace('body',{
+            filebrowserUpload:'/admin/panel/upload-image',
+            filebrowserImageUploadUrl:'/admin/panel/upload-image'
+        });
         $(document).ready(function () {
             $('#permission_id').selectpicker();
         })
     </script>
-@endsection
-@section('content')
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-       <div class="page-header head-section">
-           <h2>  مقام ها</h2>
-           <a href="{{route('roles.create')}}" class="btn btn-sm btn-primary">ارسال مقام</a>
-       </div>
-        <form class="form-horizontal" action="{{route('roles.store')}}" method="post" enctype="multipart/form-data">
-            {{csrf_field()}}
-            @include('Admin.section.errors')
-            <div class="form-group">
-                <div class="col-md-6">
-                    <label for="name" class="control-label">عنوان مقام</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="عنوان مقام" value="{{old('name')}}">
-                </div>
-                <div class="col-sm-6">
-                    <label for="permission_id" class="control-label">سطوح دسترسی</label>
-                    <select type="text" class="form-control" name="permission_id[]" id="permission_id" multiple="multiple">
-                        @foreach($permissions as $permission)
-                            <option value="{{$permission->id}}">{{$permission->name}}-{{$permission->label}}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="description" class="control-label">توضیحات کوتاه</label>
-                <textarea class="form-control" rows="5" name="label" id="label" placeholder="توضیحات را وارد کنید" >{{old('label')}}</textarea>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <button type="submit" class="btn btn-danger">ارسال</button>
-                </div>
-            </div>
-        </form>
-    </div>
 @endsection

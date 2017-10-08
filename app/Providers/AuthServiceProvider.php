@@ -26,6 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('show-aricle',function ($user,$article){
+            return $user->id==$article->user_id;
+        });
         Passport::routes();
     }
 }

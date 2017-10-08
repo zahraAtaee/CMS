@@ -312,8 +312,8 @@
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle" src="/layouts/layout/img/avatar3_small.jpg" />
-                        <span class="username username-hide-on-mobile"> حسام </span>
+                        <img alt="" class="img-circle" src="{{auth()->user()->images['thumb']}}" />
+                        <span class="username username-hide-on-mobile">{{auth()->user()->name}}</span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">

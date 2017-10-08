@@ -4,12 +4,12 @@
         <span>ثبت نظر</span>
         @include ('Home.layout.errors')
         <div class="blog-comment-form">
-            <form role="form" method="post" action="/comment">
+            <form role="form" method="post" action="/fa/comment">
                 {{csrf_field()}}
                 <input type="hidden" name="parent_id" value="0"/>
                 <input type="hidden"  name="commentable_id" value="{{$subject->id}}">
                 <input type="hidden"  name="commentable_type" value="{{get_class($subject)}}">
-                <textarea class="form-control" rows="3" placeholder="متن پیام"></textarea>
+                <textarea class="form-control" rows="3" placeholder="متن پیام" name="comment"></textarea>
                 <button class="btn btn-default" type="submit">ارسال نظر</button>
             </form>
         </div>

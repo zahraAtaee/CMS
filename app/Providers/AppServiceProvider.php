@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Comment;
 use App\Payment;
+use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
@@ -28,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
             $commentUnsuccess=Comment::where('approved',0)->count();
 
             $paymentSuccess  =Payment::wherePayment(1)->count();
+
             $paymentUnsuccess=Payment::wherePayment(0)->count();
             $view->with
             ([
@@ -35,6 +37,14 @@ class AppServiceProvider extends ServiceProvider
                     'commentUnsuccess'   =>$commentUnsuccess,
                     'paymentSuccess'     =>$paymentSuccess,
                     'paymentUnsuccess'   =>$paymentUnsuccess,
+            ]);
+        });
+        view()->composer('Admin.section.quickSidebar',function($view){
+
+            $user  =User::whereActive(1)->get();
+            $view->with
+            ([
+                    'user'     =>$user,
             ]);
         });
 

@@ -36,9 +36,10 @@ class PanelController extends Controller
         $feedback=Comment::Approved(false)->count();
 
 
+        $user=User::all();
         $userCount=User::count();
-
-        return view('Admin.panel',compact('lables','values','commentsActive','commentsDeActive','orders','sumPrice','tax','feedback','userCount'));
+//dd($user[0]->comments);
+        return view('Admin.panel',compact('user','lables','values','commentsActive','commentsDeActive','orders','sumPrice','tax','feedback','userCount'));
     }
 
     public function uploadImageSubject()
