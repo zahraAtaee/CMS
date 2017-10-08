@@ -18,7 +18,6 @@ class RoleController extends Controller
     public function index()
     {
         $roles=Role::latest()->paginate(20);
-//        dd($roles[0]->permissions());
         return view('Admin.roles.all',compact('roles'));
     }
 
@@ -73,8 +72,8 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Role  $role
+     * @param RoleRequest|Request $request
+     * @param  \App\Role $role
      * @return \Illuminate\Http\Response
      */
     public function update(RoleRequest $request, Role $role)

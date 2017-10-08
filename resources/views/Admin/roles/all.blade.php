@@ -67,7 +67,11 @@
                             <tr>
                                 <td>{{$role->name}}</td>
                                 <td>{{$role->label}}</td>
-                                <td></td>
+                                <td>
+                                    @foreach ($role->permissions as $permission)
+                                     {{$permission->name}}::
+                                    @endforeach
+                                </td>
                                 <td>
                                     <form action="{{route('roles.destroy',['id'=>$role->id])}}" method="post">
                                         {{csrf_field()}}
@@ -78,7 +82,6 @@
                                         </div>
                                     </form>
                                 </td>
-
                             </tr>
                         @endforeach
                         </tbody>
