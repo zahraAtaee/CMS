@@ -3,10 +3,10 @@
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <link href="/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
     <link href="/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" rel="stylesheet" type="text/css" />
-    <link href="/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
 @endsection
 @section('content')
+
     <!-- BEGIN PAGE HEADER-->
     <!-- BEGIN PAGE BAR -->
     <div class="page-bar">
@@ -25,8 +25,8 @@
     </div>
     <!-- END PAGE BAR -->
     <!-- BEGIN PAGE TITLE-->
-    <h1 class="page-title"> کاربران سیستم
-        <small>لیست کاربران ...</small>
+    <h1 class="page-title"> کاربران
+        <small>لیست کاربران سیستم ....</small>
     </h1>
     <!-- END PAGE TITLE-->
     <!-- END PAGE HEADER-->
@@ -36,12 +36,11 @@
             <div class="portlet light bordered">
                 <div class="portlet-title">
                     <div class="caption font-dark">
-                        <i class="icon-settings font-dark"></i>
                         <div class="btn-group btn-group-circle btn-group ">
-                                <a href="{{route('roles.index')}}" class="btn btn-sm btn-danger">سطوح دسترسی</a>
-                                <a href="{{route('level.index')}}" class="btn btn-sm btn-info">کاربران مدیریت  </a>
-                                <a href="{{route('users.create')}}" class="btn btn-sm btn-primary">کاربر جدید</a>
-                        </span>
+                            <a href="{{route('roles.index')}}" class="btn btn-sm btn-danger">سطوح دسترسی</a>
+                            <a href="{{route('level.index')}}" class="btn btn-sm btn-info">کاربران مدیریت  </a>
+                            <a href="{{route('users.create')}}" class="btn btn-sm btn-primary">کاربر جدید</a>
+                        </div>
                     </div>
                     <div class="tools"> </div>
                 </div>

@@ -49,9 +49,10 @@ Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web' ], 'prefix' =
     $this->resource('permissions' , 'PermissionController');
 
 
-        $this->resource('users','UserController');
+    $this->resource('users','UserController');
 /*        $this->get('/' , 'UserController@index')->name('user.all');*/
-        $this->resource('users/level' , 'LevelManageController' , ['parameters' => ['level' => 'user']]);
+//    $this->resource('users/level','LevelManageController');
+    $this->resource('user/level','LevelManageController', ['parameters' => ['level' => 'user']]);
         /*$this->put('/{user}/edit' , 'UserController@edit')->name('users.edit');
         $this->post('/create' , 'UserController@create')->name('users.create');
         $this->delete('/{user}/destroy' , 'UserController@destroy')->name('users.destroy');*/

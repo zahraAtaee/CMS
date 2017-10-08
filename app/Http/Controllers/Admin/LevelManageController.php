@@ -17,6 +17,7 @@ class LevelManageController extends Controller
      */
     public function index()
     {
+
         $roles=Role::latest()->with('users')->paginate('25');
 
         return view('Admin.levelAdmins.all',compact('roles'));
@@ -39,7 +40,7 @@ class LevelManageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param LevelManageRequest|Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(LevelManageRequest $request)
@@ -64,8 +65,9 @@ class LevelManageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param User $user
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
     public function edit(User $user)
     {
@@ -78,13 +80,13 @@ class LevelManageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param LevelManageRequest|Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(LevelManageRequest $request, $id)
     {
-        //
+        return redirect('users.index');
     }
 
     /**

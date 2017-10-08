@@ -1,10 +1,6 @@
 @extends('Admin.master')
 @section('style')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <link href="/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
-    <link href="/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.css" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL PLUGINS -->
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
     <link href="/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
     <link href="/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
@@ -61,8 +57,8 @@
                                 <div class="col-md-5">
                                     <div class="form-group form-md-line-input has-success">
                                         <div class="input-icon">
-                                            <input type="text" class="form-control"  name="title"   >
-                                            <label for="form_control_1">عنوان نقش </label>
+                                            <input type="text" class="form-control"  name="name"   >
+                                            <label for="name">عنوان نقش </label>
                                             <span class="help-block">عنوان نقش را وارد کنید...</span>
 
                                         </div>
@@ -73,17 +69,11 @@
                                 <div class="col-md-5">
                                     <div class="form-group form-md-line-input has-success">
                                         <label for="permission_id" class="control-label">سطوح دسترسی</label>
-                                        <select  name="permission_id[]" id="permission_id" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                                        <select  name="permission_id[]" multiple id="permission_id" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                             @foreach($permissions as $permission)
                                                 <option value="{{$permission->id}}">{{$permission->name}}-{{$permission->label}}</option>
                                             @endforeach
                                         </select>
-                                       {{-- <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button" data-select2-open="multi-append">
-                                                <span class="glyphicon glyphicon-search"></span>
-                                            </button>
-                                        </span>--}}
-
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -99,7 +89,7 @@
                         </div>
                         <div class="form-actions noborder">
                             <button type="submit" class="btn blue">ارسال</button>
-                            <button type="button" class="btn default">انصراف</button>
+                            <a href="{{route('roles.index')}}" class="btn default">انصراف</a>
                         </div>
                     </form>
                 </div>
@@ -109,28 +99,11 @@
     </div>
 @endsection
 @section('script')
-    <script src="/ckeditor/ckeditor.js"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <script src="/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js" type="text/javascript"></script>
-    <script src="/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
-    <script src="/global/plugins/typeahead/typeahead.bundle.min.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL PLUGINS -->
-    <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    <script src="/pages/scripts/components-bootstrap-tagsinput.min.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL SCRIPTS -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script src="/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="/pages/scripts/components-select2.min.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL SCRIPTS -->
-    <script>
-        CKEDITOR.replace('body',{
-            filebrowserUpload:'/admin/panel/upload-image',
-            filebrowserImageUploadUrl:'/admin/panel/upload-image'
-        });
-        $(document).ready(function () {
-            $('#permission_id').selectpicker();
-        })
-    </script>
+
 @endsection
