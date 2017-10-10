@@ -19,10 +19,11 @@ trait HasRole
 
     public function hasRole($role)
     {
+
          if(is_string($role)){
              return $this->roles->contains('name',$role);
          }
-
+//        dd($this->roles);
         /*foreach ($role as $r)
          {
              if($this->hasRole($r->name)){

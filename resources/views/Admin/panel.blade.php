@@ -274,7 +274,7 @@
                                     @foreach($commentsDeActive as $comment)
                                     <div class="mt-action">
                                         <div class="mt-action-img">
-                                            <img src="/pages/media/users/avatar10.jpg" /> </div>
+                                            <img class="img-circle imagePanel"  src="{{$comment->user->images['thumb']}}" /> </div>
                                         <div class="mt-action-body">
                                             <div class="mt-action-row">
                                                 <div class="mt-action-info ">

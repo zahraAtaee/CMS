@@ -19,6 +19,7 @@
 <link href="/layouts/layout/css/layout-rtl.min.css" rel="stylesheet" type="text/css" />
 <link href="/layouts/layout/css/themes/darkblue-rtl.min.css" rel="stylesheet" type="text/css" id="style_color" />
 <link href="/layouts/layout/css/custom-rtl.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/themeAdminPanel.css" rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 <link rel="stylesheet" type="text/css" href="/css/sweetalert.css" />
 @yield('style')

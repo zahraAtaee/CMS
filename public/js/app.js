@@ -27554,6 +27554,7 @@ Echo.private('articles.admin').listen('ArticleEvent', function (e) {
 
 $('#sendCommentModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
+    console.log(button);
     var parentId = button.data('parent');
     var modal = $(this);
     modal.find("[name='parent_id']").val(parentId);

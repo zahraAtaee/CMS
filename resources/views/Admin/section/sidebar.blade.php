@@ -51,6 +51,7 @@
             <li class="heading">
                 <h3 class="uppercase">امکانات</h3>
             </li>
+{{--            @can('edit-course')--}}
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-layers"></i>
@@ -70,6 +71,8 @@
                     </li>
                 </ul>
             </li>
+            {{--@endcan--}}
+            {{--@can('view')--}}
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-puzzle"></i>

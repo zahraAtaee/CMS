@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Article;
+use App\Permission;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Laravel\Passport\Passport;
@@ -14,7 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        \App\Article::class => \App\Policies\articlePolicy::class,
     ];
 
     /**
@@ -26,9 +28,20 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('show-aricle',function ($user,$article){
-            return $user->id==$article->user_id;
-        });
+        foreach ($this->getPermission() as $permission) {
+
+            Gate::define($permission->name,function ($user) use($permission){
+
+                return $user->hasRole($permission->roles);
+            });
+
+        }
+
         Passport::routes();
+    }
+
+    protected function getPermission()
+    {
+        return Permission::with('roles')->get();
     }
 }

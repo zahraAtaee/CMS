@@ -17,8 +17,9 @@ class PanelController extends Controller
 
     public function index()
     {
-//        auth()->loginUsingId(1);
-
+        //dd(app()->router->getRoutes());
+        //auth()->loginUsingId(1);
+        //dd(auth()->user()->hasRole(Permission::whereLabel('edit-course')->first()->roles));
         $month=12;
         $paymentSuccess=Payment::spaningPayment($month,true);
         $paymentUnSuccess=Payment::spaningPayment($month,false);
@@ -38,7 +39,6 @@ class PanelController extends Controller
 
         $user=User::all();
         $userCount=User::count();
-//dd($user[0]->comments);
         return view('Admin.panel',compact('user','lables','values','commentsActive','commentsDeActive','orders','sumPrice','tax','feedback','userCount'));
     }
 
