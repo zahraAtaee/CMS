@@ -21,7 +21,7 @@
 @endif
 <!-- Posted Comments -->
 <br/><br/>
-<div class="blog-comment-main">
+<div class="blog-comment-main" style="direction: rtl">
     @foreach($comments as $comment)
     <div class="blog-comment">
         <a class="comment-img" href="#" >
@@ -38,7 +38,7 @@
             @foreach($comment->comments as $child)
                 <div class="sub-blog-comment">
                     <a class="comment-img" href="#">
-                        <img class="img-responsive" src="{{$comment->user->images['thumb']}}" alt="">
+                        <img class="img-responsive" src="{{$child->user->images['thumb']}}" alt="">
                     </a>
                     <div class="comment-text">
                         <a class="title" href="#">{{$child->user->name}}</a>

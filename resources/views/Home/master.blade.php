@@ -16,7 +16,7 @@
 
 @include("Home.section.header")
 
-<div class="wrapper">
+<div id="app" class="wrapper">
 
     @yield('content')
 
@@ -26,6 +26,7 @@
 {{--<script src="/js/viewSite.js"></script>
 @include("Home.section.blog")--}}
 
+<script src="/js/app.js"></script>
 <script src="/viewSite/js/jquery-1.11.3.min.js"></script>
 <script src="/viewSite/js/bootstrap.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB5bKr7r4KJkvlApP-suXOTT-4J3Tp-Vek&amp;sensor=true"></script>
