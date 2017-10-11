@@ -26,8 +26,8 @@ Route::get('telegram','TelegramController@telegram');
 Route::post('/396603472:AAGLckyApu-oMnURzd59DgNXbsCqFhgPjHA/webhook' , 'TelegramController@webhook');
 
 Route::group(['middleware' => 'auth:web'] , function () {
-    $this->post('/course/payment' , 'CourseController@payment');
-    $this->get('/course/payment/checker' , 'CourseController@checker');
+    $this->post('/course/payment' , 'PaymentController@payment');
+    $this->get('/course/payment/checker' , 'PaymentController@checker');
 });
 
 Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web','checkAdmin'], 'prefix' => 'admin'],function (){

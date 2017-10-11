@@ -53,12 +53,12 @@ class Course extends Model
        'tags','images'];
 
 
-    /*public function setBodyAttribute($value)
+    public function setBodyAttribute($value)
     {
 
         $this->attributes['description']=str_limit(preg_replace('/<[^>]*>/','',$value),200);
         $this->attributes['body']=$value;
-    }*/
+    }
 
 
     public function episodes()
@@ -71,5 +71,9 @@ class Course extends Model
         return $this->morphMany(Comment::class, 'commentable');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

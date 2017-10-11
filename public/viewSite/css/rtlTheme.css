@@ -14,3 +14,12 @@
 .pageRtl{
     direction: rtl;
 }
+.textAlign
+{
+    text-align: justify;
+}
+.textAlignTitle
+{
+    text-align: right !important;
+}
+
