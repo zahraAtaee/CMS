@@ -25,7 +25,7 @@
                     @include('Home.layout.aboutMe',['widget'=>$course])
 
                     @if(auth()->check() && auth()->user()->checkLearning($course)==0)
-                        @include('Home.layout.shoppingCart',['widget'=>$course,'url'=>'/course/payment'])
+                        @include('Home.layout.shoppingCart',['widget'=>$course,'url'=>'payment.course'])
                     @endif
 
                     @include('Home.layout.popularPost')
