@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title">
-                    <h2>بهترین خدمات ما</h2>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  <br> و با استفاده از طراحان گرافیک است.</p>
+                    <h2>{{__('messages.services.title')}}</h2>
+                    <p>{{__('messages.services.description')}}</p>
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
                     <div class="icon-box">
                         <i class="ion-easel"></i>
                     </div>
-                    <h4 class="wow fadeInUp" data-wow-delay=".3s">طراحی تعاملی</h4>
+                    <h4 class="wow fadeInUp" data-wow-delay=".3s">{{__('messages.services.item1')}}</h4>
                     <p class="wow fadeInUp" data-wow-delay=".5s">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <br> و با استفاده از طراحان گرافیک است.  <br> حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد</p>
                 </div>
             </div>

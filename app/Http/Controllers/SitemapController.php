@@ -17,13 +17,13 @@ class SitemapController extends Controller
             $articles=Article::latest()->get();
             foreach ($articles as $article)
             {
-                $sitemap->add(url()->to($article->path()),$article->create_at, '1.0', 'weekly');
+                $sitemap->addSitemap(url()->to($article->path()));
             }
 
 
         }
 
-        return $sitemap->render();
+        return $sitemap->render('sitemapindex');
     }
 
     public function articles()

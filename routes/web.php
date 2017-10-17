@@ -28,9 +28,19 @@ Route::post('/396603472:AAGLckyApu-oMnURzd59DgNXbsCqFhgPjHA/webhook' , 'Telegram
 Route::group(['middleware' => 'auth:web'] , function () {
     $this->post('/course/payment' , 'PaymentController@payment')->name('payment.course');
     $this->get('/course/payment/checker' , 'PaymentController@checker');
+
+    $this->group(['prefix'=>'/user/panel'],function (){
+
+        $this->get('/','UserPanelController@index')->name('user.panel');
+        $this->get('/history','UserPanelController@history')->name('user.panel.history');
+        $this->get('/vip','UserPanelController@vip')->name('user.panel.vip');
+        $this->get('/payment','UserPanelController@payment')->name('user.panel.payment');
+        $this->get('/checker','UserPanelController@checker')->name('user.panel.checker');
+    });
 });
 
 Route::group(['namespace' => 'Admin' , 'middleware' => ['auth:web','checkAdmin'], 'prefix' => 'admin'],function (){
+
     $this->get('/panel' , 'PanelController@index')->name('admin.panel');
     $this->post('/panel/upload-image' , 'PanelController@uploadImageSubject');
     $this->resource('articles' , 'ArticleController');
