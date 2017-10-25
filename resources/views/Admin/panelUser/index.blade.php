@@ -16,87 +16,7 @@
 @section('content')
     <!-- BEGIN PAGE HEADER-->
     <!-- BEGIN THEME PANEL -->
-    {{--<div class="theme-panel hidden-xs hidden-sm">
-        <div class="toggler"> </div>
-        <div class="toggler-close"> </div>
-        <div class="theme-options">
-            <div class="theme-option theme-colors clearfix">
-                <span> رنگ تم </span>
-                <ul>
-                    <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
-                    <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="Dark Blue"> </li>
-                    <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
-                    <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
-                    <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
-                    <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true" data-original-title="Light 2"> </li>
-                </ul>
-            </div>
-            <div class="theme-option">
-                <span> استایل تم </span>
-                <select class="layout-style-option form-control input-sm">
-                    <option value="square" selected="selected">گوشه های مربعی</option>
-                    <option value="rounded">گوشه های انحنادار</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> طرح بندی </span>
-                <select class="layout-option form-control input-sm">
-                    <option value="fluid" selected="selected">Fluid</option>
-                    <option value="boxed">Boxed</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> هدر </span>
-                <select class="page-header-option form-control input-sm">
-                    <option value="fixed" selected="selected">ثابت</option>
-                    <option value="default">پیش فرض</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> منوی بالای کرکره ای </span>
-                <select class="page-header-top-dropdown-style-option form-control input-sm">
-                    <option value="light" selected="selected">روشن</option>
-                    <option value="dark">تیره</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> حالت سایدبار </span>
-                <select class="sidebar-option form-control input-sm">
-                    <option value="fixed">ثابت</option>
-                    <option value="default" selected="selected">پیش فرض</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> منو سایدبار </span>
-                <select class="sidebar-menu-option form-control input-sm">
-                    <option value="accordion" selected="selected">آکاردئون</option>
-                    <option value="hover">هاوور</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> استایل سایدبار </span>
-                <select class="sidebar-style-option form-control input-sm">
-                    <option value="default" selected="selected">پیش فرض</option>
-                    <option value="light">روشن</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> مکان سایدبار </span>
-                <select class="sidebar-pos-option form-control input-sm">
-                    <option value="left" selected="selected">چپ</option>
-                    <option value="right">راست</option>
-                </select>
-            </div>
-            <div class="theme-option">
-                <span> فوتر </span>
-                <select class="page-footer-option form-control input-sm">
-                    <option value="fixed">ثابت</option>
-                    <option value="default" selected="selected">پیش فرض</option>
-                </select>
-            </div>
-        </div>
-    </div>--}}
-    <!-- END THEME PANEL -->
+
     <!-- BEGIN PAGE BAR -->
     <div class="page-bar">
 
@@ -146,7 +66,7 @@
                                     <a href="javascript:;"> پروژه ها </a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;"> پیغام ها
+                                    <a href="#comments"> پیغام ها
                                         <span> 3 </span>
                                     </a>
                                 </li>
@@ -168,22 +88,33 @@
                                     </p>
                                     <ul class="list-inline">
                                         <li>
-                                            <i class="fa fa-map-marker"></i> Spain </li>
+                                            <i class="fa fa-map-marker"></i> تهران </li>
                                         <li>
-                                            <i class="fa fa-calendar"></i> 18 Jan 1982 </li>
+                                            <i class="fa fa-calendar"></i>   {{jDate::forge(now())->format('%B %d، %Y')}} </li>
                                         <li>
-                                            <i class="fa fa-briefcase"></i> Design </li>
+                                            <i class="fa fa-briefcase"></i> طراح </li>
                                         <li>
-                                            <i class="fa fa-star"></i> Top Seller </li>
+                                            <i class="fa fa-star"></i>
+                                           {{-- @if(user()->upgradeLevels())
+
+
+                                                {{'عضویت ویژه'}}
+
+                                            @else
+
+                                                {{' ارتقا حساب کاربری '}}
+
+                                            @endif--}}
+                                        </li>
                                         <li>
-                                            <i class="fa fa-heart"></i> BASE Jumping </li>
+                                            <i class="fa fa-heart"></i> لایک </li>
                                     </ul>
                                 </div>
                                 <!--end col-md-8-->
                                 <div class="col-md-4">
                                     <div class="portlet sale-summary">
                                         <div class="portlet-title">
-                                            <div class="caption font-red sbold"> Sales Summary </div>
+                                            <div class="caption font-red sbold"> خلاصه فروش </div>
                                             <div class="tools">
                                                 <a class="reload" href="javascript:;"> </a>
                                             </div>
@@ -191,19 +122,19 @@
                                         <div class="portlet-body">
                                             <ul class="list-unstyled">
                                                 <li>
-                                                                        <span class="sale-info"> TODAY SOLD
+                                                                        <span class="sale-info"> امروز
                                                                             <i class="fa fa-img-up"></i>
                                                                         </span>
                                                     <span class="sale-num"> 23 </span>
                                                 </li>
                                                 <li>
-                                                                        <span class="sale-info"> WEEKLY SALES
+                                                                        <span class="sale-info"> فروش هفته
                                                                             <i class="fa fa-img-down"></i>
                                                                         </span>
                                                     <span class="sale-num"> 87 </span>
                                                 </li>
                                                 <li>
-                                                    <span class="sale-info"> TOTAL SOLD </span>
+                                                    <span class="sale-info"> کل فروش </span>
                                                     <span class="sale-num"> 2377 </span>
                                                 </li>
                                             </ul>
@@ -219,112 +150,19 @@
                                         <a href="#tab_1_11" data-toggle="tab">آخرین سفارشات   </a>
                                     </li>
                                     <li>
-                                        <a href="#tab_1_22" data-toggle="tab"> پیغام ها  </a>
+                                        <a href="#tab_1_22" data-toggle="tab">فعالیت ها  </a>
+                                    </li>
+                                    <li>
+                                        <a href="#comments" data-toggle="tab"> گفتگو ها  </a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab_1_11">
-                                        <div class="portlet-body">
-                                            <table class="table table-striped table-bordered table-advance table-hover">
-                                                <thead>
-                                                <tr>
-                                                    <th>
-                                                        <i class="fa fa-briefcase"></i> Company </th>
-                                                    <th class="hidden-xs">
-                                                        <i class="fa fa-question"></i> Descrition </th>
-                                                    <th>
-                                                        <i class="fa fa-bookmark"></i> Amount </th>
-                                                    <th> </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;"> Pixel Ltd </a>
-                                                    </td>
-                                                    <td class="hidden-xs"> Server hardware purchase </td>
-                                                    <td> 52560.10$
-                                                        <span class="label label-success label-sm"> Paid </span>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;"> Smart House </a>
-                                                    </td>
-                                                    <td class="hidden-xs"> Office furniture purchase </td>
-                                                    <td> 5760.00$
-                                                        <span class="label label-warning label-sm"> درانتظار </span>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;"> FoodMaster Ltd </a>
-                                                    </td>
-                                                    <td class="hidden-xs"> Company Anual Dinner Catering </td>
-                                                    <td> 12400.00$
-                                                        <span class="label label-success label-sm"> Paid </span>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;"> WaterPure Ltd </a>
-                                                    </td>
-                                                    <td class="hidden-xs"> Payment for Jan 2013 </td>
-                                                    <td> 610.50$
-                                                        <span class="label label-danger label-sm"> از کار افتاده </span>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;"> Pixel Ltd </a>
-                                                    </td>
-                                                    <td class="hidden-xs"> Server hardware purchase </td>
-                                                    <td> 52560.10$
-                                                        <span class="label label-success label-sm"> Paid </span>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;"> Smart House </a>
-                                                    </td>
-                                                    <td class="hidden-xs"> Office furniture purchase </td>
-                                                    <td> 5760.00$
-                                                        <span class="label label-warning label-sm"> درانتظار </span>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <a href="javascript:;"> FoodMaster Ltd </a>
-                                                    </td>
-                                                    <td class="hidden-xs"> Company Anual Dinner Catering </td>
-                                                    <td> 12400.00$
-                                                        <span class="label label-success label-sm"> Paid </span>
-                                                    </td>
-                                                    <td>
-                                                        <a class="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                        @component('Admin.panelUser.history', ['payments' => $payments])
+                                        @slot('title')
+                                        تاریخچه پرداخت ها
+                                        @endslot
+                                        @endcomponent
                                     </div>
                                     <!--tab-pane-->
                                     <div class="tab-pane" id="tab_1_22">
@@ -650,6 +488,133 @@
                                         </div>
                                     </div>
                                     <!--tab-pane-->
+                                    <div class="tab-pane" id="comments">
+                                        <div class="tab-pane active" id="tab_1_1_1">
+                                            <div class="scroller" data-height="290px" data-always-visible="1" data-rail-visible1="1">
+                                                <ul class="chats">
+                                                    @foreach($comments as $comment)
+                                                        <li class="in">
+                                                            <img class="avatar" alt="" src="{{$comment->user->images['thumb']}}">
+                                                            <div class="message">
+                                                                <span class="arrow"> </span>
+                                                                <a href="javascript:;" class="name"> {{$comment->user->name}} </a>
+                                                                <span class="datetime"> در {{jdate($comment->created_at)->ago()}} </span>
+                                                                <span class="body">{!! $comment->comment !!}</span>
+                                                            </div>
+                                                        </li>
+
+                                                        @if(count($comment->comments))
+                                                            @foreach($comment->comments as $child)
+                                                                <li class="out">
+                                                                    <img class="avatar" alt="" src="{{$child->user->images['thumb']}}">
+                                                                    <div class="message">
+                                                                        <span class="arrow"> </span>
+                                                                        <a href="javascript:;" class="name"> {{$child->user->name}} </a>
+                                                                        <span class="datetime"> در {{jdate($child->created_at)->ago()}} </span>
+                                                                        <span class="body">{!! $child->comment !!} </span>
+                                                                    </div>
+                                                                </li>
+                                                            @endforeach
+                                                        @endif
+                                                    @endforeach
+                                                    <li class="out">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar2.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> آناهیتا </a>
+                                                            <span class="datetime"> در 20:11 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="out">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar2.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> آناهیتا </a>
+                                                            <span class="datetime"> در 20:11 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="in">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar1.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> کوروش </a>
+                                                            <span class="datetime"> در 20:30 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="in">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar1.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> کوروش </a>
+                                                            <span class="datetime"> در 20:30 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="out">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar3.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> محمد </a>
+                                                            <span class="datetime"> در 20:33 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="in">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar3.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> محمد </a>
+                                                            <span class="datetime"> در 20:35 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="out">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar1.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> کوروش </a>
+                                                            <span class="datetime"> در 20:40 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="in">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar3.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> محمد </a>
+                                                            <span class="datetime"> در 20:40 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود. </span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="out">
+                                                        <img class="avatar" alt="" src="/layouts/layout/img/avatar1.jpg">
+                                                        <div class="message">
+                                                            <span class="arrow"> </span>
+                                                            <a href="javascript:;" class="name"> کوروش </a>
+                                                            <span class="datetime"> در 20:54 </span>
+                                                            <span class="body"> لورم ایپسوم یا طرح&zwnj;نما به متنی آزمایشی و بی&zwnj;معنی در صنعت چاپ، صفحه&zwnj;آرایی و طراحی گرافیک گفته می&zwnj;شود.
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                            <div class="chat-form">
+                                                <div class="input-cont">
+                                                    <input class="form-control" type="text" placeholder="پیغام خود را تایپ کنید..."> </div>
+                                                <div class="btn-cont">
+                                                    <span class="arrow"> </span>
+                                                    <a href="" class="btn blue icn-only">
+                                                        <i class="fa fa-check icon-white"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--tab-pane-->
                                 </div>
                             </div>
                         </div>
@@ -662,20 +627,33 @@
                             <ul class="ver-inline-menu tabbable margin-bottom-10">
                                 <li class="active">
                                     <a data-toggle="tab" href="#tab_1-1">
-                                        <i class="fa fa-cog"></i> Personal info </a>
+                                        <i class="fa fa-cog"></i> اطلاعات شخصی </a>
                                     <span class="after"> </span>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#tab_2-2">
-                                        <i class="fa fa-picture-o"></i> Change Avatar </a>
+                                        <i class="fa fa-picture-o"></i> تغییر آواتار </a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#tab_3-3">
-                                        <i class="fa fa-lock"></i> Change Password </a>
+                                        <i class="fa fa-lock"></i> تغییر کلمه عبور </a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#tab_4-4">
-                                        <i class="fa fa-eye"></i> Privacity Settings </a>
+                                        <i class="fa fa-eye"></i> تنظیمات خصوصی </a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#tab_4-4">
+                                {{-- @if(user()->upgradeLevels())
+
+                                    <i class="fa fa-eye"></i> {{'عضویت ویژه'}}
+
+                                    @else
+
+                                    <i class="fa fa-eye"></i>{{' ارتقا حساب کاربری '}}
+                                 @endif--}}
+
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -684,36 +662,35 @@
                                 <div id="tab_1-1" class="tab-pane active">
                                     <form role="form" action="#">
                                         <div class="form-group">
-                                            <label class="control-label">First Name</label>
-                                            <input type="text" placeholder="John" class="form-control" /> </div>
+                                            <label class="control-label">نام</label>
+                                            <input type="text" value="" class="form-control" /> </div>
                                         <div class="form-group">
-                                            <label class="control-label">Last Name</label>
-                                            <input type="text" placeholder="Doe" class="form-control" /> </div>
+                                            <label class="control-label">نام خانوادگی</label>
+                                            <input type="text" value="" class="form-control" /> </div>
                                         <div class="form-group">
-                                            <label class="control-label">Mobile Number</label>
-                                            <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
+                                            <label class="control-label">شماره موبایل</label>
+                                            <input type="text" value="" class="form-control" /> </div>
                                         <div class="form-group">
-                                            <label class="control-label">Interests</label>
+                                            <label class="control-label">موقعیت</label>
                                             <input type="text" placeholder="Design, Web etc." class="form-control" /> </div>
                                         <div class="form-group">
-                                            <label class="control-label">Occupation</label>
-                                            <input type="text" placeholder="Web Developer" class="form-control" /> </div>
+                                            <label class="control-label">توضیحات</label>
+                                            <input type="text" value="" class="form-control" /> </div>
                                         <div class="form-group">
                                             <label class="control-label">درباره</label>
                                             <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label">Website Url</label>
+                                            <label class="control-label">آدرس سایت</label>
                                             <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
                                         <div class="margiv-top-10">
-                                            <a href="javascript:;" class="btn green"> Save Changes </a>
+                                            <a href="javascript:;" class="btn green"> ذخیره تغییرات </a>
                                             <a href="javascript:;" class="btn default"> لغو </a>
                                         </div>
                                     </form>
                                 </div>
                                 <div id="tab_2-2" class="tab-pane">
-                                    <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                        eiusmod. </p>
+                                    <p> تغییر عکس پروفایل  </p>
                                     <form action="#" role="form">
                                         <div class="form-group">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -722,19 +699,19 @@
                                                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
                                                 <div>
                                                                         <span class="btn default btn-file">
-                                                                            <span class="fileinput-new"> Select image </span>
-                                                                            <span class="fileinput-exists"> Change </span>
+                                                                            <span class="fileinput-new"> انتخاب عکس </span>
+                                                                            <span class="fileinput-exists"> تغییر </span>
                                                                             <input type="file" name="..."> </span>
-                                                    <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                    <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> حذف </a>
                                                 </div>
                                             </div>
                                             <div class="clearfix margin-top-10">
-                                                <span class="label label-danger"> NOTE! </span>
-                                                <span> درtached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
+                                                <span class="label label-danger"> توجه! </span>
+                                                <span> عکس منتخب حجمش نباید از 10M بیشتر باشد. </span>
                                             </div>
                                         </div>
                                         <div class="margin-top-10">
-                                            <a href="javascript:;" class="btn green"> Submit </a>
+                                            <a href="javascript:;" class="btn green"> ارسال </a>
                                             <a href="javascript:;" class="btn default"> لغو </a>
                                         </div>
                                     </form>
@@ -742,16 +719,16 @@
                                 <div id="tab_3-3" class="tab-pane">
                                     <form action="#">
                                         <div class="form-group">
-                                            <label class="control-label">Current Password</label>
+                                            <label class="control-label">کلمه عبور فعلی</label>
                                             <input type="password" class="form-control" /> </div>
                                         <div class="form-group">
-                                            <label class="control-label">New Password</label>
+                                            <label class="control-label">کلمه عبور جدید</label>
                                             <input type="password" class="form-control" /> </div>
                                         <div class="form-group">
-                                            <label class="control-label">Re-type New Password</label>
+                                            <label class="control-label">تکرار کلمه عبور جدید</label>
                                             <input type="password" class="form-control" /> </div>
                                         <div class="margin-top-10">
-                                            <a href="javascript:;" class="btn green"> Change Password </a>
+                                            <a href="javascript:;" class="btn green"> تغییر کلمه عبور </a>
                                             <a href="javascript:;" class="btn default"> لغو </a>
                                         </div>
                                     </form>
@@ -760,60 +737,60 @@
                                     <form action="#">
                                         <table class="table table-bordered table-striped">
                                             <tr>
-                                                <td> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus.. </td>
+                                                <td> عدم نمایش ایمیل در پست ها</td>
                                                 <td>
                                                     <div class="mt-radio-inline">
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios1" value="option1" /> Yes
+                                                            <input type="radio" name="optionsRadios1" value="option1" /> بله
                                                             <span></span>
                                                         </label>
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios1" value="option2" checked/> No
+                                                            <input type="radio" name="optionsRadios1" value="option2" checked/> خیر
                                                             <span></span>
                                                         </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td> Enim eiusmod high life accusamus terry richardson ad squid wolf moon </td>
+                                                <td>عدم نمایش نام خانوادگی در پیامها </td>
                                                 <td>
                                                     <div class="mt-radio-inline">
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios21" value="option1" /> Yes
+                                                            <input type="radio" name="optionsRadios21" value="option1" /> بله
                                                             <span></span>
                                                         </label>
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios21" value="option2" checked/> No
+                                                            <input type="radio" name="optionsRadios21" value="option2" checked/> خیر
                                                             <span></span>
                                                         </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td> Enim eiusmod high life accusamus terry richardson ad squid wolf moon </td>
+                                                <td> عدم نمایش عکس پروفایل در سایت </td>
                                                 <td>
                                                     <div class="mt-radio-inline">
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios31" value="option1" /> Yes
+                                                            <input type="radio" name="optionsRadios31" value="option1" /> بله
                                                             <span></span>
                                                         </label>
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios31" value="option2" checked/> No
+                                                            <input type="radio" name="optionsRadios31" value="option2" checked/> خیر
                                                             <span></span>
                                                         </label>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td> Enim eiusmod high life accusamus terry richardson ad squid wolf moon </td>
+                                                <td> عدم اجازه جهت گفتگوی شخصی </td>
                                                 <td>
                                                     <div class="mt-radio-inline">
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios41" value="option1" /> Yes
+                                                            <input type="radio" name="optionsRadios41" value="option1" /> بله
                                                             <span></span>
                                                         </label>
                                                         <label class="mt-radio">
-                                                            <input type="radio" name="optionsRadios41" value="option2" checked/> No
+                                                            <input type="radio" name="optionsRadios41" value="option2" checked/> خیر
                                                             <span></span>
                                                         </label>
                                                     </div>
@@ -822,7 +799,7 @@
                                         </table>
                                         <!--end profile-settings-->
                                         <div class="margin-top-10">
-                                            <a href="javascript:;" class="btn green"> Save Changes </a>
+                                            <a href="javascript:;" class="btn green"> ذخیره تغییرات</a>
                                             <a href="javascript:;" class="btn default"> لغو </a>
                                         </div>
                                     </form>

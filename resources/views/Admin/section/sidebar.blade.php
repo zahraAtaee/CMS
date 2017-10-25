@@ -40,26 +40,36 @@
                 </form>
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
             </li>
-            <li class="nav-item start active open">
+            <li class="nav-item start {{Route::currentRouteName()=='admin.panel' ? 'active' : ''}} open">
                 <a href="{{route('admin.panel')}}" class="nav-link nav-toggle">
                     <i class="icon-home"></i>
                     <span class="title">پیشخوان</span>
                     <span class="selected"></span>
                     <span class="arrow open"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="nav-item start {{Route::currentRouteName()=='admin.panel' ? 'active' : ''}} open">
+                        <a href="{{route('user.panel')}}" class="nav-link ">
+                            <i class="icon-user"></i>
+                            <span class="title">پروفایل کاربر</span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="heading">
                 <h3 class="uppercase">امکانات</h3>
             </li>
 {{--            @can('edit-course')--}}
-            <li class="nav-item  ">
+            <li class="nav-item {{Route::currentRouteName()=='articles.index' ? ' active  open' : ''}}  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-layers"></i>
                     <span class="title">مقالات</span>
+                    {!!  Route::currentRouteName()=='articles.index' ? '<span class="selected"></span>' : '' !!}
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
+                    <li class="nav-item {{Route::currentRouteName()=='articles.index' ? 'active' : ''}} ">
                         <a  href="{{route('articles.index')}}" class="nav-link ">
                             <span class="title">مقالات تخصصی</span>
                         </a>
@@ -73,16 +83,18 @@
             </li>
             {{--@endcan--}}
             {{--@can('view')--}}
-            <li class="nav-item  ">
+            <li class="nav-item {{Route::currentRouteName()=='courses.index' ? ' active  open' : ''}}  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-puzzle"></i>
                     <span class="title">دوره های آموزشی</span>
+                    {!!  Route::currentRouteName()=='courses.index' ? '<span class="selected"></span>' : '' !!}
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
+                    <li class="nav-item {{Route::currentRouteName()=='courses.index' ? ' active ' : ''}} ">
                         <a href="{{route('courses.index')}}" class="nav-link ">
                             <span class="title">دوره های تخصصی</span>
+
                         </a>
                     </li>
                     <li class="nav-item  ">
@@ -93,43 +105,45 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item  ">
+            <li class="nav-item {{Route::currentRouteName()=='payments.index'  ? ' active  open' : ''}} ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-wallet"></i>
                     <span class="title">پرداخت ها</span>
+                    {!!  Route::currentRouteName()=='payments.index'  ? '<span class="selected"></span>' : '' !!}
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
+                    <li class="nav-item {{Route::currentRouteName()=='payments.index'  ? ' active' : ''}} ">
                         <a href="{{route('payments.index')}}" class="nav-link ">
                             <span class="title">پرداختی های موفق</span>
                             <span class="badge badge-success">{{$paymentSuccess}}</span>
 
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item  {{Route::currentRouteName()=='payment.unsuccessfull' ? ' active' : ''}}">
                         <a  href="{{route('payment.unsuccessfull')}}" class="nav-link ">
                             <span class="title">پرداختی های ناموفق</span>
                             <span class="badge badge-danger">{{$paymentUnsuccess}}</span>
                         </a>
                     </li>
-
                 </ul>
             </li>
-            <li class="nav-item  ">
+            <li class="nav-item  {{Route::currentRouteName()=='comments.index' || Route::currentRouteName()=='comments.unsuccessfull' ? ' active  open' : ''}}">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-paper-plane"></i>
                     <span class="title">پیام ها</span>
+                    {!!  Route::currentRouteName()=='comments.index' ? '<span class="selected"></span>' : '' !!}
+
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
+                    <li class="nav-item  {{Route::currentRouteName()=='comments.index' ? ' active' : ''}}">
                         <a href="{{route('comments.index')}}" class="nav-link ">
                             <span class="title">همه نظرات</span>
                             <span class="badge badge-success">{{$commentSuccess}}</span>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item  {{Route::currentRouteName()=='comments.unsuccessfull' ? ' active' : ''}}">
                         <a href="{{route('comments.unsuccessfull')}}" class="nav-link ">
                             <span class="title">نظرات تایید نشده </span>
                             <span class="badge badge-danger">{{$commentUnsuccess}}</span>
@@ -193,7 +207,7 @@
                     <li class="nav-item  ">
                         <a href="page_user_profile_1_account.html" class="nav-link ">
                             <i class="icon-user-female"></i>
-                            <span class="title">پروفایل 1 اطلاعات کاربری</span>
+                            <span class="title">پروفایل کاربری</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
@@ -223,6 +237,8 @@
                     </li>
                 </ul>
             </li>
+
+
         </ul>
         <!-- END SIDEBAR MENU -->
         <!-- END SIDEBAR MENU -->
